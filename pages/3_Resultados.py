@@ -12,15 +12,15 @@ from src.visualization.pca import project_2d, variance_explained
 from src.visualization.charts import pca_scatter, cluster_profile_bars
 from src.clustering import ALGORITHMS
 
-st.set_page_config(page_title="Resultados", page_icon="📈", layout="wide")
+st.set_page_config(page_title="Resultados", page_icon=":material/insights:", layout="wide")
 
-st.title("📈 Resultados del modelo")
+st.title("Resultados del modelo")
 st.caption("Métricas, visualización y perfiles por cluster")
 
 # ---------- Verificar que hay modelo entrenado ----------
 required_keys = ["current_model", "current_metrics", "df_filtered", "X_scaled"]
 if not all(k in st.session_state for k in required_keys):
-    st.warning("Primero entrena un modelo en la página **🧪 Entrenamiento**.")
+    st.warning("Primero entrena un modelo en la página **Entrenamiento**.")
     st.stop()
 
 model = st.session_state["current_model"]
@@ -127,9 +127,9 @@ st.markdown("### Interpretación de cada cluster")
 for _, row in profile_with_interp.iterrows():
     cluster_id = row["cluster"]
     if cluster_id == -1:
-        st.markdown(f"**🔸 Ruido** · {row['interpretación']}")
+        st.markdown(f"**Ruido** · {row['interpretación']}")
     else:
-        st.markdown(f"**🔹 Cluster {int(cluster_id)}** · {row['interpretación']}")
+        st.markdown(f"**Cluster {int(cluster_id)}** · {row['interpretación']}")
     st.caption(
         "  ·  ".join([f"{d}={row[d]:.2f}" for d in DIMENSIONS])
     )

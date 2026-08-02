@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timezone
 from bson import ObjectId
 from src.db.connection import get_db
 
@@ -12,7 +12,7 @@ def get_collection():
 def save_metadata(doc: dict) -> str:
     """Guarda el metadata del modelo. Retorna el _id insertado."""
     if "trained_at" not in doc:
-        doc["trained_at"] = datetime.utcnow()
+        doc["trained_at"] = datetime.now(timezone.utc)
     result = get_collection().insert_one(doc)
     return str(result.inserted_id)
 

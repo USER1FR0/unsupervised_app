@@ -33,23 +33,50 @@ def fetch_sheet_dataframe() -> pd.DataFrame:
 
 
 def _row_to_document(row: pd.Series) -> dict:
-    raw_answers = [int(row[c]) for c in RAW_ANSWER_COLUMNS]
-    scores = {dim: float(row[dim]) for dim in DIMENSION_COLUMNS}
-    submitted_at = pd.to_datetime(row["timestamp"], dayfirst=True).to_pydatetime()
+    """Convierte una fila del Sheet en documento MongoDB.
+    Lanza ValueError si la fila no puede parsearse (falta columna, tipo inválido)."""
+    try:
+        raw_answers = [int(row[c]) for c in RAW_ANSWER_COLUMNS]
+        scores = {dim: float(row[dim]) for dim in DIMENSION_COLUMNS}
+        submitted_at = pd.to_datetime(row["timestamp"], dayfirst=True).to_pydatetime()
+    except (KeyError, ValueError, TypeError) as e:
+        raise ValueError(str(e))
 
     return {
         "submitted_at": submitted_at,
         "raw_answers": raw_answers,
         **scores,
-        "arquetipo": str(row["arquetipo"]),
+        "arquetipo": str(row.get("arquetipo", "")),
         "edad": int(row["edad"]),
-        "genero": str(row["genero"]),
-        "estado": str(row["estado"]),
-        "municipio": str(row["municipio"]),
+        "genero": str(row.get("genero", "")),
+        "estado": str(row.get("estado", "")),
+        "municipio": str(row.get("municipio", "")),
         "source": "google_form",
         "synthetic": False,
     }
 
 
 def dataframe_to_documents(df: pd.DataFrame) -> list:
-    return [_row_to_document(row) for _, row in df.iterrows()]
+    """Convierte filas a documentos. Salta las filas malformadas y las cuenta.
+    Retorna solo la lista de documentos válidos. Los errores quedan en el
+    atributo _last_import_errors (list[dict]) para consulta posterior."""
+    docs = []
+    errors = []
+    for idx, row in df.iterrows():
+        try:
+            docs.append(_row_to_document(row))
+        except ValueError as e:
+            errors.append({"row": int(idx), "error": str(e)})
+
+    # Guardar en atributo del módulo para poder inspeccionar desde la UI
+    global _last_import_errors
+    _last_import_errors = errors
+    return docs
+
+
+_last_import_errors = []
+
+
+def get_last_import_errors() -> list:
+    """Retorna las filas que fallaron en la última llamada a dataframe_to_documents."""
+    return _last_import_errors

@@ -9,18 +9,21 @@ from src.evaluation.optimization import (
     k_distances,
     hierarchical_linkage_matrix,
 )
-from src.data.loader import DIMENSIONS
+from src.data.loader import DIMENSIONS, active_source_label
 from src.data.preprocessing import scale_dimensions
 from src.visualization.charts import elbow_plot, k_distance_plot, dendrogram_plot
 
-st.set_page_config(page_title="Entrenamiento", page_icon="🧪", layout="wide")
+st.set_page_config(page_title="Entrenamiento", page_icon=":material/science:", layout="wide")
 
-st.title("🧪 Entrenamiento de modelos")
-st.caption("Selecciona un algoritmo, ajusta hiperparámetros y entrena")
+st.title("Entrenamiento de modelos")
+st.caption(f"Selecciona un algoritmo, ajusta hiperparámetros y entrena · Fuente: **{active_source_label()}**")
 
 # ---------- Verificar datos ----------
 if "df_filtered" not in st.session_state or st.session_state["df_filtered"].empty:
-    st.warning("Primero visita la página **Exploración** y aplica filtros (aunque sea sin cambios) para cargar los datos.")
+    st.warning(
+        "Primero visita la página **Exploración** y aplica filtros "
+        "(aunque sea sin cambios) para cargar los datos."
+    )
     st.stop()
 
 df = st.session_state["df_filtered"]
@@ -49,7 +52,7 @@ st.caption(ALGORITHMS[algo_key]["description"])
 st.write("")
 st.divider()
 
-# ---------- Optimización (HU-06) ----------
+# ---------- Optimización ----------
 st.markdown("### 2. Optimización de hiperparámetros")
 st.caption("Antes de entrenar, revisa esta gráfica para elegir mejor los hiperparámetros.")
 
@@ -82,10 +85,26 @@ elif algo_key == "dbscan":
     with st.spinner("Calculando k-distancias..."):
         opt = k_distances(X_scaled, k=min_samples_opt)
     st.plotly_chart(
-        k_distance_plot(opt["distances"], opt["k"], opt["suggested_eps"]),
+        k_distance_plot(
+            opt["distances"], opt["k"], opt["suggested_eps"],
+            eps_aggressive=opt.get("eps_aggressive"),
+            eps_conservative=opt.get("eps_conservative"),
+        ),
         use_container_width=True,
     )
-    st.success(f"**eps sugerido**: {opt['suggested_eps']}")
+    col_a, col_b, col_c = st.columns(3)
+    col_a.metric("eps agresivo (p50)", opt["eps_aggressive"],
+                 help="Clusters más chicos y más puntos como ruido.")
+    col_b.metric("eps moderado (p75)", opt["eps_moderate"],
+                 help="Recomendación principal. Balance entre estructura y ruido.")
+    col_c.metric("eps conservador (p90)", opt["eps_conservative"],
+                 help="Menos clusters, casi sin ruido. Puede colapsar todo en uno.")
+    if opt.get("eps_knee") is not None:
+        st.caption(f"Codo detectado por Kneedle: **{opt['eps_knee']}** (puede coincidir con alguno de los anteriores).")
+    st.success(
+        f"**eps sugerido**: {opt['suggested_eps']} · "
+        "prueba primero el moderado, y si te sale 1 solo cluster baja al agresivo."
+    )
 
 elif algo_key == "gmm":
     cov_type_opt = st.selectbox("Tipo de covarianza", ["full", "tied", "diag", "spherical"], key="gmm_cov_opt")
@@ -152,7 +171,7 @@ if st.button("Entrenar modelo", type="primary", use_container_width=True):
     st.session_state["current_params"] = params
     st.session_state["current_training_time"] = round(elapsed, 3)
 
-    st.success(f"✅ Modelo entrenado en **{elapsed:.2f} s**")
+    st.success(f"Modelo entrenado en **{elapsed:.2f} s**")
 
     # Preview rápido de métricas
     st.markdown("#### Vista rápida")
@@ -164,6 +183,12 @@ if st.button("Entrenar modelo", type="primary", use_container_width=True):
 
     if metrics["silhouette"] is not None:
         st.info(f"Interpretación silhouette: **{interpret_silhouette(metrics['silhouette'])}**")
+    else:
+        st.warning(
+            "El silhouette no se puede calcular con menos de 2 clusters. "
+            "Ajusta los hiperparámetros: en DBSCAN prueba bajar `eps`; "
+            "en el resto sube `k` a 2 o más."
+        )
 
     st.write("")
-    st.markdown("👉 Ve a la página **📈 Resultados** para el análisis completo.")
+    st.markdown("Ve a la página **Resultados** para el análisis completo.")

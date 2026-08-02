@@ -8,4 +8,4 @@ data/*.csv
 models/*.pkl
 !models/.gitkeep
 .DS_Store
-.streamlit/
+.streamlit/secrets.toml

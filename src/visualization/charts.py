@@ -111,7 +111,8 @@ def elbow_plot(k_values, y_values, suggested_k, title: str, y_label: str) -> go.
     return _apply_base(fig, title)
 
 
-def k_distance_plot(distances, k, suggested_eps, title: str = None) -> go.Figure:
+def k_distance_plot(distances, k, suggested_eps, title: str = None,
+                     eps_aggressive=None, eps_conservative=None) -> go.Figure:
     fig = go.Figure()
     fig.add_trace(go.Scatter(
         x=list(range(len(distances))),
@@ -119,13 +120,29 @@ def k_distance_plot(distances, k, suggested_eps, title: str = None) -> go.Figure
         mode="lines",
         line=dict(color=PALETTE["primary"], width=2),
     ))
+    if eps_aggressive is not None:
+        fig.add_hline(
+            y=eps_aggressive,
+            line_dash="dot",
+            line_color=PALETTE["sky"],
+            annotation_text=f"agresivo: {eps_aggressive}",
+            annotation_position="bottom right",
+        )
     fig.add_hline(
         y=suggested_eps,
         line_dash="dash",
         line_color=PALETTE["peach"],
-        annotation_text=f"eps sugerido: {suggested_eps}",
+        annotation_text=f"moderado: {suggested_eps}",
         annotation_position="top right",
     )
+    if eps_conservative is not None:
+        fig.add_hline(
+            y=eps_conservative,
+            line_dash="dot",
+            line_color=PALETTE["muted"],
+            annotation_text=f"conservador: {eps_conservative}",
+            annotation_position="top left",
+        )
     fig.update_layout(
         xaxis_title="Puntos ordenados",
         yaxis_title=f"Distancia al {k}º vecino",

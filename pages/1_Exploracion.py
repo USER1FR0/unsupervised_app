@@ -1,11 +1,17 @@
 import streamlit as st
 import pandas as pd
-from src.data.loader import load_dataframe, DIMENSIONS, DIMENSION_LABELS
+from src.data.loader import (
+    load_dataframe,
+    active_source_label,
+    DIMENSIONS,
+    DIMENSION_LABELS,
+)
 from src.data.preprocessing import drop_null_dimensions, count_nulls_by_column
 from src.stats.descriptive import (
     describe_all_dimensions,
     correlation_matrix,
     internal_consistency,
+    cronbach_alpha,
 )
 from src.visualization.charts import (
     histogram,
@@ -15,22 +21,22 @@ from src.visualization.charts import (
     bar_dimensions_mean,
 )
 
-st.set_page_config(page_title="Exploración", page_icon="📊", layout="wide")
+st.set_page_config(page_title="Exploración", page_icon=":material/analytics:", layout="wide")
 
-st.title("📊 Exploración de datos")
-st.caption("Visualización, filtros y estadística descriptiva")
+st.title("Exploración de datos")
+st.caption(f"Visualización, filtros y estadística descriptiva · Fuente: **{active_source_label()}**")
 
 # ---------- Carga ----------
 df_full = load_dataframe()
 
 if df_full.empty:
-    st.warning("No hay datos cargados. Sincroniza desde el panel lateral en la página principal.")
+    st.warning("No hay datos cargados. Elige una fuente y cárgala desde el panel lateral en la página principal.")
     st.stop()
 
 # Reporte de nulos
 nulls = count_nulls_by_column(df_full)
 if nulls:
-    with st.expander("⚠️ Se detectaron valores nulos", expanded=False):
+    with st.expander("Se detectaron valores nulos", expanded=False):
         for col, n in nulls.items():
             st.write(f"- **{col}**: {n} valores nulos")
 
@@ -44,12 +50,16 @@ col_f1, col_f2, col_f3 = st.columns(3)
 
 with col_f1:
     edad_min, edad_max = int(df_clean["edad"].min()), int(df_clean["edad"].max())
-    edad_range = st.slider(
-        "Rango de edad",
-        min_value=edad_min,
-        max_value=edad_max,
-        value=(edad_min, edad_max),
-    )
+    if edad_min == edad_max:
+        edad_range = (edad_min, edad_max)
+        st.caption(f"Rango de edad: {edad_min} (único valor)")
+    else:
+        edad_range = st.slider(
+            "Rango de edad",
+            min_value=edad_min,
+            max_value=edad_max,
+            value=(edad_min, edad_max),
+        )
 
 with col_f2:
     generos_disponibles = sorted(df_clean["genero"].unique().tolist())
@@ -104,10 +114,15 @@ with tab_tabla:
     st.markdown("#### Registros")
     st.caption(f"Total: {len(df)} · Columnas: {len(df.columns)}")
 
+    default_cols = [c for c in [
+        "submitted_at", "O", "C", "E", "A", "N", "arquetipo",
+        "edad", "genero", "estado", "municipio",
+    ] if c in df.columns]
+
     columnas_display = st.multiselect(
         "Columnas a mostrar",
         options=df.columns.tolist(),
-        default=["submitted_at", "O", "C", "E", "A", "N", "arquetipo", "edad", "genero", "estado", "municipio"],
+        default=default_cols,
     )
 
     st.dataframe(
@@ -141,7 +156,21 @@ with tab_stats:
         )
         st.dataframe(consistency, use_container_width=True, hide_index=True)
     else:
-        st.info("No se pudo calcular (no hay respuestas crudas disponibles).")
+        st.info("No se pudo calcular (no hay respuestas crudas disponibles en esta fuente).")
+
+    st.write("")
+    st.markdown("#### Alfa de Cronbach por dimensión")
+    st.caption(
+        "Métrica psicométrica estándar. α ≥ 0.7 es aceptable, ≥ 0.8 bueno, ≥ 0.9 excelente."
+    )
+    alpha_df = cronbach_alpha(df)
+    if not alpha_df.empty:
+        alpha_df["dimensión"] = alpha_df["dimensión"].map(
+            {d: f"{d} · {DIMENSION_LABELS[d]}" for d in DIMENSIONS}
+        )
+        st.dataframe(alpha_df, use_container_width=True, hide_index=True)
+    else:
+        st.info("No se pudo calcular α (no hay respuestas crudas).")
 
     st.write("")
     st.markdown("#### Promedio general por dimensión")

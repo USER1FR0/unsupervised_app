@@ -1,0 +1,13 @@
+{
+  "descripcion": "Mapeo de ítems del instrumento Big Five (encuesta de 20 preguntas Likert 1-5).",
+  "items_por_dimension": {
+    "O": [1, 2, 3, 4],
+    "C": [5, 6, 7, 8],
+    "E": [9, 10, 11, 12],
+    "A": [13, 14, 15, 16],
+    "N": [17, 18, 19, 20]
+  },
+  "reverse_items": [4, 8, 12, 16, 20],
+  "escala_min": 1,
+  "escala_max": 5
+}
