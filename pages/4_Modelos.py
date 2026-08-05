@@ -1,112 +1,222 @@
 import streamlit as st
 from datetime import datetime, timezone
+
 from src.db.model_repository import (
-    save_metadata, find_all, find_by_id, delete_by_id, ensure_indexes, count,
+    save_metadata, find_all, delete_by_id, ensure_indexes, count, name_exists,
+    readable_model_name, readable_dataset_name,
 )
-from src.persistence.model_io import save_model_bundle, load_model_bundle, delete_model_bundle
-from src.clustering import ALGORITHMS
+from src.persistence.model_io import (
+    save_model_bundle, delete_model_bundle, bundle_exists,
+)
+from src.ui.theme import apply_global_style, render_sidebar, section_head
 
-st.set_page_config(page_title="Modelos", page_icon=":material/save:", layout="wide")
+st.set_page_config(page_title="Modelos", layout="wide")
+apply_global_style()
+render_sidebar()
 
+st.markdown("## Modelos guardados")
+st.caption("Guarda el modelo actual con un nombre unico y consulta el historial.")
+st.divider()
+
+# ---------- Conexion Mongo ----------
 try:
     ensure_indexes()
 except Exception as e:
     st.error(f"No se pudo conectar con MongoDB: {e}")
+    st.info("Revisa `config/.env` (MONGO_URI, MONGO_DB) y la conexion a internet.")
     st.stop()
 
-st.title("Modelos guardados")
-st.caption("Guarda modelos entrenados y consulta el historial de experimentos")
+# ==========================================================================
+#                       GUARDAR MODELO ACTUAL
+# ==========================================================================
+section_head(title="Guardar modelo actual", kicker="Persistencia")
 
-# ---------- Guardar modelo actual ----------
-st.markdown("### Guardar modelo actual")
-
-required = ["current_model", "current_metrics", "scaler", "current_algorithm", "current_params"]
+required = ["current_model", "current_metrics", "scaler",
+            "current_algorithm", "current_params"]
 if not all(k in st.session_state for k in required):
-    st.info("Para guardar un modelo, primero entrena uno en la página **Entrenamiento**.")
+    st.info("Para guardar un modelo, primero entrena uno en **Entrenamiento**.")
+    st.page_link("pages/2_Entrenamiento.py", label="Ir a Entrenamiento")
 else:
-    algo = st.session_state["current_algorithm"]
     params = st.session_state["current_params"]
     metrics = st.session_state["current_metrics"]
     training_time = st.session_state["current_training_time"]
+    csv_name = st.session_state.get("csv_name", "sin_archivo")
 
-    st.markdown(f"**Algoritmo actual**: {ALGORITHMS[algo]['label']}")
-    st.caption(" · ".join(f"{k}={v}" for k, v in params.items()))
+    col_info = st.columns(3)
+    col_info[0].metric("Algoritmo", "GMM")
+    col_info[1].metric("Clusters", metrics.get("n_clusters", "N/A"))
+    col_info[2].metric(
+        "Silhouette",
+        f"{metrics['silhouette']:.3f}" if metrics.get("silhouette") is not None else "N/A",
+    )
 
-    if st.button("Guardar en historial", type="primary"):
-        with st.spinner("Guardando..."):
-            model_wrapper = st.session_state["current_model"]
-            scaler = st.session_state["scaler"]
+    st.write("")
 
-            # Serializar el modelo interno de sklearn
-            bundle = save_model_bundle(
-                model_wrapper.get_model(),
-                scaler,
-                algo,
-            )
+    default_name = f"gmm_{csv_name.replace('.csv','')}_{datetime.now().strftime('%Y%m%d_%H%M')}"
+    col_n, col_b = st.columns([3, 1])
+    with col_n:
+        model_name = st.text_input(
+            "Nombre del modelo",
+            value=default_name,
+            help="Nombre unico para identificar este modelo en el historial. "
+                 "Solo letras, numeros, guiones y guiones bajos.",
+        )
+    with col_b:
+        st.write("")
+        save_clicked = st.button("Guardar", type="primary", use_container_width=True)
 
-            # Guardar metadata (fuente incluida para trazabilidad)
-            metadata = {
-                "algorithm": algo,
-                "algorithm_label": ALGORITHMS[algo]["label"],
-                "trained_at": datetime.now(timezone.utc),
-                "hyperparameters": params,
-                "metrics": metrics,
-                "training_time_seconds": training_time,
-                "n_records": len(st.session_state.get("df_filtered", [])),
-                "data_source": st.session_state.get("data_source", "MongoDB"),
-                "model_file_path": bundle["model_file_path"],
-                "scaler_file_path": bundle["scaler_file_path"],
-            }
-            model_id = save_metadata(metadata)
+    if save_clicked:
+        model_name = (model_name or "").strip()
 
-        st.success(f"Modelo guardado con ID `{model_id[:8]}...`")
-        st.rerun()
+        # Validaciones
+        if not model_name:
+            st.error("El nombre no puede estar vacio.")
+        elif len(model_name) > 80:
+            st.error("El nombre es muy largo (max 80 caracteres).")
+        elif not all(c.isalnum() or c in "_-." for c in model_name):
+            st.error("El nombre solo puede contener letras, numeros, '.', '_' y '-'.")
+        elif name_exists(model_name):
+            st.error(f"Ya existe un modelo con el nombre '{model_name}'.")
+        else:
+            try:
+                with st.spinner("Guardando..."):
+                    wrapper = st.session_state["current_model"]
+                    scaler = st.session_state["scaler"]
+                    pca = st.session_state.get("current_pca")
+
+                    # Si no tenemos PCA (usuario no visito Resultados),
+                    # lo calculamos aqui para que Clasificacion pueda usarlo.
+                    if pca is None and "X_scaled" in st.session_state:
+                        from src.visualization.pca import project_2d
+                        _, pca = project_2d(st.session_state["X_scaled"])
+
+                    bundle = save_model_bundle(
+                        wrapper.get_model(), scaler, "gmm", pca=pca,
+                    )
+                    metadata = {
+                        "model_name": model_name,
+                        "algorithm": "gmm",
+                        "algorithm_label": "GMM",
+                        "trained_at": datetime.now(timezone.utc),
+                        "hyperparameters": params,
+                        "metrics": metrics,
+                        "training_time_seconds": training_time,
+                        "n_records": len(st.session_state.get("df_filtered", [])),
+                        "dataset_source": csv_name,
+                        "model_file_path": bundle["model_file_path"],
+                        "scaler_file_path": bundle["scaler_file_path"],
+                        "pca_file_path": bundle.get("pca_file_path"),
+                    }
+                    save_metadata(metadata)
+                st.success(f"Modelo guardado como '{model_name}'.")
+                st.rerun()
+            except Exception as e:
+                st.error(f"Error al guardar el modelo: {e}")
 
 st.write("")
 st.divider()
 
-# ---------- Historial ----------
-st.markdown("### Historial de modelos")
-
-total = count()
-st.caption(f"{total} modelos en el historial")
-
-if total == 0:
-    st.info("No hay modelos guardados aún.")
+# ==========================================================================
+#                          HISTORIAL DE MODELOS
+# ==========================================================================
+try:
+    all_models = find_all()
+except Exception as e:
+    st.error(f"No se pudo leer el historial: {e}")
     st.stop()
 
-models = find_all()
+total = len(all_models)
+orphans = [m for m in all_models if not bundle_exists(m)]
 
-for m in models:
+section_head(
+    title=f"Historial ({total} modelos)",
+    subtitle=f"{len(orphans)} con archivos faltantes" if orphans else "",
+    kicker="Experimentos",
+)
+
+if total == 0:
+    st.info("No hay modelos guardados aun.")
+    st.stop()
+
+# Purga de huerfanos
+if orphans:
+    st.warning(
+        f"Hay **{len(orphans)}** modelo(s) con archivos .pkl faltantes en disco. "
+        "No sirven para clasificar. Puedes purgarlos del historial."
+    )
+    if st.button("Purgar modelos huerfanos", type="secondary"):
+        removed = 0
+        for m in orphans:
+            try:
+                delete_by_id(str(m["_id"]))
+                removed += 1
+            except Exception:
+                pass
+        st.success(f"Purgados {removed} modelo(s).")
+        st.rerun()
+
+st.write("")
+
+for m in all_models:
     model_id = str(m["_id"])
-    algo_label = m.get("algorithm_label", m["algorithm"])
-    trained_at = m["trained_at"].strftime("%d/%m/%Y %H:%M")
-    metrics = m.get("metrics", {})
-    src = m.get("data_source", "MongoDB")
+    name = readable_model_name(m)
+    trained_at = m["trained_at"].strftime("%d/%m/%Y %H:%M") if m.get("trained_at") else ""
+    metrics = m.get("metrics", {}) or {}
+    ds_source = readable_dataset_name(m)
+    sil = metrics.get("silhouette")
+    algo_label = m.get("algorithm_label", m.get("algorithm", "?"))
+    healthy = bundle_exists(m)
+    tag = "" if healthy else " [ARCHIVOS FALTANTES]"
 
-    with st.expander(
-        f"**{algo_label}** · {trained_at} · "
-        f"silhouette={metrics.get('silhouette', 'N/A')} · "
+    header = (
+        f"**{name}**{tag} · {algo_label} · "
         f"clusters={metrics.get('n_clusters', 'N/A')} · "
-        f"fuente={src}",
-    ):
-        col1, col2 = st.columns([3, 1])
+        f"silhouette={f'{sil:.3f}' if isinstance(sil, (int, float)) else 'N/A'} · "
+        f"{trained_at}"
+    )
 
-        with col1:
-            st.markdown("**Hiperparámetros**")
-            for k, v in m.get("hyperparameters", {}).items():
+    with st.expander(header):
+        col_a, col_b = st.columns([3, 1])
+
+        with col_a:
+            if not healthy:
+                st.error(
+                    "Los archivos .pkl de este modelo no existen en disco. "
+                    "No es utilizable. Eliminalo o purga los huerfanos."
+                )
+
+            st.markdown("**Hiperparametros**")
+            for k, v in (m.get("hyperparameters") or {}).items():
                 st.caption(f"· {k}: {v}")
 
-            st.markdown("**Métricas**")
+            st.markdown("**Metricas**")
             for k, v in metrics.items():
-                st.caption(f"· {k}: {v}")
+                if isinstance(v, float):
+                    st.caption(f"· {k}: {v:.3f}")
+                else:
+                    st.caption(f"· {k}: {v}")
 
-            st.caption(f"Registros: {m.get('n_records', 'N/A')} · "
-                       f"Tiempo: {m.get('training_time_seconds', 'N/A')} s · "
-                       f"Fuente: {src}")
+            st.caption(
+                f"Registros: {m.get('n_records', 'N/A')} · "
+                f"Archivo: {ds_source} · "
+                f"Tiempo: {m.get('training_time_seconds', 'N/A')} s"
+            )
 
-        with col2:
-            if st.button("Eliminar", key=f"del_{model_id}", use_container_width=True):
-                delete_model_bundle(m["model_file_path"], m["scaler_file_path"])
-                delete_by_id(model_id)
-                st.rerun()
+        with col_b:
+            if healthy:
+                st.page_link("pages/6_Clasificacion.py", label="Clasificar con este")
+            if st.button("Eliminar", key=f"del_{model_id}",
+                          use_container_width=True):
+                try:
+                    delete_model_bundle(
+                        m.get("model_file_path", ""),
+                        m.get("scaler_file_path", ""),
+                        m.get("pca_file_path"),
+                    )
+                except Exception:
+                    pass
+                try:
+                    delete_by_id(model_id)
+                    st.rerun()
+                except Exception as e:
+                    st.error(f"No se pudo eliminar: {e}")

@@ -1,11 +1,7 @@
 import streamlit as st
 import pandas as pd
-from src.data.loader import (
-    load_dataframe,
-    active_source_label,
-    DIMENSIONS,
-    DIMENSION_LABELS,
-)
+
+from src.data.loader import DIMENSIONS, DIMENSION_LABELS
 from src.data.preprocessing import drop_null_dimensions, count_nulls_by_column
 from src.stats.descriptive import (
     describe_all_dimensions,
@@ -20,31 +16,32 @@ from src.visualization.charts import (
     bar_categorical,
     bar_dimensions_mean,
 )
+from src.ui.theme import apply_global_style, render_sidebar, section_head, require_dataset
 
-st.set_page_config(page_title="Exploración", page_icon=":material/analytics:", layout="wide")
+st.set_page_config(page_title="Exploracion", layout="wide")
+apply_global_style()
+render_sidebar()
 
-st.title("Exploración de datos")
-st.caption(f"Visualización, filtros y estadística descriptiva · Fuente: **{active_source_label()}**")
+st.markdown("## Exploracion de datos")
+st.caption(
+    f"Filtros, estadistica descriptiva y correlaciones · "
+    f"Archivo: **{st.session_state.get('csv_name', '?')}**"
+)
+st.divider()
 
-# ---------- Carga ----------
-df_full = load_dataframe()
-
-if df_full.empty:
-    st.warning("No hay datos cargados. Elige una fuente y cárgala desde el panel lateral en la página principal.")
-    st.stop()
+df_full = require_dataset()
 
 # Reporte de nulos
 nulls = count_nulls_by_column(df_full)
 if nulls:
-    with st.expander("Se detectaron valores nulos", expanded=False):
+    with st.expander(f"Se detectaron {sum(nulls.values())} valores nulos"):
         for col, n in nulls.items():
             st.write(f"- **{col}**: {n} valores nulos")
 
-# Eliminar nulos en dimensiones
 df_clean = drop_null_dimensions(df_full)
 
 # ---------- Filtros ----------
-st.markdown("### Filtros")
+section_head(title="Filtros", kicker="Segmentacion")
 
 col_f1, col_f2, col_f3 = st.columns(3)
 
@@ -52,37 +49,24 @@ with col_f1:
     edad_min, edad_max = int(df_clean["edad"].min()), int(df_clean["edad"].max())
     if edad_min == edad_max:
         edad_range = (edad_min, edad_max)
-        st.caption(f"Rango de edad: {edad_min} (único valor)")
+        st.caption(f"Rango de edad: {edad_min} (unico valor)")
     else:
         edad_range = st.slider(
             "Rango de edad",
-            min_value=edad_min,
-            max_value=edad_max,
+            min_value=edad_min, max_value=edad_max,
             value=(edad_min, edad_max),
         )
 
 with col_f2:
     generos_disponibles = sorted(df_clean["genero"].unique().tolist())
-    generos = st.multiselect(
-        "Género",
-        options=generos_disponibles,
-        default=generos_disponibles,
-    )
+    generos = st.multiselect("Genero", options=generos_disponibles,
+                              default=generos_disponibles)
 
 with col_f3:
     estados_disponibles = sorted(df_clean["estado"].unique().tolist())
-    estados = st.multiselect(
-        "Estado",
-        options=estados_disponibles,
-        default=estados_disponibles,
-    )
+    estados = st.multiselect("Estado", options=estados_disponibles,
+                              default=estados_disponibles)
 
-col_r1, col_r2 = st.columns([1, 5])
-with col_r1:
-    if st.button("Reiniciar filtros", use_container_width=True):
-        st.rerun()
-
-# Aplicar filtros
 df = df_clean[
     (df_clean["edad"].between(edad_range[0], edad_range[1]))
     & (df_clean["genero"].isin(generos))
@@ -90,13 +74,16 @@ df = df_clean[
 ].reset_index(drop=True)
 
 st.write("")
-st.info(f"**{len(df)}** registros después de aplicar filtros (de {len(df_clean)} totales)")
+
+col_m1, col_m2, col_m3 = st.columns(3)
+col_m1.metric("Filtrados", len(df))
+col_m2.metric("Totales", len(df_full))
+col_m3.metric("Excluidos", len(df_full) - len(df))
 
 if df.empty:
     st.warning("No hay registros que cumplan los filtros seleccionados.")
     st.stop()
 
-# Guardar en session state para usar en otras páginas
 st.session_state["df_filtered"] = df
 
 st.write("")
@@ -104,20 +91,21 @@ st.divider()
 
 # ---------- Tabs ----------
 tab_tabla, tab_stats, tab_dist, tab_corr = st.tabs([
-    "Tabla de datos",
-    "Estadística descriptiva",
-    "Distribución por variable",
-    "Correlación",
+    "Tabla",
+    "Estadistica descriptiva",
+    "Distribucion",
+    "Correlacion",
 ])
 
 with tab_tabla:
-    st.markdown("#### Registros")
-    st.caption(f"Total: {len(df)} · Columnas: {len(df.columns)}")
+    section_head(title="Registros filtrados",
+                 subtitle=f"{len(df)} registros, {len(df.columns)} columnas")
 
-    default_cols = [c for c in [
+    preferred = [
         "submitted_at", "O", "C", "E", "A", "N", "arquetipo",
         "edad", "genero", "estado", "municipio",
-    ] if c in df.columns]
+    ]
+    default_cols = [c for c in preferred if c in df.columns]
 
     columnas_display = st.multiselect(
         "Columnas a mostrar",
@@ -127,14 +115,12 @@ with tab_tabla:
 
     st.dataframe(
         df[columnas_display] if columnas_display else df,
-        use_container_width=True,
-        hide_index=True,
-        height=480,
+        use_container_width=True, hide_index=True, height=480,
     )
 
 with tab_stats:
-    st.markdown("#### Estadística descriptiva por dimensión")
-    st.caption("Cálculos propios: media, mediana, desviación estándar, mínimo, Q1, Q3 y máximo.")
+    section_head(title="Estadistica descriptiva por dimension",
+                 subtitle="Media, mediana, desviacion, cuartiles y extremos")
 
     stats_df = describe_all_dimensions(df)
     stats_df["variable"] = stats_df["variable"].map(
@@ -143,45 +129,46 @@ with tab_stats:
     st.dataframe(stats_df, use_container_width=True, hide_index=True)
 
     st.write("")
-    st.markdown("#### Consistencia interna del instrumento")
-    st.caption(
-        "Correlación promedio entre los ítems de cada dimensión. "
-        "Valores cercanos a 1 indican que los ítems miden lo mismo."
-    )
 
-    consistency = internal_consistency(df)
-    if not consistency.empty:
-        consistency["dimensión"] = consistency["dimensión"].map(
-            {d: f"{d} · {DIMENSION_LABELS[d]}" for d in DIMENSIONS}
-        )
-        st.dataframe(consistency, use_container_width=True, hide_index=True)
-    else:
-        st.info("No se pudo calcular (no hay respuestas crudas disponibles en esta fuente).")
+    col_left, col_right = st.columns(2)
 
-    st.write("")
-    st.markdown("#### Alfa de Cronbach por dimensión")
-    st.caption(
-        "Métrica psicométrica estándar. α ≥ 0.7 es aceptable, ≥ 0.8 bueno, ≥ 0.9 excelente."
-    )
-    alpha_df = cronbach_alpha(df)
-    if not alpha_df.empty:
-        alpha_df["dimensión"] = alpha_df["dimensión"].map(
-            {d: f"{d} · {DIMENSION_LABELS[d]}" for d in DIMENSIONS}
-        )
-        st.dataframe(alpha_df, use_container_width=True, hide_index=True)
-    else:
-        st.info("No se pudo calcular α (no hay respuestas crudas).")
+    with col_left:
+        section_head(title="Consistencia interna",
+                     subtitle="Correlacion promedio entre items de una misma dimension")
+        consistency = internal_consistency(df)
+        if not consistency.empty:
+            consistency["dimensión"] = consistency["dimensión"].map(
+                {d: f"{d} · {DIMENSION_LABELS[d]}" for d in DIMENSIONS}
+            )
+            st.dataframe(consistency, use_container_width=True, hide_index=True)
+        else:
+            st.info("Requiere las columnas q1..q20 en el CSV.")
+
+    with col_right:
+        section_head(title="Alfa de Cronbach",
+                     subtitle="Metrica psicometrica estandar (>= 0.7 aceptable)")
+        alpha_df = cronbach_alpha(df)
+        if not alpha_df.empty:
+            alpha_df["dimensión"] = alpha_df["dimensión"].map(
+                {d: f"{d} · {DIMENSION_LABELS[d]}" for d in DIMENSIONS}
+            )
+            st.dataframe(alpha_df, use_container_width=True, hide_index=True)
+        else:
+            st.info("Requiere las columnas q1..q20 en el CSV.")
 
     st.write("")
-    st.markdown("#### Promedio general por dimensión")
-    means = {d: df[d].mean() for d in DIMENSIONS}
-    st.plotly_chart(bar_dimensions_mean(means), use_container_width=True)
+    section_head(title="Promedio general por dimension")
+    try:
+        means = {d: df[d].mean() for d in DIMENSIONS}
+        st.plotly_chart(bar_dimensions_mean(means), use_container_width=True)
+    except Exception as e:
+        st.error(f"No se pudo graficar los promedios: {e}")
 
 with tab_dist:
-    st.markdown("#### Distribución por variable")
+    section_head(title="Distribucion por variable")
 
     var = st.selectbox(
-        "Selecciona una dimensión",
+        "Selecciona una dimension",
         options=DIMENSIONS,
         format_func=lambda d: f"{d} · {DIMENSION_LABELS[d]}",
     )
@@ -199,37 +186,31 @@ with tab_dist:
         )
 
     st.write("")
-    st.markdown("#### Distribuciones categóricas")
+    section_head(title="Distribuciones categoricas")
 
     col_c1, col_c2 = st.columns(2)
     with col_c1:
         st.plotly_chart(
-            bar_categorical(
-                df["genero"].value_counts(),
-                "Distribución por género",
-            ),
+            bar_categorical(df["genero"].value_counts(), "Distribucion por genero"),
             use_container_width=True,
         )
     with col_c2:
         st.plotly_chart(
-            bar_categorical(
-                df["estado"].value_counts(),
-                "Distribución por estado",
-            ),
+            bar_categorical(df["estado"].value_counts(), "Distribucion por estado"),
             use_container_width=True,
         )
 
 with tab_corr:
-    st.markdown("#### Matriz de correlación entre dimensiones")
-    st.caption("Correlación de Pearson calculada con implementación propia.")
-
+    section_head(title="Matriz de correlacion",
+                 subtitle="Correlacion de Pearson entre las 5 dimensiones OCEAN")
     corr = correlation_matrix(df)
     st.plotly_chart(heatmap_correlation(corr), use_container_width=True)
 
-    st.write("")
-    st.markdown("**Interpretación rápida**")
-    st.caption(
-        "Valores positivos (verde) indican que las dimensiones tienden a subir juntas. "
-        "Valores negativos (durazno) indican que cuando una sube, la otra baja. "
-        "Valores cercanos a 0 indican independencia estadística."
+    st.markdown(
+        '<div class="card-accent">'
+        '<strong>Interpretacion rapida:</strong> valores positivos (azul) indican que '
+        'las dimensiones suben juntas; valores negativos (naranja) indican relacion '
+        'inversa; valores cercanos a 0 indican independencia.'
+        '</div>',
+        unsafe_allow_html=True,
     )

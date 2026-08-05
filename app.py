@@ -1,10 +1,6 @@
 import os
-import sys
 import warnings
 
-# --- Silenciar warnings cosméticos antes de importar streamlit / joblib / requests ---
-# LOKY_MAX_CPU_COUNT debe estar antes de que joblib se importe. Windows 11 24H2
-# quitó wmic y joblib truena buscándolo si esta var no está seteada.
 os.environ["LOKY_MAX_CPU_COUNT"] = os.environ.get(
     "LOKY_MAX_CPU_COUNT", str(os.cpu_count() or 4)
 )
@@ -13,153 +9,189 @@ warnings.filterwarnings("ignore", message=".*Could not find the number of physic
 warnings.filterwarnings("ignore", message=".*urllib3.*")
 
 import streamlit as st
-from src.db.response_repository import count, ensure_indexes, upsert_many
-from src.sheets_importer import fetch_sheet_dataframe, dataframe_to_documents
-from src.data.loader import load_csv_into_session, clear_csv_source
+
+from src.data.loader import (
+    load_csv_from_upload, load_sample,
+    set_active_dataframe, clear_active_dataframe,
+    get_active_dataframe,
+    SAMPLE_DATASETS, sample_exists, sample_size,
+    DIMENSIONS,
+)
+from src.ui.theme import apply_global_style, render_sidebar, hero, section_head, card
 
 st.set_page_config(
-    page_title="Análisis No Supervisado",
-    page_icon=":material/hub:",
+    page_title="Big Five Analyzer",
     layout="wide",
     initial_sidebar_state="expanded",
 )
 
-# Intento de crear índices; si Mongo no responde, no rompemos la landing.
-try:
-    ensure_indexes()
-    _mongo_ok = True
-    _mongo_error = None
-except Exception as e:
-    _mongo_ok = False
-    _mongo_error = str(e)
+apply_global_style()
+render_sidebar()
 
-def _reset_derived_state():
-    """Limpia el estado derivado cuando el usuario cambia la fuente de datos.
-    Evita que un modelo entrenado sobre CSV se muestre encima de datos Mongo."""
-    for key in (
-        "df_filtered", "X_scaled", "scaler",
-        "current_model", "current_metrics", "current_algorithm",
-        "current_params", "current_training_time",
-        "df_labeled", "pdf_buffer",
-    ):
-        st.session_state.pop(key, None)
-
-
-# ---------- Sidebar (global) ----------
-with st.sidebar:
-    st.markdown("### Fuente de datos")
-
-    prev_source = st.session_state.get("data_source", "MongoDB")
-    source = st.radio(
-        "Origen",
-        options=["MongoDB", "CSV cargado"],
-        index=0 if prev_source == "MongoDB" else 1,
-        horizontal=True,
-        label_visibility="collapsed",
-    )
-    if source != prev_source:
-        _reset_derived_state()
-    st.session_state["data_source"] = source
-
-    st.write("")
-
-    if source == "MongoDB":
-        if _mongo_ok:
-            total = count()
-            st.markdown(f"**{total}** registros en Mongo")
-            if st.button("Sincronizar desde Sheets", use_container_width=True, type="primary"):
-                with st.spinner("Sincronizando..."):
-                    try:
-                        from src.sheets_importer import get_last_import_errors
-                        df_raw = fetch_sheet_dataframe()
-                        docs = dataframe_to_documents(df_raw)
-                        errors = get_last_import_errors()
-                        result = upsert_many(docs)
-                        msg = f"{result['inserted']} nuevos · {result['updated']} actualizados"
-                        if errors:
-                            msg += f" · {len(errors)} filas con error (revisa el log)"
-                        st.success(msg)
-                        if errors:
-                            with st.expander("Filas con error"):
-                                for e in errors[:20]:
-                                    st.caption(f"Fila {e['row']}: {e['error']}")
-                        st.rerun()
-                    except Exception as e:
-                        st.error(f"Error: {e}")
-            st.caption("Lee el Google Sheet y actualiza la base sin duplicar.")
-        else:
-            total = 0
-            st.error("No hay conexión con MongoDB.")
-            st.caption(_mongo_error or "Revisa config/.env y tu red.")
-
-    else:  # CSV cargado
-        uploaded = st.file_uploader(
-            "Sube un CSV",
-            type=["csv"],
-            help="Debe contener al menos las columnas: O, C, E, A, N, edad, genero, estado, municipio.",
-        )
-        if uploaded is not None:
-            try:
-                n_rows = load_csv_into_session(uploaded)
-                st.success(f"CSV cargado · {n_rows} filas")
-            except Exception as e:
-                st.error(f"CSV inválido: {e}")
-
-        csv_df = st.session_state.get("df_csv_source")
-        total = 0 if csv_df is None else len(csv_df)
-        st.markdown(f"**{total}** registros en CSV activo")
-
-        if csv_df is not None:
-            if st.button("Quitar CSV cargado", use_container_width=True):
-                clear_csv_source()
-                st.rerun()
-
-        st.caption(
-            "El CSV se usa como fuente alterna a Mongo. "
-            "Descarga un CSV de ejemplo en la carpeta `data/`."
-        )
-
-# ---------- Landing ----------
-st.title("Análisis No Supervisado de Personalidad")
-st.caption("Big Five · Unidad IV · Extracción de Conocimientos en Base de Datos")
-
-st.write("")
-
-if total == 0:
-    if source == "MongoDB":
-        st.info(
-            "No hay registros en Mongo aún. Usa **Sincronizar desde Sheets** en el "
-            "panel lateral, o cambia a la fuente **CSV cargado**."
-        )
-    else:
-        st.info("Sube un CSV en el panel lateral para trabajar con esa fuente.")
-    st.stop()
-
-st.markdown(
-    "Aplicación para el análisis no supervisado de perfiles de personalidad. "
-    "Los datos provienen de una encuesta propia basada en el modelo Big Five (OCEAN), "
-    "y se procesan con cuatro algoritmos de agrupamiento: K-Means, Clusterización "
-    "Jerárquica, DBSCAN y GMM."
+# ---------- HERO ----------
+hero(
+    title="Analisis No Supervisado de Personalidad",
+    subtitle=(
+        "Descubre grupos naturales de personalidad en tus datos usando el modelo "
+        "Big Five (OCEAN) y el algoritmo de Mezcla Gaussiana (GMM). Carga tu CSV, "
+        "explora la estadistica, entrena el modelo y clasifica nuevos registros."
+    ),
+    eyebrow="Unidad IV · Extraccion de Conocimientos",
 )
 
-st.write("")
+df = get_active_dataframe()
 
-col1, col2, col3, col4 = st.columns(4)
-col1.metric("Registros", total)
-col2.metric("Algoritmos", 4)
-col3.metric("Dimensiones", 5)
-col4.metric("Arquetipos", 25)
+# ==========================================================================
+#                              CARGA DE DATOS
+# ==========================================================================
+
+section_head(
+    title="Carga tus datos",
+    subtitle="Sube un CSV con respuestas Big Five o usa uno de los datasets de ejemplo.",
+    kicker="Paso 1",
+)
+
+col_up, col_sample = st.columns([2, 1])
+
+with col_up:
+    uploader_seed = st.session_state.get("_uploader_seed", 0)
+    uploaded = st.file_uploader(
+        "Arrastra o selecciona un archivo CSV",
+        type=["csv"],
+        help=(
+            "Columnas requeridas: O, C, E, A, N, edad, genero, estado, municipio. "
+            "Opcionalmente q1..q20 para reconstruir los items."
+        ),
+        label_visibility="collapsed",
+        key=f"main_uploader_{uploader_seed}",
+    )
+    if uploaded is not None:
+        already_loaded = st.session_state.get("csv_name") == uploaded.name and df is not None
+        if not already_loaded:
+            try:
+                df_new = load_csv_from_upload(uploaded)
+                set_active_dataframe(df_new, uploaded.name)
+                df = df_new
+                st.rerun()
+            except Exception as e:
+                st.error(f"CSV invalido: {e}")
+
+with col_sample:
+    st.markdown("**Datasets de ejemplo**")
+    for key, filename in SAMPLE_DATASETS.items():
+        exists = sample_exists(key)
+        n = sample_size(key) if exists else 0
+        label = f"{key.capitalize()} ({n})" if exists else f"{key.capitalize()} (no disponible)"
+        if st.button(label, key=f"load_{key}", use_container_width=True,
+                      disabled=not exists):
+            try:
+                df_new = load_sample(key)
+                set_active_dataframe(df_new, filename)
+                st.success(f"Cargados **{len(df_new)}** registros desde `{filename}`.")
+                df = df_new
+                st.rerun()
+            except Exception as e:
+                st.error(f"Error al cargar {filename}: {e}")
+
+
+# ==========================================================================
+#                     ESTADO ACTUAL Y SIGUIENTES PASOS
+# ==========================================================================
 
 st.write("")
 st.divider()
 
-st.markdown("### Cómo usar la aplicación")
-st.markdown(
-    """
-    1. **Exploración** — Inspecciona los datos, aplica filtros y revisa la estadística descriptiva.
-    2. **Entrenamiento** — Selecciona un algoritmo, ajusta sus hiperparámetros y entrénalo.
-    3. **Resultados** — Revisa las métricas, la proyección PCA y la interpretación de los clusters.
-    4. **Modelos** — Guarda modelos entrenados y compara experimentos previos.
-    5. **Descargas** — Exporta datos filtrados y genera reportes PDF.
-    """
-)
+if df is None or df.empty:
+    st.info(
+        "Todavia no hay datos cargados. Sube tu CSV arriba o selecciona un dataset "
+        "de ejemplo para comenzar."
+    )
+
+    with st.expander("Que columnas debe tener mi CSV?"):
+        st.markdown(
+            """
+            **Obligatorias**
+            - `O`, `C`, `E`, `A`, `N` — scores OCEAN en el rango 1-5.
+            - `edad` — entero.
+            - `genero`, `estado`, `municipio` — texto.
+
+            **Opcionales (para analisis psicometrico)**
+            - `q1` a `q20` — respuestas Likert 1-5 individuales.
+            - `arquetipo` — etiqueta descriptiva.
+            - `submitted_at` o `timestamp` — fecha del registro.
+            """
+        )
+else:
+    section_head(
+        title="Dataset activo",
+        subtitle=f"Cargado desde `{st.session_state.get('csv_name', '?')}`",
+        kicker="Estado",
+    )
+
+    col_a, col_b, col_c, col_d = st.columns(4)
+    col_a.metric("Registros", len(df))
+    col_b.metric("Dimensiones", len(DIMENSIONS))
+
+    if "edad" in df.columns:
+        col_c.metric("Edad promedio", f"{df['edad'].mean():.1f}")
+
+    if "arquetipo" in df.columns:
+        col_d.metric("Arquetipos distintos", df["arquetipo"].nunique())
+
+    st.write("")
+
+    # Preview corto
+    st.markdown("**Vista previa**")
+    preview_cols = [c for c in ["submitted_at"] + DIMENSIONS +
+                    ["arquetipo", "edad", "genero", "estado"]
+                    if c in df.columns]
+    st.dataframe(df[preview_cols].head(5), use_container_width=True, hide_index=True)
+
+    st.write("")
+
+    # CTA a siguientes pasos
+    section_head(
+        title="Siguientes pasos",
+        subtitle="El flujo esta pensado para recorrerse en orden.",
+        kicker="Paso 2",
+    )
+
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        card(
+            '<h4 style="margin-top:0;">Explorar</h4>'
+            '<p style="margin: 6px 0 12px 0;">'
+            'Filtra por edad, genero y estado. Revisa la estadistica descriptiva, '
+            'correlaciones y la consistencia del instrumento.'
+            '</p>'
+        )
+        st.page_link("pages/1_Exploracion.py", label="Ir a Exploracion")
+
+    with col2:
+        card(
+            '<h4 style="margin-top:0;">Entrenar</h4>'
+            '<p style="margin: 6px 0 12px 0;">'
+            'Optimiza los hiperparametros de GMM con BIC, configura el modelo y '
+            'entrenalo sobre los datos filtrados.'
+            '</p>'
+        )
+        st.page_link("pages/2_Entrenamiento.py", label="Ir a Entrenamiento")
+
+    with col3:
+        card(
+            '<h4 style="margin-top:0;">Analizar</h4>'
+            '<p style="margin: 6px 0 12px 0;">'
+            'Metricas, PCA en 2D, perfil por cluster y probabilidades de '
+            'pertenencia (soft clustering).'
+            '</p>'
+        )
+        st.page_link("pages/3_Resultados.py", label="Ir a Resultados")
+
+    st.write("")
+    col_x, _ = st.columns([1, 5])
+    with col_x:
+        if st.button("Limpiar dataset", type="secondary", use_container_width=True):
+            clear_active_dataframe()
+            # Rotamos la seed del uploader para reciclar el widget (evita re-carga)
+            st.session_state["_uploader_seed"] = st.session_state.get("_uploader_seed", 0) + 1
+            st.rerun()
