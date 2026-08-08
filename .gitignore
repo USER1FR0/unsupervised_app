@@ -3,9 +3,5 @@ __pycache__/
 *.pyc
 *.pkl
 config/.env
-data/*.csv
-!data/.gitkeep
-models/*.pkl
-!models/.gitkeep
 .DS_Store
 .streamlit/secrets.toml

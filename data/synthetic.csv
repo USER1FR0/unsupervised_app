@@ -1,0 +1,501 @@
+submitted_at,q1,q2,q3,q4,q5,q6,q7,q8,q9,q10,q11,q12,q13,q14,q15,q16,q17,q18,q19,q20,O,C,E,A,N,arquetipo,edad,genero,estado,municipio
+17/07/2026 15:09:28,2,3,3,3,4,4,4,2,4,3,3,3,5,5,5,1,2,3,3,4,2.75,4.0,3.25,5.0,2.5,El Ancla Emocional,26,Femenino,Queretaro,N/A
+28/07/2026 17:29:34,1,1,1,4,3,4,4,3,3,3,3,4,5,5,5,1,4,3,3,3,1.25,3.5,2.75,5.0,3.25,El Guardián Leal,31,Femenino,Guanajuato,Silao
+23/07/2026 01:09:16,4,4,3,3,3,2,3,4,4,3,4,3,4,4,3,3,5,4,4,3,3.5,2.5,3.5,3.5,4.0,El Sensible Espontáneo,25,Masculino,Queretaro,N/A
+07/07/2026 08:18:01,3,3,3,4,4,4,4,1,2,2,2,3,4,4,4,2,3,3,3,2,2.75,4.25,2.25,4.0,3.25,El Arquitecto Silencioso,26,Otro,Ciudad de Mexico,N/A
+28/07/2026 06:35:57,5,5,4,2,5,5,5,2,3,3,3,2,3,2,3,4,2,3,3,4,4.5,4.75,3.25,2.5,2.5,El Estratega Sin Rodeos,24,Femenino,Guanajuato,Leon
+11/07/2026 15:01:03,3,3,2,3,4,4,4,1,3,2,2,4,3,4,4,2,2,2,2,3,2.75,4.25,2.25,3.75,2.25,El Arquitecto Silencioso,18,Femenino,Guanajuato,Salamanca
+18/07/2026 09:33:01,4,3,4,3,5,5,5,2,2,2,2,4,4,4,4,2,3,2,3,5,3.5,4.75,2.0,4.0,2.25,El Arquitecto Silencioso,25,Otro,Jalisco,N/A
+30/07/2026 21:41:17,4,4,4,1,4,4,4,2,3,3,3,3,4,3,4,4,3,2,3,2,4.25,4.0,3.0,3.25,3.0,El Filósofo de Bolsillo,23,Masculino,Guanajuato,San Miguel de Allende
+27/07/2026 00:53:21,3,3,3,3,5,5,5,2,3,3,2,3,3,4,4,2,4,4,4,1,3.0,4.75,2.75,3.75,4.25,El Arquitecto Silencioso,26,Femenino,Guanajuato,Guanajuato
+09/07/2026 10:41:21,2,3,3,3,5,5,4,1,4,3,3,3,5,5,4,1,4,4,4,2,2.75,4.75,3.25,4.75,4.0,El Guardián Leal,27,Masculino,Queretaro,N/A
+28/07/2026 19:53:10,5,5,5,3,2,3,2,2,4,3,4,3,2,2,2,3,2,3,2,4,4.5,2.75,3.5,2.25,2.25,El Crítico Creativo,33,Masculino,Guanajuato,Irapuato
+13/07/2026 09:34:54,3,3,3,3,5,5,5,2,2,2,2,3,3,3,3,3,2,2,2,5,3.0,4.75,2.25,3.0,1.75,El Ejecutor Imparable,23,Masculino,Ciudad de Mexico,N/A
+15/07/2026 14:43:03,3,4,4,2,5,5,5,1,2,2,1,3,4,4,4,2,3,3,3,3,3.75,5.0,2.0,4.0,3.0,El Arquitecto Silencioso,25,Femenino,Guanajuato,Celaya
+08/07/2026 02:25:32,3,3,3,3,4,3,3,3,5,5,5,2,3,3,3,3,1,2,2,4,3.0,3.25,4.75,3.0,1.75,El Carismático Estable,35,Masculino,Guanajuato,Irapuato
+14/07/2026 12:27:44,4,3,3,1,3,2,3,2,5,5,5,1,3,3,4,1,3,3,3,3,3.75,3.0,5.0,3.75,3.0,El Improvisador de Oficio,30,Femenino,Guanajuato,Celaya
+07/07/2026 06:41:49,4,3,3,3,4,3,4,1,5,5,5,1,4,5,4,1,1,1,1,4,3.25,4.0,5.0,4.5,1.25,El Carismático Estable,18,Masculino,Queretaro,N/A
+31/07/2026 20:22:43,4,4,4,3,4,3,4,3,5,4,5,2,4,5,4,3,1,1,1,5,3.75,3.5,4.5,4.0,1.0,El Carismático Estable,25,Masculino,Guanajuato,Irapuato
+01/08/2026 18:11:51,3,4,4,3,4,5,4,2,4,4,5,1,4,3,3,2,1,1,1,4,3.5,4.25,4.5,3.5,1.25,El Carismático Estable,23,Femenino,Guanajuato,Salamanca
+24/07/2026 18:32:32,3,4,3,1,3,4,4,2,3,3,4,2,5,4,4,2,2,1,2,4,3.75,3.75,3.5,4.25,1.75,El Ancla Emocional,25,Masculino,Guanajuato,Irapuato
+13/07/2026 05:48:26,4,4,3,2,3,4,4,1,2,2,3,4,4,3,4,3,3,2,3,4,3.75,4.0,2.25,3.5,2.5,El Arquitecto Silencioso,28,Femenino,Guanajuato,Leon
+01/08/2026 15:09:58,4,5,4,1,2,2,2,4,3,2,3,4,3,3,3,3,2,1,2,5,4.5,2.0,2.5,3.0,1.5,El Visionario Sereno,34,Femenino,Guanajuato,Dolores Hidalgo
+26/07/2026 17:17:16,4,3,3,3,4,4,5,1,4,3,4,3,5,5,5,3,3,3,3,3,3.25,4.5,3.5,4.5,3.0,El Ancla Emocional,23,Femenino,Guanajuato,Dolores Hidalgo
+12/07/2026 20:34:40,4,2,3,3,5,5,5,1,3,3,3,4,3,4,3,2,2,2,3,4,3.0,5.0,2.75,3.5,2.25,El Ejecutor Imparable,23,Masculino,Estado de Mexico,N/A
+01/08/2026 18:49:48,4,4,4,1,5,5,5,1,2,2,2,3,3,3,3,3,4,4,5,1,4.25,5.0,2.25,3.0,4.5,El Arquitecto Silencioso,36,Masculino,Guanajuato,Dolores Hidalgo
+16/07/2026 03:27:56,3,4,4,2,5,4,4,1,1,1,1,5,3,4,3,3,2,2,2,4,3.75,4.5,1.0,3.25,2.0,El Arquitecto Silencioso,33,Otro,Guanajuato,Leon
+07/07/2026 12:54:00,3,3,3,2,3,3,2,3,5,4,5,2,5,5,5,1,2,2,2,3,3.25,2.75,4.5,5.0,2.25,El Ancla Emocional,23,Masculino,Guanajuato,Dolores Hidalgo
+15/07/2026 19:34:39,4,4,3,3,3,3,3,2,3,4,3,3,3,3,3,5,4,5,3,2,3.5,3.25,3.25,2.5,4.0,El Escéptico Emocional,28,Femenino,Guanajuato,San Miguel de Allende
+16/07/2026 22:39:38,3,4,4,2,2,3,2,4,3,2,2,2,4,4,4,2,4,4,5,1,3.75,2.25,2.75,4.0,4.5,El Sensible Espontáneo,23,Masculino,Guanajuato,Leon
+04/08/2026 11:48:23,3,3,3,4,5,5,5,1,4,3,3,2,5,5,5,2,3,3,3,2,2.75,5.0,3.5,4.75,3.25,El Guardián del Método,24,Otro,Guanajuato,Guanajuato
+10/07/2026 12:07:35,4,4,4,3,2,2,1,4,4,4,4,2,3,3,3,3,4,4,5,1,3.75,1.75,4.0,3.0,4.5,El Sensible Espontáneo,18,Femenino,Guanajuato,Guanajuato
+25/07/2026 01:02:44,4,5,5,2,3,2,2,4,2,3,3,3,4,4,5,2,5,4,4,1,4.5,2.25,2.75,4.25,4.5,El Sensible Espontáneo,19,Masculino,Ciudad de Mexico,N/A
+09/07/2026 23:52:52,4,4,4,2,5,5,5,1,3,3,2,3,3,3,3,4,2,2,3,4,4.0,5.0,2.75,2.75,2.25,El Ejecutor Imparable,25,Femenino,Jalisco,N/A
+19/07/2026 08:06:51,4,3,2,5,4,3,3,1,3,3,3,4,4,3,3,3,4,4,4,1,2.5,3.75,2.75,3.25,4.25,El Preocupado Metódico,22,Prefiero no decir,Jalisco,N/A
+02/08/2026 11:34:04,5,5,5,1,2,2,2,4,3,3,3,3,4,5,4,2,3,4,3,5,5.0,2.0,3.0,4.25,2.75,El Explorador Distraído,20,Femenino,Guanajuato,Dolores Hidalgo
+10/07/2026 17:09:09,3,3,3,2,5,5,5,1,1,1,1,3,3,2,3,3,3,2,3,4,3.25,5.0,1.5,2.75,2.5,El Arquitecto Silencioso,36,Masculino,Guanajuato,Leon
+16/07/2026 04:22:53,3,3,3,2,2,2,3,2,5,5,5,2,4,3,4,1,3,3,3,4,3.25,2.75,4.75,4.0,2.75,El Improvisador de Oficio,29,Masculino,Queretaro,N/A
+15/07/2026 05:08:39,3,3,3,4,3,3,3,3,4,5,5,1,4,4,4,3,3,1,1,4,2.75,3.0,4.75,3.75,1.75,El Carismático Estable,31,Femenino,Guanajuato,Dolores Hidalgo
+04/08/2026 03:05:37,3,2,2,4,4,4,4,2,4,3,2,4,5,4,4,1,4,4,4,3,2.25,4.0,2.75,4.5,3.75,El Guardián Leal,20,Femenino,Guanajuato,San Miguel de Allende
+10/07/2026 23:59:37,3,3,3,3,2,3,2,3,3,2,3,2,3,2,3,4,5,5,5,2,3.0,2.5,3.0,2.5,4.75,El Sensible Espontáneo,21,Masculino,Queretaro,N/A
+16/07/2026 14:09:17,5,4,4,1,2,2,2,2,3,4,5,2,5,4,4,2,4,4,4,2,4.5,2.5,4.0,4.25,4.0,El Explorador Distraído,24,Femenino,Guanajuato,Leon
+02/08/2026 16:31:30,2,2,2,4,4,3,4,2,1,3,2,4,3,4,3,3,3,3,3,3,2.0,3.75,2.0,3.25,3.0,El Guardián del Método,18,Femenino,Guanajuato,Salamanca
+24/07/2026 19:40:14,3,4,3,3,4,4,3,1,5,5,5,2,3,3,3,4,1,2,2,4,3.25,4.0,4.75,2.75,1.75,El Carismático Estable,19,Femenino,Guanajuato,Irapuato
+11/07/2026 23:36:43,5,5,4,1,2,2,2,2,3,3,3,2,4,5,5,2,1,2,2,2,4.75,2.5,3.25,4.5,2.25,El Visionario Sereno,20,Femenino,Jalisco,N/A
+23/07/2026 08:21:37,5,5,5,2,4,4,4,2,1,2,2,5,3,4,3,2,2,1,2,3,4.75,4.0,1.5,3.5,2.0,El Filósofo de Bolsillo,29,Femenino,Guanajuato,San Luis de la Paz
+09/07/2026 22:48:33,3,4,4,2,5,4,4,2,3,4,3,2,4,3,3,2,3,3,3,3,3.75,4.25,3.5,3.5,3.0,El Ejecutor Imparable,26,Masculino,Guanajuato,Leon
+31/07/2026 06:32:27,4,4,5,2,4,4,4,2,4,5,4,2,4,4,3,1,1,1,1,5,4.25,4.0,4.25,4.0,1.0,El Carismático Estable,18,Masculino,Guanajuato,Salamanca
+12/07/2026 22:09:49,3,4,4,2,3,3,3,2,5,5,4,2,3,3,4,3,2,2,1,4,3.75,3.25,4.5,3.25,1.75,El Carismático Estable,26,Femenino,Estado de Mexico,N/A
+11/07/2026 12:48:31,4,3,4,2,5,5,5,1,2,1,2,4,4,4,4,2,2,2,3,3,3.75,5.0,1.75,4.0,2.5,El Arquitecto Silencioso,22,Masculino,Guanajuato,Silao
+26/07/2026 11:55:23,4,4,4,2,3,3,3,1,3,3,3,3,3,3,3,3,5,5,5,1,4.0,3.5,3.0,3.0,5.0,El Introspectivo Profundo,28,Femenino,Jalisco,N/A
+02/08/2026 05:35:14,5,5,4,2,2,2,2,3,4,4,3,2,5,4,5,3,4,3,4,2,4.5,2.25,3.75,4.25,3.75,El Explorador Distraído,22,Prefiero no decir,Guanajuato,Leon
+26/07/2026 15:03:41,4,3,3,3,2,3,2,4,3,3,3,3,2,2,2,4,5,5,5,1,3.25,2.25,3.0,2.0,5.0,El Escéptico Emocional,20,Masculino,Guanajuato,Silao
+30/07/2026 10:28:20,3,2,2,3,4,4,4,1,3,2,3,3,4,4,4,1,3,3,3,3,2.5,4.25,2.75,4.25,3.0,El Guardián Leal,18,Femenino,Guanajuato,San Luis de la Paz
+20/07/2026 18:02:15,3,4,4,2,5,4,5,2,4,4,4,3,5,5,5,2,2,2,2,4,3.75,4.5,3.75,4.75,2.0,El Ancla Emocional,18,Masculino,Guanajuato,Guanajuato
+23/07/2026 11:27:58,2,2,2,4,3,3,2,3,3,3,3,2,4,4,4,3,5,5,5,1,2.0,2.75,3.25,3.75,5.0,El Preocupado Metódico,23,Femenino,Jalisco,N/A
+17/07/2026 11:58:48,3,3,3,2,4,4,4,2,4,4,4,2,3,3,4,2,2,2,2,4,3.25,4.0,4.0,3.5,2.0,El Carismático Estable,26,Femenino,Guanajuato,San Luis de la Paz
+24/07/2026 05:48:12,4,3,3,2,2,2,2,4,2,3,2,4,3,2,3,3,4,4,4,1,3.5,2.0,2.25,2.75,4.25,El Sensible Espontáneo,27,Femenino,Guanajuato,Silao
+31/07/2026 08:25:41,2,3,3,3,3,3,4,3,4,4,3,1,3,2,3,2,1,1,1,4,2.75,3.25,4.0,3.0,1.25,El Carismático Estable,21,Femenino,Queretaro,N/A
+12/07/2026 16:42:30,3,2,3,2,4,4,4,1,2,1,2,4,4,4,3,2,2,1,2,3,3.0,4.25,1.75,3.75,2.0,El Arquitecto Silencioso,30,Masculino,Guanajuato,Irapuato
+09/07/2026 13:37:10,2,3,2,4,4,4,4,4,3,2,3,2,4,4,4,2,2,2,2,5,2.25,3.5,3.0,4.0,1.75,El Ancla Emocional,24,Masculino,Ciudad de Mexico,N/A
+14/07/2026 22:22:02,3,3,4,3,4,4,4,1,2,2,2,4,3,2,3,3,2,2,3,3,3.25,4.25,2.0,2.75,2.5,El Arquitecto Silencioso,30,Masculino,Guanajuato,Salamanca
+31/07/2026 14:41:34,2,2,2,3,4,4,5,3,3,3,3,4,3,3,3,1,3,4,3,1,2.25,4.0,2.75,3.5,3.75,El Guardián del Método,18,Masculino,Guanajuato,Valle de Santiago
+21/07/2026 05:04:43,4,4,3,2,3,4,4,3,4,3,3,2,4,4,4,2,4,3,4,2,3.75,3.5,3.5,4.0,3.75,El Buen Corazón Distraído,24,Masculino,Jalisco,N/A
+30/07/2026 20:52:22,4,3,4,3,2,2,2,2,5,5,5,1,4,4,4,2,1,1,1,5,3.5,2.5,5.0,4.0,1.0,El Carismático Estable,22,Masculino,Guanajuato,Salamanca
+05/07/2026 10:44:37,3,4,3,2,3,2,2,3,3,3,3,3,3,3,3,5,5,4,4,2,3.5,2.5,3.0,2.5,4.25,El Sensible Espontáneo,20,Femenino,Guanajuato,Celaya
+25/07/2026 18:45:16,3,3,3,2,5,4,4,1,4,3,4,4,3,3,3,2,3,4,3,2,3.25,4.5,3.25,3.25,3.5,El Guardián del Método,23,Femenino,Guanajuato,Irapuato
+23/07/2026 13:54:59,4,3,3,2,3,3,2,3,3,3,4,3,3,3,3,3,4,4,5,2,3.5,2.75,3.25,3.0,4.25,El Sensible Espontáneo,35,Masculino,Queretaro,N/A
+21/07/2026 10:48:12,2,2,2,3,5,5,4,3,4,3,4,2,4,4,4,2,3,2,3,2,2.25,4.25,3.75,4.0,3.0,El Guardián del Método,31,Masculino,Guanajuato,Dolores Hidalgo
+03/08/2026 15:24:11,4,5,5,2,1,2,1,4,4,4,4,2,3,3,3,2,2,3,3,3,4.5,1.5,4.0,3.25,2.75,El Explorador Distraído,24,Masculino,Guanajuato,Guanajuato
+18/07/2026 16:32:01,4,4,3,3,3,2,3,3,3,3,3,2,3,3,3,2,5,5,5,2,3.5,2.75,3.25,3.25,4.75,El Sensible Espontáneo,29,Femenino,Queretaro,N/A
+15/07/2026 00:15:49,4,4,4,2,3,2,2,4,4,4,4,3,2,3,3,3,4,4,4,2,4.0,2.25,3.75,2.75,4.0,El Sensible Espontáneo,23,Masculino,Queretaro,N/A
+01/08/2026 14:18:15,4,4,4,3,3,3,5,3,4,4,3,3,4,5,5,2,1,2,2,4,3.75,3.5,3.5,4.5,1.75,El Ancla Emocional,18,Masculino,Guanajuato,Leon
+24/07/2026 14:26:04,3,4,4,3,3,3,3,2,5,5,4,1,4,4,5,2,1,1,2,5,3.5,3.25,4.75,4.25,1.25,El Carismático Estable,26,Femenino,Guanajuato,Leon
+24/07/2026 00:04:55,2,2,1,4,4,3,4,2,3,3,3,3,4,5,5,2,4,3,3,2,1.75,3.75,3.0,4.5,3.5,El Guardián Leal,20,Femenino,Queretaro,N/A
+13/07/2026 22:41:51,4,5,5,1,2,3,2,3,3,3,4,3,4,3,4,3,2,2,2,2,4.75,2.5,3.25,3.5,2.5,El Explorador Distraído,20,Femenino,Jalisco,N/A
+02/08/2026 00:26:56,4,3,4,2,3,3,4,2,5,5,5,2,5,5,5,1,3,2,2,3,3.75,3.5,4.75,5.0,2.5,El Ancla Emocional,24,Femenino,Ciudad de Mexico,N/A
+21/07/2026 16:05:20,3,3,3,4,5,5,5,2,2,2,1,5,3,3,4,3,3,3,3,3,2.75,4.75,1.5,3.25,3.0,El Arquitecto Silencioso,20,Masculino,Estado de Mexico,N/A
+24/07/2026 09:29:43,3,3,3,3,4,4,5,3,2,2,2,3,2,3,2,3,2,3,3,3,3.0,4.0,2.25,2.5,2.75,El Arquitecto Silencioso,25,Femenino,Guanajuato,Celaya
+26/07/2026 15:06:38,3,2,2,1,4,4,4,3,4,4,4,2,5,5,4,3,1,1,2,4,3.0,3.75,4.0,4.25,1.5,El Ancla Emocional,24,Femenino,Queretaro,N/A
+14/07/2026 05:01:38,3,3,3,3,5,4,5,1,1,1,2,5,3,3,4,3,2,2,2,4,3.0,4.75,1.25,3.25,2.0,El Arquitecto Silencioso,22,Masculino,Guanajuato,Valle de Santiago
+30/07/2026 14:02:02,3,3,3,4,5,4,4,3,3,3,3,2,5,5,4,1,3,4,3,2,2.75,4.0,3.25,4.75,3.5,El Guardián Leal,18,Masculino,Guanajuato,Dolores Hidalgo
+12/07/2026 02:04:52,3,3,3,4,5,5,5,2,1,1,1,4,2,3,3,4,3,3,3,4,2.75,4.75,1.25,2.5,2.75,El Arquitecto Silencioso,20,Masculino,Guanajuato,Dolores Hidalgo
+28/07/2026 08:21:39,4,4,4,3,2,2,1,4,4,5,5,1,4,4,4,2,3,3,3,2,3.75,1.75,4.75,4.0,3.25,El Improvisador de Oficio,25,Femenino,Guanajuato,Valle de Santiago
+31/07/2026 10:07:44,4,4,5,2,2,1,1,5,3,5,5,3,4,4,3,3,3,3,3,3,4.25,1.25,4.0,3.5,3.0,El Explorador Distraído,28,Masculino,Guanajuato,Leon
+07/07/2026 14:11:29,3,2,2,3,4,4,4,1,4,4,4,1,4,5,4,2,2,2,2,5,2.5,4.25,4.25,4.25,1.75,El Ancla Emocional,21,Otro,Jalisco,N/A
+25/07/2026 20:10:19,4,4,4,3,4,5,4,2,2,2,1,4,3,3,3,2,1,2,1,5,3.75,4.25,1.75,3.25,1.25,El Ejecutor Imparable,24,Femenino,Guanajuato,Leon
+16/07/2026 05:32:04,3,2,3,4,3,4,3,2,4,3,4,2,5,5,5,2,3,2,2,4,2.5,3.5,3.75,4.75,2.25,El Ancla Emocional,20,Femenino,Guanajuato,Valle de Santiago
+15/07/2026 12:42:37,3,3,3,2,5,5,4,3,4,4,4,2,3,3,3,1,2,2,2,4,3.25,4.25,4.0,3.5,2.0,El Ejecutor Imparable,20,Femenino,Guanajuato,Silao
+07/07/2026 06:39:23,5,5,5,1,1,1,1,5,4,3,4,3,3,4,4,4,2,3,2,4,5.0,1.0,3.5,3.25,2.25,El Explorador Distraído,29,Masculino,Estado de Mexico,N/A
+23/07/2026 12:37:05,2,3,2,5,5,5,5,2,3,3,3,3,4,4,5,1,4,4,4,3,2.0,4.75,3.0,4.5,3.75,El Guardián del Método,27,Masculino,Ciudad de Mexico,N/A
+03/08/2026 06:19:12,3,3,4,3,5,5,5,2,3,3,3,4,4,4,4,1,2,2,2,4,3.25,4.75,2.75,4.25,2.0,El Ejecutor Imparable,29,Masculino,Guanajuato,Celaya
+22/07/2026 05:10:06,3,3,3,4,3,2,3,4,3,3,3,2,4,4,4,4,4,5,4,1,2.75,2.5,3.25,3.5,4.5,El Sensible Espontáneo,32,Femenino,Ciudad de Mexico,N/A
+23/07/2026 21:14:28,3,3,3,4,4,3,4,1,4,3,4,2,4,5,5,2,2,1,2,4,2.75,4.0,3.75,4.5,1.75,El Ancla Emocional,25,Femenino,Guanajuato,Salamanca
+06/07/2026 12:39:35,4,4,5,1,2,2,2,4,3,4,3,2,3,3,3,3,3,3,3,3,4.5,2.0,3.5,3.0,3.0,El Explorador Distraído,31,Femenino,Guanajuato,Salamanca
+01/08/2026 07:41:33,5,5,5,1,2,2,2,4,4,4,4,2,1,2,2,3,2,3,3,4,5.0,2.0,4.0,2.0,2.5,El Explorador Distraído,25,Masculino,Guanajuato,Valle de Santiago
+07/07/2026 11:53:12,4,4,4,1,4,4,5,1,1,1,1,4,4,4,3,2,2,2,2,3,4.25,4.5,1.25,3.75,2.25,El Arquitecto Silencioso,32,Masculino,Guanajuato,Leon
+02/08/2026 13:08:07,3,3,3,1,5,5,5,2,2,2,2,4,4,4,4,3,3,3,4,2,3.5,4.75,2.0,3.75,3.5,El Arquitecto Silencioso,18,Masculino,Guanajuato,Dolores Hidalgo
+30/07/2026 15:42:01,3,2,2,3,5,5,5,1,3,3,3,5,4,4,4,3,1,2,2,3,2.5,5.0,2.5,3.75,2.0,El Ejecutor Imparable,28,Femenino,Guanajuato,Dolores Hidalgo
+22/07/2026 11:52:51,5,4,4,1,3,3,2,3,3,3,3,2,3,3,3,3,3,3,3,3,4.5,2.75,3.25,3.0,3.0,El Explorador Distraído,30,Femenino,Guanajuato,Silao
+30/07/2026 11:17:06,3,3,4,1,5,5,5,2,1,1,1,3,4,2,3,3,2,2,2,4,3.75,4.75,1.5,3.0,2.0,El Arquitecto Silencioso,28,Femenino,Queretaro,N/A
+30/07/2026 00:46:01,4,4,5,2,3,4,4,1,3,3,3,4,3,4,3,2,2,2,2,4,4.25,4.0,2.75,3.5,2.0,El Visionario Sereno,27,Masculino,Guanajuato,San Luis de la Paz
+09/07/2026 17:00:00,4,4,3,2,2,2,1,4,5,4,4,2,4,4,4,2,2,2,3,3,3.75,1.75,4.25,4.0,2.5,El Improvisador de Oficio,27,Masculino,Guanajuato,Silao
+13/07/2026 04:52:46,3,4,4,2,3,4,4,2,4,4,5,2,4,4,4,2,3,3,3,5,3.75,3.75,4.25,4.0,2.5,El Carismático Estable,22,Femenino,Estado de Mexico,N/A
+23/07/2026 17:44:51,3,3,3,2,5,5,4,1,1,1,1,4,3,3,2,3,3,3,3,3,3.25,4.75,1.25,2.75,3.0,El Arquitecto Silencioso,27,Masculino,Guanajuato,Valle de Santiago
+23/07/2026 14:49:31,5,5,5,1,3,2,3,4,3,4,4,1,3,4,3,4,2,2,3,3,5.0,2.5,4.0,3.0,2.5,El Explorador Distraído,25,Femenino,Ciudad de Mexico,N/A
+26/07/2026 19:25:03,4,4,5,1,4,4,4,3,4,3,4,1,4,5,4,1,1,2,2,4,4.5,3.75,4.0,4.5,1.75,El Ancla Emocional,20,Masculino,Guanajuato,Valle de Santiago
+20/07/2026 23:43:18,4,4,4,2,3,3,3,3,5,4,4,1,4,4,3,2,3,3,3,4,4.0,3.0,4.5,3.75,2.75,El Carismático Estable,24,Masculino,Guanajuato,Celaya
+24/07/2026 18:48:29,4,4,3,1,2,2,3,3,3,3,4,4,4,3,4,2,4,4,3,3,4.0,2.5,3.0,3.75,3.5,El Explorador Distraído,23,Femenino,Guanajuato,Celaya
+26/07/2026 14:56:32,4,4,4,4,5,5,5,1,3,3,3,4,3,3,3,3,3,2,3,3,3.5,5.0,2.75,3.0,2.75,El Arquitecto Silencioso,22,Femenino,Guanajuato,San Luis de la Paz
+02/08/2026 09:42:00,3,3,3,4,5,5,5,2,4,4,4,2,5,5,5,2,4,3,3,1,2.75,4.75,4.0,4.75,3.75,El Guardián Leal,18,Femenino,Guanajuato,Silao
+14/07/2026 09:16:49,3,4,3,3,3,2,2,4,3,4,3,2,3,4,3,3,5,5,5,2,3.25,2.25,3.5,3.25,4.75,El Sensible Espontáneo,27,Masculino,Queretaro,N/A
+17/07/2026 15:39:49,2,2,2,5,3,3,3,2,4,4,4,3,4,5,5,1,4,4,4,2,1.75,3.25,3.75,4.75,4.0,El Guardián Leal,31,Masculino,Queretaro,N/A
+01/08/2026 18:29:32,4,4,4,1,4,5,5,2,1,2,1,5,3,3,3,2,2,2,2,4,4.25,4.5,1.25,3.25,2.0,El Arquitecto Silencioso,24,Femenino,Queretaro,N/A
+04/08/2026 04:54:38,2,3,3,4,3,4,3,4,3,3,3,3,3,3,3,2,4,3,3,2,2.5,3.0,3.0,3.25,3.5,El Preocupado Metódico,25,Masculino,Guanajuato,Irapuato
+12/07/2026 21:12:22,4,4,4,3,3,3,3,3,2,2,2,3,3,2,3,2,4,5,4,1,3.75,3.0,2.25,3.0,4.5,El Introspectivo Profundo,18,Femenino,Guanajuato,Silao
+16/07/2026 12:38:55,4,4,4,2,3,3,2,4,2,2,1,5,4,4,3,4,5,5,4,1,4.0,2.5,1.5,3.25,4.75,El Introspectivo Profundo,31,Masculino,Guanajuato,Silao
+15/07/2026 02:03:01,3,5,5,1,1,2,1,4,3,4,3,1,3,4,3,2,2,2,3,4,4.5,1.5,3.75,3.5,2.25,El Explorador Distraído,25,Masculino,Jalisco,N/A
+07/07/2026 11:34:22,3,4,3,2,2,2,2,3,2,3,4,3,3,4,3,3,5,5,5,2,3.5,2.25,3.0,3.25,4.75,El Sensible Espontáneo,18,Masculino,Queretaro,N/A
+11/07/2026 19:20:49,3,3,2,4,4,4,4,2,3,3,3,5,4,4,4,2,3,3,2,3,2.5,4.0,2.5,4.0,2.75,El Guardián Leal,20,Masculino,Guanajuato,Leon
+19/07/2026 04:09:15,4,4,5,2,3,3,4,3,4,4,4,1,3,3,4,2,1,1,2,4,4.25,3.25,4.25,3.5,1.5,El Carismático Estable,21,Masculino,Guanajuato,Guanajuato
+03/08/2026 13:28:39,4,3,3,2,2,3,2,4,3,3,3,4,4,4,3,3,2,2,2,3,3.5,2.25,2.75,3.5,2.25,El Buen Corazón Distraído,22,Masculino,Guanajuato,Salamanca
+12/07/2026 13:53:25,5,4,4,1,2,1,2,4,3,3,3,2,4,4,4,4,3,3,2,3,4.5,1.75,3.25,3.5,2.75,El Explorador Distraído,29,Masculino,Guanajuato,Celaya
+09/07/2026 10:26:25,3,3,3,3,4,5,4,2,4,3,3,3,2,3,3,4,3,3,3,3,3.0,4.25,3.25,2.5,3.0,El Estratega Sin Rodeos,26,Masculino,Guanajuato,San Luis de la Paz
+08/07/2026 18:29:34,3,3,3,3,3,3,3,1,5,5,5,1,4,4,4,2,2,2,2,4,3.0,3.5,5.0,4.0,2.0,El Carismático Estable,19,Masculino,Guanajuato,Salamanca
+31/07/2026 00:46:57,4,4,3,2,4,3,3,3,5,5,5,1,4,4,4,1,3,2,2,4,3.75,3.25,5.0,4.25,2.25,El Carismático Estable,28,Masculino,Guanajuato,Guanajuato
+25/07/2026 07:06:31,3,3,3,3,4,4,4,2,4,4,4,2,3,3,3,4,2,3,2,4,3.0,4.0,4.0,2.75,2.25,El Carismático Estable,25,Femenino,Jalisco,N/A
+11/07/2026 07:15:06,3,2,2,3,5,5,5,2,3,2,3,4,4,4,4,2,3,3,3,4,2.5,4.75,2.5,4.0,2.75,El Guardián del Método,30,Masculino,Guanajuato,San Miguel de Allende
+10/07/2026 22:04:27,3,3,3,3,4,4,4,2,5,5,5,2,5,5,4,1,2,1,3,3,3.0,4.0,4.75,4.75,2.25,El Ancla Emocional,22,Masculino,Guanajuato,Valle de Santiago
+24/07/2026 15:10:09,2,2,2,4,4,4,3,2,2,3,3,4,3,3,3,2,3,3,3,4,2.0,3.75,2.5,3.25,2.75,El Guardián del Método,24,Masculino,Guanajuato,San Miguel de Allende
+27/07/2026 09:17:17,2,2,1,5,4,4,5,2,2,2,2,3,5,5,5,1,2,2,3,4,1.5,4.25,2.25,5.0,2.25,El Guardián Leal,19,Femenino,Guanajuato,Valle de Santiago
+04/08/2026 12:17:48,4,3,3,3,4,4,4,2,4,4,4,1,3,3,3,2,2,1,2,5,3.25,4.0,4.25,3.25,1.5,El Carismático Estable,18,Femenino,Jalisco,N/A
+01/08/2026 18:50:57,3,3,2,3,3,3,4,4,4,4,4,3,3,4,3,3,4,3,4,2,2.75,3.0,3.75,3.25,3.75,El Preocupado Metódico,19,Femenino,Guanajuato,Celaya
+05/07/2026 23:21:30,2,2,2,4,4,4,5,1,3,3,3,5,4,4,4,2,3,4,3,4,2.0,4.5,2.5,4.0,3.0,El Guardián del Método,21,Masculino,Guanajuato,Dolores Hidalgo
+20/07/2026 12:52:24,3,3,4,2,5,4,5,3,4,4,5,1,3,3,3,3,3,3,3,3,3.5,4.25,4.5,3.0,3.0,El Líder Directo,27,Masculino,Guanajuato,Irapuato
+20/07/2026 15:20:36,3,3,3,2,5,5,5,1,2,3,2,3,5,5,4,2,3,3,2,3,3.25,5.0,2.5,4.5,2.75,El Arquitecto Silencioso,29,Femenino,Guanajuato,San Miguel de Allende
+13/07/2026 19:51:00,4,4,4,2,3,3,3,3,3,3,4,3,3,3,3,4,4,3,4,3,4.0,3.0,3.25,2.75,3.5,El Crítico Creativo,26,Otro,Guanajuato,Leon
+31/07/2026 06:04:59,4,4,4,2,3,3,3,2,5,5,5,1,3,3,3,3,2,2,2,4,4.0,3.25,5.0,3.0,2.0,El Carismático Estable,29,Masculino,Guanajuato,San Miguel de Allende
+12/07/2026 13:58:15,4,3,4,2,2,2,2,4,4,4,4,2,4,4,4,1,3,2,3,4,3.75,2.0,4.0,4.25,2.5,El Buen Corazón Distraído,31,Femenino,Guanajuato,Salamanca
+09/07/2026 12:07:01,2,3,3,2,3,4,3,4,4,3,4,2,3,4,4,4,4,4,4,2,3.0,3.0,3.75,3.25,4.0,El Preocupado Metódico,22,Masculino,Guanajuato,Salamanca
+06/07/2026 16:14:37,3,2,2,4,3,3,3,3,3,4,3,2,3,3,3,3,5,4,5,1,2.25,3.0,3.5,3.0,4.75,El Preocupado Metódico,27,Masculino,Guanajuato,Dolores Hidalgo
+26/07/2026 16:48:44,3,4,3,3,4,3,3,2,2,1,1,4,2,3,3,2,2,2,2,4,3.25,3.5,1.5,3.0,2.0,El Arquitecto Silencioso,25,Femenino,Guanajuato,Dolores Hidalgo
+31/07/2026 18:32:45,3,4,4,3,4,4,4,2,5,4,5,1,4,4,4,3,3,2,3,4,3.5,4.0,4.75,3.75,2.5,El Carismático Estable,34,Femenino,Guanajuato,San Luis de la Paz
+04/08/2026 11:27:50,3,3,3,2,5,5,4,2,2,2,3,3,3,3,3,3,2,3,3,3,3.25,4.5,2.5,3.0,2.75,El Arquitecto Silencioso,25,Masculino,Guanajuato,Irapuato
+26/07/2026 05:23:03,4,3,3,3,3,3,3,3,5,5,5,2,5,4,4,1,2,2,2,4,3.25,3.0,4.75,4.5,2.0,El Carismático Estable,20,Femenino,Guanajuato,Silao
+23/07/2026 00:38:19,4,5,5,1,3,3,3,4,3,3,4,3,3,3,3,3,3,3,3,2,4.75,2.75,3.25,3.0,3.25,El Explorador Distraído,23,Masculino,Guanajuato,Salamanca
+10/07/2026 16:43:18,4,4,4,1,2,2,2,3,3,3,4,2,4,3,4,4,3,3,3,3,4.25,2.25,3.5,3.25,3.0,El Explorador Distraído,20,Femenino,Guanajuato,San Luis de la Paz
+07/07/2026 21:36:19,3,3,4,3,3,2,2,3,5,5,4,1,4,4,4,1,2,1,2,4,3.25,2.5,4.75,4.25,1.75,El Carismático Estable,19,Masculino,Ciudad de Mexico,N/A
+17/07/2026 19:43:47,3,3,3,2,2,3,4,3,3,3,2,2,2,3,3,3,5,4,4,2,3.25,3.0,3.0,2.75,4.25,El Escéptico Emocional,18,Femenino,Guanajuato,Silao
+09/07/2026 08:55:18,5,5,5,1,3,2,2,3,4,4,3,2,4,4,4,1,2,3,3,3,5.0,2.5,3.75,4.25,2.75,El Explorador Distraído,19,Masculino,Guanajuato,Leon
+21/07/2026 01:56:43,3,3,4,3,3,3,3,4,3,3,2,3,4,4,4,2,4,4,3,2,3.25,2.75,2.75,4.0,3.75,El Buen Corazón Distraído,29,Femenino,Guanajuato,Celaya
+01/08/2026 08:31:45,3,3,3,3,3,3,3,2,4,4,4,2,4,3,3,2,2,3,2,5,3.0,3.25,4.0,3.5,2.0,El Carismático Estable,29,Masculino,Estado de Mexico,N/A
+02/08/2026 09:35:38,4,3,3,4,5,4,5,3,2,2,2,2,3,2,4,2,2,2,2,4,3.0,4.25,2.5,3.25,2.0,El Ejecutor Imparable,20,Masculino,Ciudad de Mexico,N/A
+27/07/2026 10:31:57,3,3,3,3,3,3,4,1,4,4,3,3,5,5,5,1,3,4,3,3,3.0,3.75,3.5,5.0,3.25,El Guardián Leal,27,Prefiero no decir,Jalisco,N/A
+07/07/2026 20:52:45,3,4,4,4,3,2,4,3,3,3,4,3,5,5,4,2,3,3,3,4,3.25,3.0,3.25,4.5,2.75,El Ancla Emocional,18,Femenino,Guanajuato,Silao
+28/07/2026 20:12:58,4,4,4,3,3,3,2,3,4,4,4,2,2,3,3,3,4,4,5,3,3.75,2.75,4.0,2.75,4.0,El Sensible Espontáneo,21,Masculino,Guanajuato,Irapuato
+13/07/2026 14:31:38,3,3,3,3,4,5,4,3,1,1,2,4,3,4,4,4,2,2,2,3,3.0,4.0,1.5,3.25,2.25,El Arquitecto Silencioso,25,Femenino,Guanajuato,San Miguel de Allende
+21/07/2026 11:58:17,2,2,3,3,3,3,3,3,2,2,2,3,4,4,5,2,3,3,3,2,2.5,3.0,2.25,4.25,3.25,El Empático Reservado,26,Femenino,Queretaro,N/A
+07/07/2026 14:00:41,5,5,5,2,1,1,1,5,3,3,3,2,3,3,3,3,2,2,2,3,4.75,1.0,3.25,3.0,2.25,El Explorador Distraído,22,Femenino,Queretaro,N/A
+10/07/2026 21:22:31,4,4,3,1,3,3,2,4,4,4,4,3,4,4,4,1,5,4,5,1,4.0,2.5,3.75,4.25,4.75,El Sensible Espontáneo,24,Masculino,Guanajuato,Silao
+31/07/2026 17:34:28,4,5,5,1,3,3,3,4,4,4,4,1,4,3,3,2,2,2,3,4,4.75,2.75,4.25,3.5,2.25,El Visionario Sereno,26,Masculino,Guanajuato,Celaya
+16/07/2026 20:47:50,2,3,3,3,4,5,4,1,3,2,3,4,3,3,3,1,1,1,1,4,2.75,4.5,2.5,3.5,1.25,El Ejecutor Imparable,28,Femenino,Guanajuato,Dolores Hidalgo
+08/07/2026 05:35:24,3,3,3,4,4,5,5,2,3,3,3,3,5,5,4,2,3,3,2,4,2.75,4.5,3.0,4.5,2.5,El Ancla Emocional,24,Femenino,Guanajuato,Dolores Hidalgo
+20/07/2026 12:53:27,2,2,2,3,3,3,4,3,3,4,4,4,3,3,3,3,4,4,4,3,2.25,3.25,3.25,3.0,3.75,El Preocupado Metódico,33,Masculino,Guanajuato,Leon
+14/07/2026 07:06:27,3,3,4,3,4,4,4,2,2,2,2,4,4,4,4,5,2,2,2,4,3.25,4.0,2.0,3.25,2.0,El Arquitecto Silencioso,30,Femenino,Guanajuato,San Luis de la Paz
+19/07/2026 12:21:37,3,3,2,3,4,4,4,3,3,4,4,2,4,4,4,3,4,4,5,2,2.75,3.75,3.75,3.75,4.25,El Preocupado Metódico,18,Femenino,Guanajuato,Salamanca
+30/07/2026 13:28:51,4,3,3,2,2,2,2,3,3,3,3,1,4,3,4,2,2,2,3,2,3.5,2.25,3.5,3.75,2.75,El Buen Corazón Distraído,18,Masculino,Guanajuato,Irapuato
+10/07/2026 11:53:12,3,3,3,3,5,5,5,1,3,2,3,3,3,3,3,3,3,3,3,3,3.0,5.0,2.75,3.0,3.0,El Arquitecto Silencioso,27,Masculino,Guanajuato,Irapuato
+12/07/2026 20:53:37,5,4,4,2,3,3,3,2,4,4,4,2,4,4,4,1,3,3,2,4,4.25,3.25,4.0,4.25,2.5,El Ancla Emocional,29,Masculino,Queretaro,N/A
+23/07/2026 11:58:00,3,3,3,2,4,4,4,1,4,4,4,1,3,5,4,2,2,1,2,2,3.25,4.25,4.25,4.0,2.25,El Carismático Estable,27,Femenino,Guanajuato,Valle de Santiago
+23/07/2026 22:12:32,2,2,2,4,4,4,4,2,3,4,4,4,4,5,5,1,3,4,3,2,2.0,4.0,3.25,4.75,3.5,El Guardián Leal,21,Masculino,Guanajuato,Dolores Hidalgo
+26/07/2026 08:30:04,4,4,4,2,2,2,2,4,4,4,4,3,3,3,3,2,3,3,2,5,4.0,2.0,3.75,3.25,2.25,El Explorador Distraído,18,Femenino,Guanajuato,Valle de Santiago
+10/07/2026 01:14:51,3,3,4,3,3,3,2,3,2,2,2,5,3,3,3,2,4,4,4,2,3.25,2.75,1.75,3.25,4.0,El Introspectivo Profundo,28,Femenino,Guanajuato,Guanajuato
+23/07/2026 09:21:14,2,2,1,4,3,4,3,5,3,3,3,2,3,3,4,2,3,2,2,2,1.75,2.75,3.25,3.5,2.75,El Guardián Leal,25,Masculino,Guanajuato,Dolores Hidalgo
+11/07/2026 21:44:01,5,4,5,1,4,3,3,3,4,5,5,2,5,4,4,1,2,2,1,4,4.75,3.25,4.5,4.5,1.75,El Visionario Sereno,21,Masculino,Guanajuato,Valle de Santiago
+14/07/2026 13:19:41,3,3,3,3,4,4,4,2,1,2,1,5,2,3,3,1,3,3,3,5,3.0,4.0,1.25,3.25,2.5,El Arquitecto Silencioso,20,Otro,Estado de Mexico,N/A
+01/08/2026 14:24:03,3,3,3,2,5,4,4,2,2,1,2,5,4,4,4,2,3,3,3,4,3.25,4.25,1.5,4.0,2.75,El Arquitecto Silencioso,27,Femenino,Guanajuato,Guanajuato
+15/07/2026 20:37:37,4,5,4,2,2,1,1,5,3,4,4,1,3,4,4,2,3,3,3,3,4.25,1.25,4.0,3.75,3.0,El Explorador Distraído,21,Femenino,Guanajuato,San Luis de la Paz
+03/08/2026 14:42:39,3,3,3,2,2,2,1,3,4,4,4,3,4,4,4,3,3,3,3,3,3.25,2.0,3.75,3.75,3.0,El Buen Corazón Distraído,30,Masculino,Guanajuato,San Luis de la Paz
+11/07/2026 11:59:08,3,3,3,3,4,4,4,3,2,3,2,4,5,5,4,3,1,2,1,5,3.0,3.75,2.25,4.25,1.25,El Ancla Emocional,22,Masculino,Guanajuato,Valle de Santiago
+30/07/2026 06:59:59,5,4,4,1,4,3,3,4,4,4,4,3,3,3,3,4,2,3,2,3,4.5,3.0,3.75,2.75,2.5,El Visionario Sereno,26,Masculino,Guanajuato,San Luis de la Paz
+27/07/2026 05:20:32,2,2,2,4,4,4,4,3,3,3,3,3,3,3,4,2,4,3,3,5,2.0,3.75,3.0,3.5,2.75,El Guardián del Método,18,Masculino,Guanajuato,Irapuato
+01/08/2026 05:47:39,5,5,5,2,3,3,3,2,4,4,4,3,3,3,3,3,4,3,3,2,4.75,3.25,3.75,3.0,3.5,El Crítico Creativo,18,Femenino,Guanajuato,Irapuato
+10/07/2026 00:40:16,3,4,3,3,3,3,3,2,2,3,3,4,3,4,3,3,5,5,4,2,3.25,3.25,2.5,3.25,4.5,El Introspectivo Profundo,18,Masculino,Guanajuato,Silao
+14/07/2026 09:32:34,2,2,3,3,4,4,4,4,4,5,4,1,5,4,4,1,2,2,1,4,2.5,3.5,4.5,4.5,1.75,El Ancla Emocional,27,Femenino,Queretaro,N/A
+12/07/2026 01:20:12,4,4,3,1,3,3,3,2,3,3,3,3,3,3,3,3,4,4,4,2,4.0,3.25,3.0,3.0,4.0,El Introspectivo Profundo,36,Masculino,Queretaro,N/A
+02/08/2026 09:13:39,2,2,2,4,5,5,4,1,2,2,2,4,4,4,4,1,2,3,2,2,2.0,4.75,2.0,4.25,2.75,El Guardián del Método,34,Masculino,Guanajuato,San Luis de la Paz
+20/07/2026 22:54:52,2,2,3,3,3,4,3,3,5,4,4,3,5,4,4,3,3,3,3,4,2.5,3.25,4.0,4.0,2.75,El Guardián Leal,24,Femenino,Guanajuato,Celaya
+14/07/2026 00:31:56,4,3,3,3,4,3,4,3,4,5,5,1,5,4,5,2,2,2,2,4,3.25,3.5,4.75,4.5,2.0,El Carismático Estable,28,Femenino,Ciudad de Mexico,N/A
+21/07/2026 03:39:16,5,5,5,2,3,3,4,4,3,4,5,1,3,3,3,3,3,4,3,3,4.75,3.0,4.25,3.0,3.25,El Explorador Distraído,35,Masculino,Guanajuato,Guanajuato
+23/07/2026 05:34:49,3,3,4,2,1,1,1,5,3,3,3,4,3,2,3,5,4,4,4,1,3.5,1.0,2.75,2.25,4.25,El Sensible Espontáneo,18,Otro,Jalisco,N/A
+06/07/2026 02:38:09,3,2,2,4,4,4,4,3,3,2,3,3,3,3,2,2,3,3,4,4,2.25,3.75,2.75,3.0,3.0,El Guardián del Método,26,Masculino,Estado de Mexico,N/A
+03/08/2026 12:51:02,3,3,3,3,2,3,2,3,4,4,4,3,3,3,4,3,5,4,4,1,3.0,2.5,3.75,3.25,4.5,El Sensible Espontáneo,29,Femenino,Guanajuato,Irapuato
+17/07/2026 14:13:42,4,4,3,1,3,3,3,2,5,4,4,3,4,5,4,2,1,2,2,4,4.0,3.25,4.0,4.25,1.75,El Ancla Emocional,22,Femenino,Guanajuato,Leon
+01/08/2026 02:43:02,4,5,4,2,3,3,3,3,4,4,4,2,4,4,4,4,1,1,2,3,4.25,3.0,4.0,3.5,1.75,El Visionario Sereno,21,Femenino,Guanajuato,Leon
+08/07/2026 11:42:21,3,3,3,2,3,3,3,3,2,2,3,4,4,4,3,1,5,5,5,1,3.25,3.0,2.25,4.0,5.0,El Introspectivo Profundo,30,Masculino,Guanajuato,Leon
+07/07/2026 11:23:43,5,4,4,3,2,2,1,5,4,3,4,2,3,3,3,5,3,3,3,3,4.0,1.5,3.75,2.5,3.0,El Explorador Distraído,20,Otro,Guanajuato,Irapuato
+08/07/2026 05:52:49,3,3,3,4,5,4,4,3,3,2,2,3,3,4,3,3,2,3,2,4,2.75,4.0,2.5,3.25,2.25,El Ejecutor Imparable,23,Masculino,Guanajuato,Leon
+24/07/2026 05:04:18,4,3,3,3,3,3,3,4,2,2,3,3,3,2,3,4,4,4,3,2,3.25,2.75,2.5,2.5,3.75,El Introspectivo Profundo,19,Masculino,Ciudad de Mexico,N/A
+19/07/2026 13:35:53,4,4,5,3,3,3,2,3,3,3,3,2,4,4,3,2,5,5,5,1,4.0,2.75,3.25,3.75,5.0,El Sensible Espontáneo,24,Masculino,Queretaro,N/A
+12/07/2026 09:12:27,4,4,4,2,3,3,3,3,3,3,3,2,3,3,2,3,4,4,4,2,4.0,3.0,3.25,2.75,4.0,El Escéptico Emocional,28,Otro,Guanajuato,Salamanca
+03/08/2026 15:53:18,3,4,3,3,5,4,5,2,2,2,2,3,3,3,3,3,3,2,3,3,3.25,4.5,2.25,3.0,2.75,El Arquitecto Silencioso,20,Femenino,Guanajuato,Valle de Santiago
+21/07/2026 05:35:35,2,2,3,2,5,5,5,1,2,2,2,3,3,4,4,4,2,2,2,4,2.75,5.0,2.25,3.25,2.0,El Ejecutor Imparable,22,Femenino,Guanajuato,Silao
+31/07/2026 03:34:07,4,4,4,2,5,4,5,1,1,2,2,4,3,4,3,2,2,3,2,3,4.0,4.75,1.75,3.5,2.5,El Arquitecto Silencioso,21,Femenino,Guanajuato,Dolores Hidalgo
+06/07/2026 03:48:25,2,3,2,3,3,3,3,3,2,3,2,5,5,5,5,2,4,4,4,2,2.5,3.0,2.0,4.75,4.0,El Empático Reservado,20,Masculino,Guanajuato,San Luis de la Paz
+12/07/2026 20:22:33,4,4,3,3,4,5,4,1,3,3,3,3,5,5,5,1,4,4,4,1,3.5,4.5,3.0,5.0,4.25,El Empático Reservado,33,Masculino,Queretaro,N/A
+08/07/2026 12:42:20,5,4,5,1,3,2,3,4,4,4,4,4,4,4,3,1,3,3,3,3,4.75,2.5,3.5,4.0,3.0,El Explorador Distraído,20,Femenino,Guanajuato,Salamanca
+20/07/2026 02:03:03,3,3,4,3,4,4,4,1,5,5,5,1,4,5,4,3,3,3,3,3,3.25,4.25,5.0,4.0,3.0,El Carismático Estable,29,Femenino,Guanajuato,Guanajuato
+29/07/2026 05:17:36,3,4,4,3,3,3,3,3,4,4,5,2,4,5,5,2,3,1,2,4,3.5,3.0,4.25,4.5,2.0,El Ancla Emocional,26,Masculino,Guanajuato,Guanajuato
+26/07/2026 10:05:52,3,2,3,3,5,5,5,1,2,2,2,3,3,3,3,5,3,3,2,3,2.75,5.0,2.25,2.5,2.75,El Arquitecto Silencioso,19,Femenino,Guanajuato,Guanajuato
+21/07/2026 03:27:05,3,3,3,4,5,5,5,2,3,2,2,4,5,5,4,2,3,2,3,4,2.75,4.75,2.25,4.5,2.5,El Arquitecto Silencioso,27,Femenino,Ciudad de Mexico,N/A
+26/07/2026 22:07:58,5,5,5,1,2,3,2,4,2,1,2,3,3,2,3,3,5,5,5,2,5.0,2.25,2.0,2.75,4.75,El Filósofo de Bolsillo,18,Masculino,Ciudad de Mexico,N/A
+29/07/2026 06:23:24,4,3,2,4,3,3,3,2,3,3,3,4,5,5,5,1,2,2,2,3,2.75,3.25,2.75,5.0,2.25,El Ancla Emocional,24,Masculino,Guanajuato,Leon
+25/07/2026 20:38:19,5,5,5,1,3,3,3,4,3,4,3,3,4,4,4,1,2,3,2,5,5.0,2.75,3.25,4.25,2.0,El Visionario Sereno,19,Otro,Guanajuato,San Luis de la Paz
+07/07/2026 18:45:38,3,3,3,3,3,4,4,2,3,3,3,3,3,4,4,3,4,4,4,3,3.0,3.75,3.0,3.5,3.75,El Preocupado Metódico,22,Masculino,Guanajuato,Guanajuato
+09/07/2026 18:28:12,4,4,4,1,1,1,1,3,3,3,3,3,4,4,4,4,3,3,4,3,4.25,1.5,3.0,3.5,3.25,El Explorador Distraído,21,Femenino,Guanajuato,Guanajuato
+29/07/2026 08:36:19,3,2,3,3,3,3,3,2,5,4,5,1,3,3,4,2,2,1,1,5,2.75,3.25,4.75,3.5,1.25,El Carismático Estable,20,Otro,Queretaro,N/A
+21/07/2026 18:51:39,2,2,2,5,2,4,3,3,4,4,4,3,4,5,5,1,3,3,3,3,1.75,3.0,3.75,4.75,3.0,El Guardián Leal,22,Femenino,Guanajuato,Irapuato
+07/07/2026 00:15:22,3,4,3,3,3,3,3,4,3,3,3,3,3,3,3,3,4,4,4,1,3.25,2.75,3.0,3.0,4.25,El Sensible Espontáneo,24,Femenino,Guanajuato,Valle de Santiago
+15/07/2026 16:30:21,4,3,3,3,4,4,5,1,2,1,2,5,3,3,2,2,2,2,3,3,3.25,4.5,1.5,3.0,2.5,El Arquitecto Silencioso,19,Femenino,Ciudad de Mexico,N/A
+12/07/2026 04:36:20,2,3,3,3,3,2,3,3,3,3,3,3,4,5,5,2,3,3,3,3,2.75,2.75,3.0,4.5,3.0,El Guardián Leal,22,Femenino,Guanajuato,Salamanca
+25/07/2026 13:29:20,1,2,2,5,3,3,2,1,3,4,4,2,3,4,4,2,3,3,2,3,1.5,3.25,3.75,3.75,2.75,El Guardián Leal,18,Masculino,Guanajuato,Salamanca
+01/08/2026 18:55:13,5,5,5,1,4,3,4,3,4,3,3,2,4,4,3,3,3,3,2,2,5.0,3.5,3.5,3.5,3.0,El Visionario Sereno,27,Masculino,Guanajuato,Leon
+13/07/2026 21:37:23,3,3,3,1,3,4,2,3,5,4,4,1,4,4,5,2,2,2,3,4,3.5,3.0,4.5,4.25,2.25,El Carismático Estable,18,Masculino,Guanajuato,Dolores Hidalgo
+21/07/2026 11:29:25,3,4,4,3,4,4,4,2,5,5,5,2,4,4,3,1,2,2,2,5,3.5,4.0,4.75,4.0,1.75,El Carismático Estable,21,Femenino,Guanajuato,Leon
+01/08/2026 16:02:59,1,1,1,4,4,4,5,2,3,4,3,1,3,2,3,2,2,2,1,3,1.25,4.25,3.75,3.0,2.0,El Guardián del Método,25,Masculino,Guanajuato,Dolores Hidalgo
+30/07/2026 15:31:07,2,2,2,1,3,3,4,3,5,5,5,1,3,3,3,2,1,1,1,5,2.75,3.25,5.0,3.25,1.0,El Carismático Estable,22,Femenino,Guanajuato,Silao
+01/08/2026 04:22:07,3,3,3,3,5,5,5,1,2,3,3,4,4,3,4,3,2,3,3,3,3.0,5.0,2.5,3.5,2.75,El Arquitecto Silencioso,18,Masculino,Guanajuato,Salamanca
+27/07/2026 13:42:54,2,2,2,3,4,3,4,1,2,3,3,4,5,5,5,1,4,3,4,1,2.25,4.0,2.5,5.0,4.0,El Guardián Leal,32,Femenino,Guanajuato,Irapuato
+07/07/2026 09:04:57,4,3,4,2,3,3,3,3,4,5,5,2,4,4,4,2,2,2,2,4,3.75,3.0,4.5,4.0,2.0,El Carismático Estable,27,Femenino,Guanajuato,San Miguel de Allende
+19/07/2026 00:58:06,5,5,5,2,3,4,3,3,3,3,3,2,5,4,4,2,1,2,1,4,4.75,3.25,3.25,4.25,1.5,El Visionario Sereno,21,Masculino,Guanajuato,Irapuato
+08/07/2026 18:31:01,3,3,3,2,3,3,3,4,4,4,4,3,2,2,2,4,4,4,3,2,3.25,2.75,3.75,2.0,3.75,El Escéptico Emocional,24,Femenino,Guanajuato,Salamanca
+23/07/2026 14:32:18,4,4,3,3,4,4,3,2,3,3,3,4,5,5,5,1,2,2,3,2,3.5,3.75,2.75,5.0,2.75,El Empático Reservado,19,Femenino,Jalisco,N/A
+30/07/2026 09:37:27,4,3,4,2,5,5,5,1,2,2,3,4,4,3,4,3,1,1,1,5,3.75,5.0,2.25,3.5,1.0,El Ejecutor Imparable,19,Masculino,Guanajuato,Dolores Hidalgo
+20/07/2026 03:46:34,2,2,2,5,4,4,3,3,2,3,3,1,5,4,5,1,2,4,3,3,1.75,3.5,3.25,4.75,3.0,El Guardián Leal,31,Femenino,Guanajuato,Dolores Hidalgo
+10/07/2026 08:55:32,3,3,3,3,4,3,3,1,3,3,3,3,5,5,5,2,3,3,3,2,3.0,3.75,3.0,4.75,3.25,El Guardián Leal,26,Femenino,Guanajuato,San Luis de la Paz
+21/07/2026 05:36:19,3,3,3,2,4,4,3,3,3,2,3,4,4,4,3,1,3,3,3,5,3.25,3.5,2.5,4.0,2.5,El Empático Reservado,31,Masculino,Guanajuato,San Miguel de Allende
+30/07/2026 22:02:58,3,3,3,3,2,3,2,3,4,4,4,2,2,3,3,3,4,3,4,2,3.0,2.5,4.0,2.75,3.75,El Improvisador de Oficio,20,Masculino,Queretaro,N/A
+16/07/2026 07:07:34,2,2,2,4,5,5,5,2,3,3,3,4,4,4,4,1,3,3,4,3,2.0,4.75,2.75,4.25,3.25,El Guardián del Método,30,Otro,Guanajuato,San Luis de la Paz
+03/08/2026 23:18:37,3,3,4,2,4,4,5,2,5,4,4,1,4,3,3,4,2,2,3,5,3.5,4.25,4.5,3.0,2.0,El Carismático Estable,27,Femenino,Guanajuato,Leon
+16/07/2026 12:00:53,4,3,3,2,4,5,4,2,3,3,2,4,4,3,4,3,3,3,3,4,3.5,4.25,2.5,3.5,2.75,El Arquitecto Silencioso,30,Masculino,Guanajuato,San Luis de la Paz
+22/07/2026 11:40:36,5,4,4,2,2,1,1,4,3,3,4,3,2,3,3,2,5,5,5,1,4.25,1.5,3.25,3.0,5.0,El Sensible Espontáneo,27,Masculino,Guanajuato,Guanajuato
+18/07/2026 22:07:55,4,4,4,2,3,3,4,3,5,4,5,2,4,4,4,2,3,2,2,3,4.0,3.25,4.5,4.0,2.5,El Carismático Estable,18,Femenino,Guanajuato,San Luis de la Paz
+12/07/2026 09:08:10,5,5,4,4,2,3,3,3,4,4,3,3,3,3,2,3,3,3,3,4,4.0,2.75,3.5,2.75,2.75,El Explorador Distraído,32,Masculino,Guanajuato,Silao
+07/07/2026 12:37:36,4,4,4,2,5,5,5,2,1,1,1,5,4,4,3,2,2,2,2,4,4.0,4.75,1.0,3.75,2.0,El Arquitecto Silencioso,35,Prefiero no decir,Guanajuato,Valle de Santiago
+31/07/2026 07:12:34,4,4,4,2,3,3,3,4,3,2,2,3,4,4,4,3,4,5,5,2,4.0,2.75,2.5,3.75,4.5,El Introspectivo Profundo,33,Femenino,Guanajuato,Leon
+23/07/2026 19:27:40,5,5,4,1,4,4,4,1,4,5,5,1,4,4,3,2,2,2,2,3,4.75,4.25,4.75,3.75,2.25,El Carismático Estable,20,Masculino,Guanajuato,Guanajuato
+21/07/2026 19:59:49,3,4,4,2,4,5,5,3,4,5,4,3,4,4,4,1,2,2,1,4,3.75,4.25,4.0,4.25,1.75,El Ancla Emocional,19,Femenino,Guanajuato,San Luis de la Paz
+24/07/2026 17:42:40,2,2,3,4,4,3,3,3,3,3,3,3,5,5,5,2,3,3,3,4,2.25,3.25,3.0,4.75,2.75,El Guardián Leal,31,Femenino,Guanajuato,Dolores Hidalgo
+02/08/2026 17:04:26,3,3,3,2,4,3,4,3,3,3,3,3,4,5,5,1,3,3,2,3,3.25,3.5,3.0,4.75,2.75,El Ancla Emocional,23,Masculino,Guanajuato,Celaya
+16/07/2026 20:32:56,4,4,4,2,3,3,3,3,4,4,4,4,4,4,4,2,2,2,2,5,4.0,3.0,3.5,4.0,1.75,El Ancla Emocional,21,Masculino,Guanajuato,Leon
+16/07/2026 04:29:13,1,2,2,4,3,2,2,3,3,3,3,4,4,3,4,1,3,2,2,4,1.75,2.5,2.75,4.0,2.25,El Guardián Leal,26,Femenino,Guanajuato,Irapuato
+03/08/2026 00:45:10,3,2,2,4,2,2,2,4,3,3,3,3,2,3,3,4,4,4,4,1,2.25,2.0,3.0,2.5,4.25,El Sensible Espontáneo,24,Masculino,Guanajuato,Irapuato
+22/07/2026 20:39:58,4,3,4,2,3,3,3,3,2,2,2,5,3,3,3,3,5,4,5,1,3.75,3.0,1.75,3.0,4.75,El Introspectivo Profundo,25,Otro,Guanajuato,San Miguel de Allende
+23/07/2026 09:45:17,4,3,3,3,3,4,4,3,4,4,4,3,5,5,5,1,3,2,3,2,3.25,3.5,3.75,5.0,3.0,El Ancla Emocional,21,Femenino,Ciudad de Mexico,N/A
+22/07/2026 23:45:39,5,4,4,1,1,1,1,5,4,3,4,3,3,3,3,4,2,2,3,4,4.5,1.0,3.5,2.75,2.25,El Explorador Distraído,21,Femenino,Guanajuato,San Miguel de Allende
+15/07/2026 12:28:37,5,4,5,1,3,3,3,2,3,4,4,3,2,3,3,3,3,4,4,2,4.75,3.25,3.5,2.75,3.75,El Crítico Creativo,24,Masculino,Guanajuato,San Miguel de Allende
+03/08/2026 17:00:47,4,4,4,2,3,3,3,3,3,3,3,2,4,4,4,2,4,3,3,2,4.0,3.0,3.25,4.0,3.5,El Buen Corazón Distraído,22,Femenino,Queretaro,N/A
+27/07/2026 01:09:25,3,3,3,3,3,4,4,2,4,3,4,3,4,5,4,3,2,2,1,4,3.0,3.75,3.5,4.0,1.75,El Ancla Emocional,18,Femenino,Guanajuato,Silao
+08/07/2026 18:09:39,4,3,2,5,4,5,4,3,2,1,1,4,3,3,4,2,3,4,3,2,2.5,4.0,1.5,3.5,3.5,El Arquitecto Silencioso,20,Femenino,Guanajuato,Silao
+01/08/2026 14:11:16,4,5,4,2,2,2,3,4,4,5,5,3,2,2,2,4,4,3,3,2,4.25,2.25,4.25,2.0,3.5,El Líder Directo,18,Otro,Guanajuato,Dolores Hidalgo
+05/07/2026 22:17:35,5,4,4,2,2,3,2,3,3,2,2,4,2,3,3,2,4,4,4,3,4.25,2.5,2.25,3.0,3.75,El Filósofo de Bolsillo,24,Masculino,Queretaro,N/A
+02/08/2026 12:56:53,3,4,3,4,3,3,3,4,4,4,4,2,4,5,5,1,3,3,3,4,3.0,2.75,4.0,4.75,2.75,El Buen Corazón Distraído,21,Femenino,Guanajuato,San Miguel de Allende
+09/07/2026 18:02:09,3,4,4,1,1,2,1,4,4,3,4,2,3,3,3,3,2,3,2,3,4.0,1.5,3.75,3.0,2.5,El Explorador Distraído,23,Femenino,Queretaro,N/A
+16/07/2026 09:17:36,3,3,4,3,2,3,2,4,3,3,3,3,3,4,3,2,5,4,4,2,3.25,2.25,3.0,3.5,4.25,El Sensible Espontáneo,23,Masculino,Jalisco,N/A
+26/07/2026 16:02:29,4,4,3,2,5,4,5,1,2,2,2,4,4,4,4,1,3,3,3,4,3.75,4.75,2.0,4.25,2.75,El Arquitecto Silencioso,22,Masculino,Guanajuato,San Miguel de Allende
+02/08/2026 01:57:45,5,5,5,1,2,2,3,2,3,4,4,3,3,3,4,3,3,3,3,3,5.0,2.75,3.5,3.25,3.0,El Explorador Distraído,26,Femenino,Guanajuato,San Luis de la Paz
+13/07/2026 07:06:08,3,3,3,3,4,4,4,1,3,4,3,3,4,5,5,2,3,2,3,4,3.0,4.25,3.25,4.5,2.5,El Ancla Emocional,22,Femenino,Guanajuato,Celaya
+25/07/2026 19:02:44,5,4,5,1,3,3,2,2,4,4,4,2,3,3,3,2,3,4,3,3,4.75,3.0,4.0,3.25,3.25,El Explorador Distraído,25,Femenino,Guanajuato,Leon
+08/07/2026 17:42:26,3,3,3,3,5,5,5,2,3,2,2,4,2,3,3,2,3,3,3,3,3.0,4.75,2.25,3.0,3.0,El Arquitecto Silencioso,31,Otro,Guanajuato,Valle de Santiago
+16/07/2026 15:39:47,4,4,3,3,3,4,3,1,4,5,5,3,3,4,4,2,2,2,2,3,3.5,3.75,4.25,3.75,2.25,El Carismático Estable,18,Femenino,Guanajuato,Leon
+19/07/2026 01:00:08,3,3,2,3,4,4,3,2,4,4,4,2,5,5,5,2,2,2,2,3,2.75,3.75,4.0,4.75,2.25,El Ancla Emocional,18,Masculino,Estado de Mexico,N/A
+06/07/2026 19:25:57,4,4,4,2,2,2,2,3,4,4,4,1,3,3,3,3,3,3,3,2,4.0,2.25,4.25,3.0,3.25,El Improvisador de Oficio,19,Otro,Guanajuato,San Luis de la Paz
+04/08/2026 08:00:47,4,3,3,2,3,3,3,4,2,3,3,3,3,3,3,2,5,5,5,1,3.5,2.75,2.75,3.25,5.0,El Sensible Espontáneo,24,Femenino,Guanajuato,San Miguel de Allende
+22/07/2026 00:19:28,5,5,4,2,3,2,3,3,3,3,2,2,4,4,3,2,4,4,3,3,4.5,2.75,3.0,3.75,3.5,El Explorador Distraído,25,Masculino,Guanajuato,Salamanca
+29/07/2026 17:49:27,2,2,2,4,3,4,4,2,2,2,2,3,4,5,5,2,3,3,3,3,2.0,3.75,2.25,4.5,3.0,El Guardián Leal,28,Otro,Guanajuato,Valle de Santiago
+25/07/2026 07:47:33,2,2,2,4,5,5,4,2,3,3,3,4,3,3,4,3,2,2,3,4,2.0,4.5,2.75,3.25,2.25,El Guardián del Método,26,Masculino,Guanajuato,Celaya
+09/07/2026 13:50:15,2,2,2,5,3,4,3,3,3,3,3,2,5,5,5,1,2,3,3,3,1.75,3.25,3.25,5.0,2.75,El Guardián Leal,28,Masculino,Queretaro,N/A
+17/07/2026 18:05:52,4,4,4,2,2,2,2,3,3,3,2,3,2,2,1,3,5,5,5,1,4.0,2.25,2.75,2.0,5.0,El Escéptico Emocional,19,Femenino,Guanajuato,Celaya
+27/07/2026 16:27:02,3,3,4,3,3,3,3,3,2,3,2,4,5,5,5,2,2,3,3,3,3.25,3.0,2.25,4.75,2.75,El Empático Reservado,21,Femenino,Guanajuato,Silao
+24/07/2026 00:33:42,3,3,3,3,3,4,3,3,5,5,5,1,4,4,4,1,2,2,3,4,3.0,3.25,5.0,4.25,2.25,El Carismático Estable,18,Femenino,Guanajuato,San Miguel de Allende
+12/07/2026 07:11:34,5,5,5,1,3,2,3,3,4,4,4,3,3,3,3,2,1,2,2,4,5.0,2.75,3.75,3.25,1.75,El Visionario Sereno,18,Masculino,Guanajuato,Irapuato
+24/07/2026 18:35:44,5,4,5,2,3,2,2,4,5,5,5,2,3,4,4,3,4,3,3,2,4.5,2.25,4.75,3.5,3.5,El Improvisador de Oficio,33,Femenino,Guanajuato,Celaya
+11/07/2026 08:55:27,4,4,4,3,4,4,4,2,3,3,3,3,3,2,2,3,3,3,3,4,3.75,4.0,3.0,2.5,2.75,El Estratega Sin Rodeos,26,Otro,Guanajuato,Guanajuato
+19/07/2026 11:39:46,4,4,3,2,2,2,3,3,3,4,4,4,5,3,4,1,3,4,4,4,3.75,2.5,3.25,4.25,3.25,El Buen Corazón Distraído,22,Masculino,Guanajuato,Dolores Hidalgo
+14/07/2026 02:49:35,2,3,3,3,4,3,4,1,1,1,2,5,3,3,3,3,2,3,2,3,2.75,4.0,1.25,3.0,2.5,El Arquitecto Silencioso,23,Femenino,Jalisco,N/A
+20/07/2026 16:39:15,2,2,2,3,3,3,3,3,3,3,3,2,5,5,4,2,2,2,2,3,2.25,3.0,3.25,4.5,2.25,El Guardián Leal,25,Masculino,Guanajuato,Celaya
+29/07/2026 19:16:11,2,2,2,5,5,5,5,1,1,1,1,4,4,4,4,3,3,2,3,3,1.75,5.0,1.25,3.75,2.75,El Arquitecto Silencioso,27,Femenino,Guanajuato,San Miguel de Allende
+14/07/2026 13:57:51,4,4,4,2,3,3,4,4,3,3,3,3,4,4,4,2,4,3,2,3,4.0,3.0,3.0,4.0,3.0,El Buen Corazón Distraído,24,Femenino,Guanajuato,Celaya
+09/07/2026 11:26:53,4,3,4,2,4,4,4,2,1,1,1,4,3,3,2,1,3,3,3,2,3.75,4.0,1.25,3.25,3.25,El Arquitecto Silencioso,19,Femenino,Guanajuato,Valle de Santiago
+22/07/2026 08:02:11,4,3,4,1,2,2,1,4,3,4,3,2,5,5,5,1,2,2,2,5,4.0,1.75,3.5,5.0,1.75,El Buen Corazón Distraído,28,Otro,Queretaro,N/A
+15/07/2026 04:55:47,4,4,4,2,3,3,3,3,3,3,2,4,4,4,4,4,3,4,4,2,4.0,3.0,2.5,3.5,3.75,El Filósofo de Bolsillo,29,Masculino,Guanajuato,Dolores Hidalgo
+29/07/2026 10:18:44,2,3,2,3,3,2,4,4,4,4,4,2,4,3,4,2,2,2,2,4,2.5,2.75,4.0,3.75,2.0,El Carismático Estable,22,Femenino,Guanajuato,San Luis de la Paz
+28/07/2026 23:23:50,3,3,4,3,2,2,2,3,3,3,3,3,3,3,3,3,5,5,5,2,3.25,2.25,3.0,3.0,4.75,El Sensible Espontáneo,30,Femenino,Guanajuato,Valle de Santiago
+05/07/2026 18:45:52,1,2,2,4,5,5,5,3,4,4,4,3,4,3,4,1,3,3,3,3,1.75,4.5,3.75,4.0,3.0,El Guardián del Método,23,Femenino,Guanajuato,Irapuato
+11/07/2026 11:21:59,3,2,3,1,3,3,3,3,3,3,3,3,4,4,4,3,5,4,4,1,3.25,3.0,3.0,3.75,4.5,El Sensible Espontáneo,18,Otro,Guanajuato,Leon
+25/07/2026 22:59:51,5,5,5,1,2,3,2,3,4,5,5,2,4,4,4,2,2,2,2,3,5.0,2.5,4.5,4.0,2.25,El Visionario Sereno,21,Masculino,Guanajuato,Guanajuato
+16/07/2026 06:30:44,3,3,4,1,4,3,4,2,3,3,3,2,5,4,5,1,4,3,3,3,3.75,3.75,3.25,4.75,3.25,El Empático Reservado,27,Masculino,Guanajuato,Leon
+02/08/2026 02:27:15,3,3,3,3,2,2,2,2,2,2,2,4,3,3,3,3,4,4,4,1,3.0,2.5,2.0,3.0,4.25,El Introspectivo Profundo,18,Masculino,Guanajuato,Guanajuato
+31/07/2026 18:33:08,2,2,3,4,3,3,4,3,4,4,4,3,5,5,5,1,3,3,3,4,2.25,3.25,3.75,5.0,2.75,El Guardián Leal,24,Masculino,Guanajuato,San Luis de la Paz
+28/07/2026 00:09:03,2,3,3,3,3,3,3,4,3,3,3,4,2,3,4,2,4,4,4,1,2.75,2.75,2.75,3.25,4.25,El Preocupado Metódico,18,Masculino,Guanajuato,Irapuato
+25/07/2026 04:42:36,3,3,2,2,4,3,4,2,2,2,2,2,5,5,5,1,3,3,3,3,3.0,3.75,2.5,5.0,3.0,El Empático Reservado,33,Masculino,Jalisco,N/A
+29/07/2026 18:56:46,5,5,5,2,2,2,2,4,3,4,4,2,4,4,4,3,2,3,2,2,4.75,2.0,3.75,3.75,2.75,El Explorador Distraído,21,Masculino,Guanajuato,Salamanca
+20/07/2026 22:09:34,2,1,2,4,3,3,2,4,3,3,2,3,3,4,3,3,5,5,4,1,1.75,2.5,2.75,3.25,4.75,El Preocupado Metódico,32,Femenino,Guanajuato,Salamanca
+11/07/2026 11:37:52,3,3,3,3,4,4,4,3,3,3,3,3,2,3,2,4,3,3,3,3,3.0,3.75,3.0,2.25,3.0,El Estratega Sin Rodeos,32,Femenino,Guanajuato,Valle de Santiago
+02/08/2026 23:33:09,3,4,3,2,5,5,5,2,2,2,2,4,3,3,4,3,3,3,3,3,3.5,4.75,2.0,3.25,3.0,El Arquitecto Silencioso,21,Femenino,Jalisco,N/A
+27/07/2026 21:26:19,1,2,2,3,4,4,3,1,3,3,3,4,5,5,5,2,4,3,3,2,2.0,4.0,2.75,4.75,3.5,El Guardián Leal,23,Masculino,Guanajuato,Leon
+27/07/2026 20:08:09,5,5,5,1,2,3,3,4,3,3,3,3,4,3,3,2,3,3,3,2,5.0,2.5,3.0,3.5,3.25,El Explorador Distraído,23,Femenino,Guanajuato,Guanajuato
+03/08/2026 18:49:16,5,5,4,2,4,3,3,4,3,4,4,3,3,3,4,3,4,4,4,3,4.5,3.0,3.5,3.25,3.75,El Explorador Distraído,22,Femenino,Guanajuato,Salamanca
+11/07/2026 16:04:23,4,4,4,2,4,3,3,2,4,4,3,2,4,3,4,3,5,4,4,2,4.0,3.5,3.75,3.5,4.25,El Sensible Espontáneo,26,Femenino,Guanajuato,Silao
+26/07/2026 11:12:48,4,4,3,3,4,4,4,1,4,5,4,2,4,3,3,2,1,2,2,4,3.5,4.25,4.25,3.5,1.75,El Carismático Estable,22,Femenino,Guanajuato,Guanajuato
+24/07/2026 20:57:07,3,3,3,3,3,3,3,4,5,5,5,1,5,4,5,2,2,1,1,5,3.0,2.75,5.0,4.5,1.25,El Carismático Estable,24,Masculino,Guanajuato,Celaya
+26/07/2026 15:32:28,1,1,1,4,4,5,4,3,2,2,2,5,4,4,4,2,3,3,2,3,1.25,4.0,1.75,4.0,2.75,El Guardián Leal,31,Femenino,Guanajuato,Irapuato
+01/08/2026 00:31:55,4,3,4,1,4,4,4,2,3,2,3,3,4,4,4,2,2,2,2,3,4.0,4.0,2.75,4.0,2.25,El Ancla Emocional,18,Masculino,Guanajuato,San Miguel de Allende
+16/07/2026 19:04:38,5,4,4,4,3,3,2,2,5,4,5,1,3,3,3,1,2,2,2,4,3.75,3.0,4.75,3.5,2.0,El Carismático Estable,18,Otro,Queretaro,N/A
+26/07/2026 23:22:40,5,5,5,1,2,1,3,4,3,3,3,1,3,3,3,1,3,3,3,3,5.0,2.0,3.5,3.5,3.0,El Explorador Distraído,31,Masculino,Guanajuato,Guanajuato
+30/07/2026 08:16:21,3,3,3,4,3,3,3,4,2,2,2,3,3,3,4,1,5,4,5,2,2.75,2.75,2.25,3.75,4.5,El Introspectivo Profundo,24,Masculino,Guanajuato,Leon
+25/07/2026 17:57:28,4,3,3,4,4,4,4,2,2,3,2,4,2,2,3,4,3,2,2,4,3.0,4.0,2.25,2.25,2.25,El Arquitecto Silencioso,22,Femenino,Guanajuato,Dolores Hidalgo
+11/07/2026 06:10:38,4,4,3,2,2,2,2,5,3,3,3,2,4,4,4,1,5,5,5,1,3.75,1.75,3.25,4.25,5.0,El Sensible Espontáneo,26,Femenino,Guanajuato,Silao
+31/07/2026 22:07:11,5,5,5,1,2,2,2,2,3,4,4,2,3,3,4,2,2,2,3,2,5.0,2.5,3.75,3.5,2.75,El Explorador Distraído,19,Femenino,Guanajuato,Leon
+07/07/2026 23:44:52,4,4,5,1,3,2,2,4,4,3,4,3,3,2,3,2,3,3,3,3,4.5,2.25,3.5,3.0,3.0,El Explorador Distraído,34,Femenino,Guanajuato,Salamanca
+15/07/2026 07:45:58,4,5,4,2,5,5,5,1,3,3,3,3,3,3,3,3,2,3,3,3,4.25,5.0,3.0,3.0,2.75,El Ejecutor Imparable,18,Masculino,Estado de Mexico,N/A
+17/07/2026 08:47:25,4,4,5,1,4,4,4,3,4,4,4,1,3,3,3,2,2,2,1,4,4.5,3.75,4.25,3.25,1.75,El Visionario Sereno,25,Femenino,Guanajuato,Salamanca
+19/07/2026 17:12:14,4,4,4,3,3,3,3,2,3,2,2,3,3,2,3,4,5,4,5,1,3.75,3.25,2.5,2.5,4.75,El Introspectivo Profundo,24,Otro,Queretaro,N/A
+07/07/2026 23:56:33,3,2,2,3,5,5,4,2,4,4,3,4,4,4,4,1,4,4,4,3,2.5,4.5,3.25,4.25,3.75,El Guardián del Método,25,Masculino,Guanajuato,San Luis de la Paz
+07/07/2026 03:36:42,5,4,4,2,2,2,2,3,3,2,2,3,3,2,2,3,4,3,4,2,4.25,2.25,2.5,2.5,3.75,El Explorador Distraído,23,Femenino,Queretaro,N/A
+12/07/2026 09:51:55,4,4,4,3,2,2,3,4,2,3,3,3,3,3,4,3,4,4,4,1,3.75,2.25,2.75,3.25,4.25,El Sensible Espontáneo,20,Otro,Guanajuato,Guanajuato
+02/08/2026 00:29:31,3,3,3,3,4,4,5,2,4,4,3,5,4,5,4,2,2,3,3,4,3.0,4.25,3.0,4.25,2.5,El Ancla Emocional,25,Femenino,Guanajuato,San Miguel de Allende
+06/07/2026 17:02:08,4,3,4,2,3,4,3,4,3,3,3,2,3,2,3,3,4,4,4,2,3.75,3.0,3.25,2.75,4.0,El Escéptico Emocional,19,Prefiero no decir,Guanajuato,Leon
+16/07/2026 23:19:07,5,4,4,2,3,3,4,2,4,4,5,1,3,3,4,3,2,3,3,3,4.25,3.5,4.5,3.25,2.75,El Carismático Estable,27,Femenino,Guanajuato,Dolores Hidalgo
+03/08/2026 20:06:50,3,2,2,3,4,5,5,1,5,5,5,2,4,5,5,2,3,3,2,3,2.5,4.75,4.75,4.5,2.75,El Alma Práctica de la Fiesta,24,Masculino,Queretaro,N/A
+02/08/2026 06:48:38,5,4,4,1,4,4,3,3,3,5,4,2,3,2,3,4,4,4,4,2,4.5,3.5,4.0,2.5,4.0,El Crítico Creativo,32,Otro,Ciudad de Mexico,N/A
+26/07/2026 10:27:27,3,3,3,3,4,3,4,1,4,4,4,1,5,5,5,3,1,1,2,4,3.0,4.0,4.25,4.5,1.5,El Ancla Emocional,21,Femenino,Guanajuato,Leon
+21/07/2026 19:42:46,3,4,4,1,4,3,3,3,4,4,5,1,3,3,3,3,2,2,2,3,4.0,3.25,4.5,3.0,2.25,El Carismático Estable,20,Femenino,Guanajuato,Leon
+24/07/2026 04:32:04,4,4,4,2,4,4,4,2,4,5,5,2,5,5,5,2,3,2,3,2,4.0,4.0,4.5,4.75,3.0,El Ancla Emocional,18,Masculino,Guanajuato,Valle de Santiago
+23/07/2026 12:01:43,3,3,2,4,4,4,4,2,3,4,4,3,4,3,3,2,3,3,3,4,2.5,4.0,3.5,3.5,2.75,El Guardián del Método,28,Masculino,Queretaro,N/A
+23/07/2026 09:32:21,3,3,3,2,4,4,4,2,5,5,5,2,3,3,3,1,2,2,3,5,3.25,4.0,4.75,3.5,2.0,El Carismático Estable,27,Femenino,Guanajuato,San Miguel de Allende
+10/07/2026 01:33:16,3,3,4,2,3,4,4,2,4,4,4,2,4,3,4,2,2,2,2,4,3.5,3.75,4.0,3.75,2.0,El Carismático Estable,25,Masculino,Jalisco,N/A
+03/08/2026 09:11:20,4,4,4,3,4,4,4,3,3,3,4,3,3,3,3,3,4,5,5,2,3.75,3.75,3.25,3.0,4.5,El Escéptico Emocional,26,Femenino,Guanajuato,San Miguel de Allende
+18/07/2026 10:26:35,3,3,3,3,5,5,5,2,3,3,3,2,4,3,4,1,3,3,3,4,3.0,4.75,3.25,4.0,2.75,El Ejecutor Imparable,27,Masculino,Guanajuato,Irapuato
+11/07/2026 03:22:38,4,3,3,3,5,5,5,1,2,1,2,4,3,3,3,3,2,2,2,5,3.25,5.0,1.75,3.0,1.75,El Arquitecto Silencioso,22,Femenino,Guanajuato,Silao
+19/07/2026 04:50:30,4,4,3,1,4,4,4,3,4,4,5,3,5,4,4,2,1,1,1,5,4.0,3.75,4.0,4.25,1.0,El Ancla Emocional,24,Prefiero no decir,Guanajuato,Guanajuato
+30/07/2026 14:01:00,2,3,4,2,3,2,3,4,3,3,3,4,4,4,4,3,5,5,5,1,3.25,2.5,2.75,3.75,5.0,El Sensible Espontáneo,27,Femenino,Guanajuato,Valle de Santiago
+15/07/2026 00:52:07,4,2,3,4,4,4,3,3,3,3,3,2,5,4,4,1,3,2,3,3,2.75,3.5,3.25,4.5,2.75,El Guardián Leal,19,Otro,Guanajuato,Valle de Santiago
+13/07/2026 19:19:57,5,5,5,1,3,3,3,5,4,3,4,3,5,5,4,1,3,3,3,4,5.0,2.5,3.5,4.75,2.75,El Explorador Distraído,22,Femenino,Guanajuato,Guanajuato
+15/07/2026 10:03:46,3,3,3,4,4,4,3,2,4,5,4,2,4,4,3,4,2,1,2,5,2.75,3.75,4.25,3.25,1.5,El Carismático Estable,27,Otro,Guanajuato,San Luis de la Paz
+27/07/2026 04:34:06,4,5,4,1,4,3,4,2,4,5,4,1,5,5,5,2,3,2,3,3,4.5,3.75,4.5,4.75,2.75,El Ancla Emocional,26,Femenino,Guanajuato,Silao
+24/07/2026 16:53:25,2,3,2,4,3,3,3,2,3,3,3,4,4,4,4,3,3,3,4,2,2.25,3.25,2.75,3.75,3.5,El Guardián Leal,18,Femenino,Guanajuato,Leon
+27/07/2026 07:45:12,5,4,5,2,3,4,3,3,4,4,4,2,3,4,3,1,4,4,5,1,4.5,3.25,4.0,3.75,4.5,El Sensible Espontáneo,30,Femenino,Queretaro,N/A
+07/07/2026 08:48:58,4,4,4,1,3,4,3,3,4,3,4,4,5,4,4,2,2,3,2,3,4.25,3.25,3.25,4.25,2.5,El Ancla Emocional,29,Femenino,Guanajuato,San Luis de la Paz
+20/07/2026 17:22:32,3,3,3,4,4,4,4,2,3,3,3,5,5,4,4,2,2,2,2,3,2.75,4.0,2.5,4.25,2.25,El Ancla Emocional,30,Femenino,Guanajuato,Salamanca
+29/07/2026 12:51:54,4,4,3,1,4,4,4,1,2,3,2,3,2,2,2,4,2,2,2,4,4.0,4.25,2.5,2.0,2.0,El Estratega Sin Rodeos,19,Femenino,Guanajuato,Celaya
+24/07/2026 12:19:37,4,4,3,3,5,4,5,1,2,2,2,2,3,4,4,2,2,3,2,3,3.5,4.75,2.5,3.75,2.5,El Arquitecto Silencioso,18,Femenino,Guanajuato,Leon
+15/07/2026 12:28:14,5,4,5,1,2,2,2,4,4,3,4,3,4,4,4,2,4,3,3,5,4.75,2.0,3.5,4.0,2.75,El Explorador Distraído,24,Masculino,Guanajuato,Leon
+17/07/2026 19:19:03,4,4,4,2,3,3,3,3,2,2,3,3,3,3,3,3,3,3,4,1,4.0,3.0,2.5,3.0,3.75,El Filósofo de Bolsillo,21,Femenino,Ciudad de Mexico,N/A
+22/07/2026 11:01:44,3,3,3,3,3,2,3,3,4,4,4,2,4,4,4,2,3,3,3,3,3.0,2.75,4.0,4.0,3.0,El Buen Corazón Distraído,30,Femenino,Guanajuato,Dolores Hidalgo
+18/07/2026 05:20:19,2,2,2,3,5,4,4,1,3,3,3,2,3,3,3,4,4,3,3,2,2.25,4.5,3.25,2.75,3.5,El Guardián del Método,29,Otro,Queretaro,N/A
+10/07/2026 02:35:42,1,2,1,4,3,3,4,2,3,3,3,3,5,4,4,2,3,3,3,3,1.5,3.5,3.0,4.25,3.0,El Guardián Leal,32,Femenino,Guanajuato,Valle de Santiago
+24/07/2026 14:32:24,3,3,3,3,3,3,3,2,4,4,3,2,4,4,4,2,1,2,2,4,3.0,3.25,3.75,4.0,1.75,El Ancla Emocional,26,Femenino,Guanajuato,Valle de Santiago
+19/07/2026 22:22:31,4,3,4,2,3,2,3,3,4,5,4,2,5,4,5,1,3,2,3,5,3.75,2.75,4.25,4.75,2.25,El Ancla Emocional,19,Masculino,Guanajuato,Salamanca
+14/07/2026 17:11:56,4,4,4,3,4,4,4,2,1,1,1,3,4,3,4,2,1,1,1,3,3.75,4.0,1.5,3.75,1.5,El Arquitecto Silencioso,23,Femenino,Guanajuato,Dolores Hidalgo
+04/08/2026 13:17:23,4,3,4,3,2,2,1,4,3,3,3,4,4,4,4,2,4,3,3,2,3.5,1.75,2.75,4.0,3.5,El Buen Corazón Distraído,18,Otro,Guanajuato,Leon
+13/07/2026 14:14:39,1,2,2,3,4,5,4,2,3,3,3,4,4,5,5,1,3,3,4,2,2.0,4.25,2.75,4.75,3.5,El Guardián Leal,30,Masculino,Guanajuato,Leon
+15/07/2026 09:02:20,3,4,3,4,5,5,5,2,5,4,4,1,3,4,4,3,3,2,3,4,3.0,4.75,4.5,3.5,2.5,El Ejecutor Imparable,23,Masculino,Guanajuato,Dolores Hidalgo
+25/07/2026 01:39:24,2,2,3,4,3,3,3,2,3,3,3,3,5,5,5,1,3,3,3,3,2.25,3.25,3.0,5.0,3.0,El Guardián Leal,24,Masculino,Guanajuato,Leon
+14/07/2026 03:08:39,5,4,5,1,3,3,2,3,3,3,3,2,3,3,3,2,3,3,3,3,4.75,2.75,3.25,3.25,3.0,El Explorador Distraído,19,Masculino,Guanajuato,Celaya
+18/07/2026 04:31:42,4,4,3,2,3,4,4,2,4,4,3,2,5,5,5,3,5,4,4,2,3.75,3.75,3.75,4.5,4.25,El Guardián Leal,28,Masculino,Guanajuato,San Luis de la Paz
+15/07/2026 11:26:11,1,2,2,4,5,4,4,3,3,2,3,4,5,4,4,2,3,3,3,3,1.75,4.0,2.5,4.25,3.0,El Guardián Leal,20,Masculino,Guanajuato,San Miguel de Allende
+21/07/2026 04:32:29,2,3,3,3,3,3,3,4,2,3,3,3,3,3,3,2,5,5,5,3,2.75,2.75,2.75,3.25,4.5,El Preocupado Metódico,18,Femenino,Ciudad de Mexico,N/A
+01/08/2026 05:38:57,3,3,3,3,5,5,5,1,3,2,3,4,3,3,4,4,2,2,3,4,3.0,5.0,2.5,3.0,2.25,El Ejecutor Imparable,18,Masculino,Guanajuato,Guanajuato
+27/07/2026 14:00:24,4,4,5,1,1,1,1,5,2,2,3,4,3,2,3,3,4,4,3,2,4.5,1.0,2.25,2.75,3.75,El Explorador Distraído,19,Masculino,Guanajuato,Dolores Hidalgo
+02/08/2026 05:21:55,4,3,3,3,2,3,3,2,5,5,5,1,3,3,3,3,2,3,3,4,3.25,3.0,5.0,3.0,2.5,El Carismático Estable,28,Masculino,Queretaro,N/A
+15/07/2026 20:36:21,2,1,2,5,4,4,4,3,3,3,3,2,3,3,3,2,2,2,2,4,1.5,3.75,3.25,3.25,2.0,El Guardián del Método,18,Femenino,Guanajuato,Celaya
+03/08/2026 10:22:51,4,3,3,2,3,3,3,4,5,5,5,1,4,4,3,3,1,2,2,4,3.5,2.75,5.0,3.5,1.75,El Carismático Estable,26,Masculino,Ciudad de Mexico,N/A
+13/07/2026 21:20:18,4,4,4,2,3,3,4,2,4,5,4,1,4,4,4,2,2,2,2,4,4.0,3.5,4.5,4.0,2.0,El Carismático Estable,22,Femenino,Ciudad de Mexico,N/A
+13/07/2026 10:19:11,5,5,5,1,4,3,4,2,3,3,4,2,3,3,3,3,3,3,4,3,5.0,3.75,3.5,3.0,3.25,El Crítico Creativo,18,Masculino,Guanajuato,Guanajuato
+11/07/2026 19:23:47,5,5,5,2,3,2,2,5,4,4,4,2,4,3,3,3,3,3,3,3,4.75,2.0,4.0,3.25,3.0,El Explorador Distraído,27,Masculino,Guanajuato,San Luis de la Paz
+20/07/2026 14:36:56,3,4,3,2,3,3,3,4,4,3,4,2,4,4,3,2,2,2,2,4,3.5,2.75,3.75,3.75,2.0,El Ancla Emocional,30,Otro,Guanajuato,Leon
+06/07/2026 09:38:20,5,4,5,1,3,3,3,4,5,4,3,2,3,3,3,2,3,2,3,2,4.75,2.75,4.0,3.25,3.0,El Explorador Distraído,26,Femenino,Guanajuato,Irapuato
+11/07/2026 16:53:11,5,5,5,1,2,2,3,3,3,4,4,2,3,4,5,2,3,2,2,4,5.0,2.5,3.75,4.0,2.25,El Visionario Sereno,18,Femenino,Guanajuato,Leon
+24/07/2026 13:55:14,3,3,3,4,4,4,4,3,3,3,4,2,5,5,5,1,4,3,4,3,2.75,3.75,3.5,5.0,3.5,El Guardián Leal,32,Masculino,Queretaro,N/A
+06/07/2026 22:35:16,2,3,4,4,3,4,4,2,4,4,4,3,5,5,5,1,3,2,2,4,2.75,3.75,3.75,5.0,2.25,El Ancla Emocional,18,Femenino,Guanajuato,Valle de Santiago
+15/07/2026 13:02:21,3,3,3,3,5,4,5,2,5,4,4,3,5,5,5,1,5,4,5,2,3.0,4.5,4.0,5.0,4.5,El Guardián Leal,23,Masculino,Guanajuato,Irapuato
+16/07/2026 05:49:03,2,3,2,3,3,3,3,4,4,3,3,2,4,4,4,2,4,5,4,1,2.5,2.75,3.5,4.0,4.5,El Preocupado Metódico,19,Masculino,Guanajuato,San Luis de la Paz
+24/07/2026 01:44:02,3,3,3,2,1,1,1,4,3,3,3,4,3,2,3,3,4,4,4,2,3.25,1.25,2.75,2.75,4.0,El Sensible Espontáneo,18,Femenino,Guanajuato,Irapuato
+13/07/2026 20:57:17,2,2,3,2,4,4,4,1,4,5,4,3,5,5,4,1,2,3,2,3,2.75,4.25,4.0,4.75,2.5,El Ancla Emocional,23,Femenino,Guanajuato,Dolores Hidalgo
+12/07/2026 21:51:03,4,3,4,3,4,4,5,1,2,2,3,4,3,3,2,3,2,2,2,4,3.5,4.5,2.25,2.75,2.0,El Ejecutor Imparable,20,Masculino,Estado de Mexico,N/A
+28/07/2026 04:43:41,4,3,4,2,5,5,5,1,3,3,3,3,3,3,3,3,1,2,1,4,3.75,5.0,3.0,3.0,1.5,El Ejecutor Imparable,23,Prefiero no decir,Guanajuato,San Luis de la Paz
+25/07/2026 15:54:37,3,2,2,4,4,5,4,2,4,4,4,1,3,3,3,3,2,3,2,2,2.25,4.25,4.25,3.0,2.75,El Alma Práctica de la Fiesta,23,Femenino,Guanajuato,Irapuato
+08/07/2026 05:03:47,4,5,5,2,2,2,2,4,4,3,4,2,3,3,3,3,3,3,3,2,4.5,2.0,3.75,3.0,3.25,El Explorador Distraído,31,Femenino,Guanajuato,San Luis de la Paz
+12/07/2026 11:06:36,4,4,3,1,3,4,3,3,4,3,4,2,4,4,3,3,4,3,3,3,4.0,3.25,3.75,3.5,3.25,El Explorador Distraído,24,Masculino,Guanajuato,Leon
+25/07/2026 11:24:02,1,2,2,4,3,4,4,2,3,3,3,3,4,4,4,3,2,2,2,3,1.75,3.75,3.0,3.75,2.25,El Guardián Leal,24,Femenino,Guanajuato,Leon
+10/07/2026 16:52:36,4,5,4,2,4,4,4,3,4,5,5,1,4,4,4,2,1,1,1,3,4.25,3.75,4.75,4.0,1.5,El Carismático Estable,19,Masculino,Guanajuato,Celaya
+02/08/2026 07:43:17,5,5,5,1,3,3,2,4,4,5,4,1,3,3,3,3,3,3,3,3,5.0,2.5,4.5,3.0,3.0,El Explorador Distraído,33,Femenino,Guanajuato,Salamanca
+14/07/2026 01:00:20,4,4,5,2,2,2,3,3,3,3,3,3,3,3,3,3,4,3,3,2,4.25,2.5,3.0,3.0,3.5,El Explorador Distraído,39,Masculino,Queretaro,N/A
+16/07/2026 13:45:06,3,4,4,2,3,3,3,3,4,4,3,2,3,2,3,3,4,4,4,2,3.75,3.0,3.75,2.75,4.0,El Escéptico Emocional,28,Masculino,Guanajuato,Valle de Santiago
+24/07/2026 04:59:18,3,4,3,2,3,3,4,4,4,3,3,2,5,4,3,2,3,4,3,3,3.5,3.0,3.5,4.0,3.25,El Buen Corazón Distraído,21,Femenino,Queretaro,N/A
+28/07/2026 23:59:14,2,3,3,3,3,3,3,3,3,3,3,4,2,2,3,2,5,4,4,2,2.75,3.0,2.75,2.75,4.25,El Preocupado Metódico,18,Otro,Guanajuato,Dolores Hidalgo
+20/07/2026 07:11:37,4,3,3,3,3,3,3,4,3,3,3,3,5,3,4,1,5,5,5,2,3.25,2.75,3.0,4.25,4.75,El Sensible Espontáneo,31,Femenino,Guanajuato,Guanajuato
+19/07/2026 09:52:57,5,4,5,1,4,4,3,4,3,2,2,4,4,4,4,2,4,3,3,2,4.75,3.25,2.25,4.0,3.5,El Filósofo de Bolsillo,21,Femenino,Guanajuato,Valle de Santiago
+09/07/2026 15:33:56,3,4,3,2,3,3,3,3,3,3,3,3,5,5,5,3,3,3,3,3,3.5,3.0,3.0,4.5,3.0,El Buen Corazón Distraído,21,Masculino,Guanajuato,Silao
+23/07/2026 03:26:14,4,5,4,2,2,2,2,5,3,2,2,3,4,4,4,1,2,2,2,3,4.25,1.75,2.5,4.25,2.25,El Buen Corazón Distraído,28,Masculino,Guanajuato,Valle de Santiago
+02/08/2026 05:22:00,5,4,4,2,2,2,2,3,3,3,3,3,4,4,4,2,3,3,3,3,4.25,2.25,3.0,4.0,3.0,El Explorador Distraído,18,Masculino,Queretaro,N/A
+28/07/2026 03:44:04,4,4,4,3,3,2,3,4,4,4,4,2,4,4,4,2,4,3,4,3,3.75,2.5,4.0,4.0,3.5,El Buen Corazón Distraído,18,Femenino,Queretaro,N/A
+26/07/2026 21:54:23,3,3,3,3,4,5,4,1,4,4,3,4,4,5,4,2,3,2,3,4,3.0,4.5,3.25,4.25,2.5,El Ejecutor Imparable,37,Masculino,Guanajuato,Salamanca
+23/07/2026 16:13:22,4,4,4,3,4,5,4,2,2,2,1,4,3,3,4,4,3,3,3,3,3.75,4.25,1.75,3.0,3.0,El Arquitecto Silencioso,18,Femenino,Guanajuato,Guanajuato
+12/07/2026 07:53:08,3,4,4,1,5,5,4,1,2,3,2,4,3,3,3,4,3,3,3,3,4.0,4.75,2.25,2.75,3.0,El Arquitecto Silencioso,26,Femenino,Queretaro,N/A
+17/07/2026 08:43:07,5,5,5,1,2,3,2,3,4,4,4,2,3,4,3,4,3,3,3,3,5.0,2.5,4.0,3.0,3.0,El Explorador Distraído,23,Femenino,Jalisco,N/A
+14/07/2026 21:01:58,3,4,3,3,3,3,3,3,5,5,4,1,4,4,3,3,2,2,2,5,3.25,3.0,4.75,3.5,1.75,El Carismático Estable,27,Femenino,Estado de Mexico,N/A
+30/07/2026 03:46:33,2,3,3,4,4,4,4,2,2,2,3,3,5,5,5,1,2,2,2,4,2.5,4.0,2.5,5.0,2.0,El Ancla Emocional,20,Prefiero no decir,Guanajuato,Valle de Santiago
+25/07/2026 20:53:10,4,4,4,2,3,4,3,3,5,5,5,1,3,3,2,3,2,1,1,5,4.0,3.25,5.0,2.75,1.25,El Carismático Estable,25,Femenino,Guanajuato,Celaya
+24/07/2026 00:05:36,3,3,3,2,5,5,5,1,2,1,2,4,3,3,3,2,3,3,3,3,3.25,5.0,1.75,3.25,3.0,El Arquitecto Silencioso,23,Femenino,Guanajuato,Celaya
+16/07/2026 23:27:54,5,4,5,3,2,2,2,3,4,4,4,3,3,4,4,2,4,3,3,3,4.25,2.25,3.75,3.75,3.25,El Explorador Distraído,25,Femenino,Queretaro,N/A
+13/07/2026 10:46:07,2,3,3,5,4,4,3,1,5,5,5,1,3,4,4,2,3,3,3,5,2.25,4.0,5.0,3.75,2.5,El Alma Práctica de la Fiesta,34,Masculino,Guanajuato,San Luis de la Paz
+18/07/2026 16:08:24,3,3,3,3,4,3,4,2,3,4,4,1,5,4,5,2,2,2,2,3,3.0,3.75,4.0,4.5,2.25,El Ancla Emocional,22,Femenino,Guanajuato,Salamanca
+19/07/2026 02:17:08,5,4,4,1,2,2,2,4,4,4,4,1,4,4,4,3,2,2,3,3,4.5,2.0,4.25,3.75,2.5,El Explorador Distraído,26,Femenino,Guanajuato,San Luis de la Paz
+02/08/2026 17:03:35,3,2,2,4,3,4,3,4,3,4,4,3,4,5,5,1,4,3,4,3,2.25,3.0,3.5,4.75,3.5,El Guardián Leal,25,Masculino,Guanajuato,Leon
+03/08/2026 09:32:29,4,5,4,1,3,3,3,2,4,3,4,3,3,4,4,3,4,3,3,3,4.5,3.25,3.5,3.5,3.25,El Explorador Distraído,22,Masculino,Guanajuato,Leon
+02/08/2026 07:35:31,2,3,2,3,4,3,3,2,2,2,2,3,4,4,4,2,3,3,4,2,2.5,3.5,2.25,4.0,3.5,El Empático Reservado,18,Masculino,Guanajuato,Irapuato
+08/07/2026 16:15:51,4,4,4,2,2,2,2,4,4,4,4,3,2,2,2,4,5,5,4,2,4.0,2.0,3.75,2.0,4.5,El Sensible Espontáneo,35,Masculino,Guanajuato,San Luis de la Paz
+29/07/2026 11:42:06,5,5,5,1,3,3,3,4,2,2,2,4,4,4,4,2,2,3,2,2,5.0,2.75,2.0,4.0,2.75,El Filósofo de Bolsillo,28,Masculino,Jalisco,N/A
+14/07/2026 22:03:44,3,4,3,2,3,3,3,3,2,1,3,4,2,3,3,3,4,3,4,3,3.5,3.0,2.0,2.75,3.5,El Introspectivo Profundo,21,Masculino,Estado de Mexico,N/A
+27/07/2026 07:59:06,3,3,2,3,5,4,5,1,2,2,2,2,4,3,4,4,3,2,2,5,2.75,4.75,2.5,3.25,2.0,El Ejecutor Imparable,28,Femenino,Guanajuato,San Luis de la Paz
+26/07/2026 09:44:48,3,3,2,3,4,4,4,2,3,3,3,3,4,4,3,1,3,4,4,2,2.75,4.0,3.0,4.0,3.75,El Guardián Leal,24,Masculino,Guanajuato,San Miguel de Allende
+23/07/2026 11:29:37,4,4,4,2,5,4,4,3,5,5,5,2,4,4,4,2,2,2,2,4,4.0,4.0,4.75,4.0,2.0,El Carismático Estable,25,Masculino,Estado de Mexico,N/A
+07/07/2026 01:39:14,1,1,2,3,4,4,4,2,5,4,4,2,4,3,3,2,3,2,2,4,1.75,4.0,4.25,3.5,2.25,El Alma Práctica de la Fiesta,23,Masculino,Guanajuato,San Luis de la Paz
+17/07/2026 13:17:24,5,5,5,1,3,2,3,3,3,2,3,3,3,3,3,3,2,2,2,4,5.0,2.75,2.75,3.0,2.0,El Visionario Sereno,27,Femenino,Estado de Mexico,N/A
+31/07/2026 22:23:47,3,3,2,4,5,5,5,1,2,2,2,3,3,3,3,2,3,3,3,3,2.5,5.0,2.25,3.25,3.0,El Arquitecto Silencioso,31,Otro,Estado de Mexico,N/A
+21/07/2026 07:07:39,4,5,5,2,3,3,3,4,4,3,3,3,3,3,3,3,2,2,2,4,4.5,2.75,3.25,3.0,2.0,El Visionario Sereno,30,Femenino,Guanajuato,Dolores Hidalgo
+20/07/2026 15:43:37,3,4,4,2,2,2,2,4,3,3,3,1,3,3,3,2,3,2,3,5,3.75,2.0,3.5,3.25,2.25,El Explorador Distraído,28,Masculino,Guanajuato,Celaya
+16/07/2026 22:59:53,4,3,3,4,2,2,2,4,3,3,4,2,3,4,4,2,4,5,4,2,3.0,2.0,3.5,3.75,4.25,El Sensible Espontáneo,31,Masculino,Guanajuato,Valle de Santiago
+13/07/2026 14:12:17,4,3,3,1,3,3,4,4,4,4,5,3,4,3,3,3,2,3,3,4,3.75,3.0,4.0,3.25,2.5,El Carismático Estable,18,Masculino,Guanajuato,Salamanca
+17/07/2026 21:09:14,3,4,4,3,4,4,3,1,3,3,3,4,4,4,4,1,3,3,3,3,3.5,4.0,2.75,4.25,3.0,El Empático Reservado,35,Otro,Guanajuato,Silao
+16/07/2026 09:27:45,3,3,3,3,4,4,3,1,5,5,5,2,4,4,3,2,2,2,2,5,3.0,4.0,4.75,3.75,1.75,El Carismático Estable,23,Femenino,Guanajuato,Irapuato
+09/07/2026 15:28:25,3,3,4,4,4,4,4,3,3,4,3,3,5,4,5,1,2,2,2,3,3.0,3.75,3.25,4.75,2.25,El Ancla Emocional,24,Femenino,Estado de Mexico,N/A
+14/07/2026 00:15:49,4,4,4,1,2,3,2,4,3,3,4,3,2,3,3,2,2,3,2,2,4.25,2.25,3.25,3.0,2.75,El Explorador Distraído,21,Femenino,Guanajuato,Irapuato
+01/08/2026 20:51:44,4,4,4,2,3,4,4,3,2,2,2,4,4,3,3,4,3,2,2,4,4.0,3.5,2.0,3.0,2.25,El Filósofo de Bolsillo,25,Femenino,Guanajuato,Irapuato
+27/07/2026 11:12:12,5,5,4,2,2,2,3,4,5,5,5,2,3,4,4,1,2,3,2,3,4.5,2.25,4.75,4.0,2.5,El Improvisador de Oficio,21,Masculino,Guanajuato,Leon
+31/07/2026 07:06:53,4,4,3,2,3,3,3,3,4,4,5,2,4,4,4,1,1,1,2,4,3.75,3.0,4.25,4.25,1.5,El Ancla Emocional,21,Masculino,Guanajuato,San Miguel de Allende
+28/07/2026 08:57:59,4,5,4,3,3,3,2,3,4,4,4,1,4,4,5,2,2,1,1,4,4.0,2.75,4.25,4.25,1.5,El Ancla Emocional,27,Femenino,Guanajuato,San Luis de la Paz
+19/07/2026 04:47:25,1,2,2,5,4,4,4,2,3,4,4,4,4,4,4,2,3,4,3,3,1.5,4.0,3.25,4.0,3.25,El Guardián Leal,23,Femenino,Queretaro,N/A
+20/07/2026 09:33:27,4,4,4,2,2,3,2,4,3,2,3,3,4,3,4,3,5,4,5,1,4.0,2.25,2.75,3.5,4.75,El Sensible Espontáneo,23,Masculino,Guanajuato,Valle de Santiago
+07/07/2026 07:35:01,3,3,3,3,4,4,3,3,2,2,2,3,3,3,3,2,4,5,5,3,3.0,3.5,2.25,3.25,4.25,El Introspectivo Profundo,30,Femenino,Guanajuato,Celaya
+26/07/2026 09:47:44,4,4,4,3,1,1,1,4,3,3,2,3,4,4,4,1,2,2,2,3,3.75,1.25,2.75,4.25,2.25,El Buen Corazón Distraído,24,Masculino,Guanajuato,Valle de Santiago
+07/07/2026 08:57:02,5,5,4,2,3,2,3,3,4,3,3,1,2,2,2,3,3,2,3,3,4.5,2.75,3.75,2.25,2.75,El Crítico Creativo,28,Femenino,Guanajuato,Dolores Hidalgo
+30/07/2026 09:11:05,3,2,3,4,4,4,4,2,4,5,5,3,4,5,5,1,2,2,2,4,2.5,4.0,4.25,4.75,2.0,El Ancla Emocional,18,Femenino,Guanajuato,San Luis de la Paz
+24/07/2026 06:35:37,4,4,4,2,5,4,4,1,3,3,3,3,3,3,3,2,3,3,3,3,4.0,4.5,3.0,3.25,3.0,El Arquitecto Silencioso,18,Masculino,Queretaro,N/A
+07/07/2026 22:42:25,2,3,2,2,4,4,4,3,1,1,1,5,4,4,4,2,3,2,3,3,2.75,3.75,1.0,4.0,2.75,El Empático Reservado,18,Masculino,Guanajuato,Irapuato
+27/07/2026 16:37:03,4,5,5,2,2,3,2,3,4,4,3,3,4,3,3,2,3,3,3,3,4.5,2.5,3.5,3.5,3.0,El Explorador Distraído,25,Femenino,Estado de Mexico,N/A
+18/07/2026 22:52:25,3,3,4,3,4,4,3,1,5,4,4,1,4,4,4,2,2,3,3,4,3.25,4.0,4.5,4.0,2.5,El Carismático Estable,23,Otro,Guanajuato,Guanajuato
+26/07/2026 18:30:23,4,5,4,2,3,3,3,3,3,3,3,3,4,3,3,4,2,2,2,5,4.25,3.0,3.0,3.0,1.75,El Visionario Sereno,27,Otro,Queretaro,N/A
+22/07/2026 16:40:53,4,4,4,1,3,2,3,2,2,2,3,2,3,3,2,5,5,4,5,1,4.25,3.0,2.75,2.25,4.75,El Escéptico Emocional,21,Femenino,Guanajuato,Guanajuato
+10/07/2026 18:48:54,5,5,5,3,2,3,3,3,3,5,4,2,4,4,4,4,2,3,2,4,4.5,2.75,4.0,3.5,2.25,El Visionario Sereno,26,Masculino,Guanajuato,San Miguel de Allende
+18/07/2026 09:22:59,2,3,4,2,2,2,3,5,2,2,2,4,2,2,2,3,5,4,4,1,3.25,2.0,2.0,2.25,4.5,El Sensible Espontáneo,22,Prefiero no decir,Guanajuato,Dolores Hidalgo
+26/07/2026 20:15:27,3,4,3,4,4,5,3,1,3,3,2,3,3,4,4,3,3,3,3,3,3.0,4.25,2.75,3.5,3.0,El Arquitecto Silencioso,26,Femenino,Guanajuato,San Miguel de Allende
+28/07/2026 10:39:39,4,4,4,2,4,4,4,3,4,4,4,3,3,4,4,2,2,3,3,4,4.0,3.75,3.75,3.75,2.5,El Visionario Sereno,33,Femenino,Guanajuato,Leon
+08/07/2026 13:59:27,2,4,3,2,3,4,4,3,2,3,2,3,4,3,3,3,2,2,2,4,3.25,3.5,2.5,3.25,2.0,El Ejecutor Imparable,19,Femenino,Guanajuato,Silao
+26/07/2026 19:14:19,5,5,5,2,4,3,3,4,2,2,2,3,2,3,3,3,3,3,3,3,4.75,3.0,2.25,2.75,3.0,El Filósofo de Bolsillo,23,Femenino,Guanajuato,Valle de Santiago
+29/07/2026 09:36:20,3,3,3,2,3,3,3,2,3,3,3,2,5,5,5,2,3,3,3,3,3.25,3.25,3.25,4.75,3.0,El Ancla Emocional,26,Masculino,Guanajuato,Salamanca
+30/07/2026 11:26:17,5,4,5,2,2,2,2,4,2,2,3,3,5,5,5,2,3,3,2,4,4.5,2.0,2.5,4.75,2.5,El Buen Corazón Distraído,29,Masculino,Guanajuato,Guanajuato
+18/07/2026 15:10:13,4,4,3,3,3,3,3,2,5,4,4,2,4,4,4,2,2,2,2,4,3.5,3.25,4.25,4.0,2.0,El Carismático Estable,19,Femenino,Guanajuato,Leon
+24/07/2026 12:37:51,3,3,3,3,5,5,5,1,2,2,2,4,3,3,3,4,1,2,2,3,3.0,5.0,2.0,2.75,2.0,El Arquitecto Silencioso,29,Masculino,Guanajuato,Valle de Santiago
+05/07/2026 02:15:50,4,4,4,3,4,4,4,3,5,5,5,2,4,5,5,3,1,2,2,5,3.75,3.75,4.75,4.25,1.5,El Carismático Estable,25,Femenino,Guanajuato,Leon
+18/07/2026 20:54:51,4,3,3,3,3,4,4,3,4,4,4,2,4,4,5,2,3,2,2,2,3.25,3.5,4.0,4.25,2.75,El Ancla Emocional,29,Femenino,Guanajuato,Dolores Hidalgo
+29/07/2026 22:02:56,5,5,4,1,3,3,3,4,4,4,4,2,3,3,3,1,3,3,3,4,4.75,2.75,4.0,3.5,2.75,El Explorador Distraído,21,Femenino,Guanajuato,Silao
+29/07/2026 11:20:54,5,4,5,2,2,3,2,4,3,4,3,3,5,3,4,3,3,2,3,2,4.5,2.25,3.25,3.75,3.0,El Explorador Distraído,28,Femenino,Guanajuato,San Luis de la Paz
+19/07/2026 01:43:01,1,2,3,4,4,3,4,1,2,3,3,4,3,4,4,4,2,2,2,4,2.0,4.0,2.5,3.25,2.0,El Guardián del Método,23,Masculino,Guanajuato,Salamanca
+21/07/2026 05:41:00,3,4,4,3,3,3,3,5,4,4,4,2,4,5,4,2,3,3,3,4,3.5,2.5,4.0,4.25,2.75,El Buen Corazón Distraído,18,Masculino,Guanajuato,Irapuato
+22/07/2026 17:29:24,4,4,4,2,3,4,3,3,5,5,5,2,4,4,4,1,2,2,3,5,4.0,3.25,4.75,4.25,2.0,El Carismático Estable,24,Femenino,Guanajuato,Silao
+17/07/2026 05:46:41,5,5,5,1,3,3,3,4,3,4,4,2,3,3,4,4,2,3,3,3,5.0,2.75,3.75,3.0,2.75,El Explorador Distraído,26,Masculino,Guanajuato,Dolores Hidalgo
+30/07/2026 22:58:31,3,3,2,3,2,2,2,2,3,4,4,3,4,4,4,1,3,3,4,3,2.75,2.5,3.5,4.25,3.25,El Buen Corazón Distraído,31,Femenino,Guanajuato,Leon
+13/07/2026 14:46:36,2,3,3,4,4,4,5,2,2,2,3,4,4,4,4,2,3,3,3,3,2.5,4.25,2.25,4.0,3.0,El Arquitecto Silencioso,18,Femenino,Guanajuato,Irapuato
+05/07/2026 13:45:47,3,3,3,3,4,4,4,1,3,3,3,2,3,3,3,3,3,3,3,4,3.0,4.25,3.25,3.0,2.75,El Ejecutor Imparable,22,Masculino,Guanajuato,San Luis de la Paz
+10/07/2026 01:09:33,3,3,4,3,4,4,4,2,3,2,2,3,2,3,3,2,2,3,3,3,3.25,4.0,2.5,3.0,2.75,El Arquitecto Silencioso,26,Femenino,Estado de Mexico,N/A
+10/07/2026 05:07:50,4,4,4,2,3,3,2,4,2,3,1,3,3,3,3,3,4,4,4,2,4.0,2.5,2.25,3.0,4.0,El Introspectivo Profundo,28,Masculino,Guanajuato,Guanajuato
+28/07/2026 04:30:24,5,4,4,2,2,2,2,5,4,4,5,2,4,3,4,2,3,3,3,3,4.25,1.75,4.25,3.75,3.0,El Improvisador de Oficio,18,Masculino,Guanajuato,Leon
+22/07/2026 22:52:08,3,3,3,2,4,4,4,1,3,3,3,3,3,3,3,3,3,3,3,4,3.25,4.25,3.0,3.0,2.75,El Ejecutor Imparable,38,Masculino,Guanajuato,San Miguel de Allende
+05/07/2026 23:03:03,5,5,5,2,3,2,3,5,4,3,4,2,4,3,4,1,2,3,2,3,4.75,2.25,3.75,4.0,2.5,El Explorador Distraído,23,Femenino,Guanajuato,Silao
+16/07/2026 03:30:48,3,3,4,3,5,5,5,1,3,3,3,3,3,3,3,3,2,2,2,3,3.25,5.0,3.0,3.0,2.25,El Ejecutor Imparable,33,Femenino,Guanajuato,Valle de Santiago
+01/08/2026 05:17:13,2,3,2,2,2,3,3,3,5,5,5,1,3,4,4,3,3,3,2,4,2.75,2.75,5.0,3.5,2.5,El Carismático Estable,18,Otro,Estado de Mexico,N/A
+12/07/2026 16:00:29,4,4,3,1,5,5,5,2,2,1,2,4,5,4,3,2,4,3,3,3,4.0,4.75,1.75,4.0,3.25,El Arquitecto Silencioso,36,Femenino,Estado de Mexico,N/A
+11/07/2026 02:47:38,5,4,4,1,2,2,2,4,4,3,3,3,3,3,3,3,5,5,5,2,4.5,2.0,3.25,3.0,4.75,El Sensible Espontáneo,27,Masculino,Guanajuato,Irapuato
+25/07/2026 17:24:33,5,4,5,3,4,3,3,3,5,4,5,1,4,4,4,2,2,3,2,5,4.25,3.25,4.75,4.0,2.0,El Carismático Estable,18,Femenino,Guanajuato,Valle de Santiago
+14/07/2026 18:18:30,5,5,5,1,3,3,2,4,2,3,3,2,3,3,3,3,2,2,2,3,5.0,2.5,3.0,3.0,2.25,El Visionario Sereno,28,Masculino,Guanajuato,San Miguel de Allende
+07/07/2026 06:57:34,5,5,5,1,3,2,2,3,4,3,3,2,3,3,3,4,2,2,3,4,5.0,2.5,3.5,2.75,2.25,El Visionario Sereno,28,Otro,Guanajuato,Silao
+22/07/2026 10:37:10,5,5,5,2,2,1,1,5,4,3,4,3,4,4,3,2,3,3,3,4,4.75,1.25,3.5,3.75,2.75,El Explorador Distraído,26,Femenino,Guanajuato,Leon
+28/07/2026 03:31:45,4,4,4,3,3,3,3,3,3,3,3,4,3,4,4,3,5,4,4,2,3.75,3.0,2.75,3.5,4.25,El Introspectivo Profundo,32,Masculino,Guanajuato,Dolores Hidalgo
+24/07/2026 07:23:21,4,4,4,3,4,3,4,2,3,3,3,2,4,4,4,4,4,3,4,2,3.75,3.75,3.25,3.5,3.75,El Introspectivo Profundo,23,Masculino,Guanajuato,San Luis de la Paz
+16/07/2026 06:49:10,5,4,4,2,2,3,2,5,3,3,3,3,2,4,3,3,4,3,4,2,4.25,2.0,3.0,3.0,3.75,El Explorador Distraído,26,Masculino,Guanajuato,San Miguel de Allende
+07/07/2026 10:16:45,3,4,3,4,4,4,4,1,3,3,3,3,5,4,5,2,3,3,3,3,3.0,4.25,3.0,4.5,3.0,El Guardián Leal,26,Masculino,Queretaro,N/A
+05/07/2026 22:12:51,3,3,3,2,4,4,4,3,5,4,4,1,4,3,4,2,1,1,2,3,3.25,3.75,4.5,3.75,1.75,El Carismático Estable,32,Femenino,Guanajuato,Dolores Hidalgo
+24/07/2026 06:59:18,1,1,2,4,3,4,3,2,4,4,4,3,5,5,5,3,3,3,2,4,1.5,3.5,3.75,4.5,2.5,El Guardián Leal,30,Masculino,Guanajuato,Celaya
+24/07/2026 14:05:39,3,2,3,3,4,5,4,2,3,3,3,3,4,4,4,1,2,2,2,4,2.75,4.25,3.0,4.25,2.0,El Ancla Emocional,30,Femenino,Guanajuato,Irapuato
+02/08/2026 14:40:23,2,2,3,4,4,4,5,2,4,4,3,2,5,5,4,2,2,3,2,3,2.25,4.25,3.75,4.5,2.5,El Guardián Leal,28,Otro,Guanajuato,Celaya
+27/07/2026 04:08:42,4,4,3,3,4,3,3,4,3,3,3,4,2,3,3,3,4,5,4,3,3.5,3.0,2.75,2.75,4.0,El Introspectivo Profundo,23,Masculino,Queretaro,N/A
+21/07/2026 15:28:52,4,4,4,2,3,3,3,3,3,2,2,3,3,3,3,4,3,3,3,2,4.0,3.0,2.5,2.75,3.25,El Filósofo de Bolsillo,32,Masculino,Queretaro,N/A
+17/07/2026 20:48:50,3,3,4,3,4,4,5,1,1,2,2,4,3,3,3,4,3,4,4,2,3.25,4.5,1.75,2.75,3.75,El Arquitecto Silencioso,24,Femenino,Guanajuato,Irapuato
+11/07/2026 16:48:39,5,4,5,2,3,3,3,3,4,4,4,2,2,2,2,4,3,4,4,4,4.5,3.0,4.0,2.0,3.25,El Crítico Creativo,18,Femenino,Estado de Mexico,N/A
+28/07/2026 20:26:55,2,2,3,3,4,4,4,2,3,3,3,3,5,5,5,2,3,3,3,4,2.5,4.0,3.0,4.75,2.75,El Guardián Leal,24,Femenino,Guanajuato,Celaya
+14/07/2026 01:51:05,4,4,3,2,4,4,3,2,4,3,4,2,4,4,4,1,2,2,3,2,3.75,3.75,3.75,4.25,2.75,El Ancla Emocional,21,Femenino,Guanajuato,Celaya
+14/07/2026 08:44:29,3,2,3,2,5,5,4,3,4,4,3,3,5,5,5,2,4,3,3,4,3.0,4.25,3.5,4.75,3.0,El Guardián Leal,23,Masculino,Guanajuato,Salamanca
+02/08/2026 18:31:59,3,3,3,3,3,3,4,3,3,2,3,4,5,4,5,1,3,2,3,3,3.0,3.25,2.5,4.75,2.75,El Empático Reservado,24,Masculino,Guanajuato,Celaya
