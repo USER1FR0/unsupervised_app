@@ -80,6 +80,11 @@ selected = st.selectbox(
     options=usable_models,
     format_func=_select_label,
     index=0,
+    help=(
+        "Modelo del historial que se usara para clasificar los datos nuevos. "
+        "Se cargaran juntos el modelo GMM, el StandardScaler y el PCA guardados. "
+        "Un modelo con Silhouette bajo dara clasificaciones con mucha incertidumbre."
+    ),
 )
 if selected is None:
     st.stop()
@@ -111,13 +116,18 @@ card(model_summary, variant="elevated")
 col_m1, col_m2, col_m3 = st.columns(3)
 col_m1.metric("Silhouette",
     f"{metrics.get('silhouette', 0):.3f}"
-    if isinstance(metrics.get("silhouette"), (int, float)) else "N/A"
+    if isinstance(metrics.get("silhouette"), (int, float)) else "N/A",
+    help="Del modelo seleccionado, no de los datos a clasificar. Un modelo con silhouette bajo dara clasificaciones mas inciertas.",
 )
 col_m2.metric("Davies-Bouldin",
     f"{metrics.get('davies_bouldin', 0):.3f}"
-    if isinstance(metrics.get("davies_bouldin"), (int, float)) else "N/A"
+    if isinstance(metrics.get("davies_bouldin"), (int, float)) else "N/A",
+    help="Menor Davies-Bouldin indica clusters mejor definidos en el entrenamiento.",
 )
-col_m3.metric("Registros entrenados", selected.get("n_records", "N/A"))
+col_m3.metric(
+    "Registros entrenados", selected.get("n_records", "N/A"),
+    help="Con que cantidad de datos se entreno el modelo. Muestras muy pequenas hacen el modelo menos robusto para generalizar.",
+)
 
 st.write("")
 
@@ -137,8 +147,17 @@ MODE_OPTIONS = [
     "Generar demo",
     "Usar dataset actual",
 ]
-source_mode = st.radio("Fuente", options=MODE_OPTIONS, horizontal=True,
-                        label_visibility="collapsed", key="clf_source_mode")
+source_mode = st.radio(
+    "Fuente", options=MODE_OPTIONS, horizontal=True,
+    label_visibility="collapsed", key="clf_source_mode",
+    help=(
+        "Cuatro opciones segun el escenario: "
+        "CSV nuevo para datos externos, "
+        "Dataset de ejemplo para pruebas cruzadas, "
+        "Generar demo para crear datos frescos al momento, "
+        "Usar dataset actual para clasificar lo que ya esta cargado en la sesion."
+    ),
+)
 
 df_to_classify = None
 source_name = None
@@ -148,6 +167,10 @@ if source_mode == "Cargar CSV nuevo":
     uploaded = st.file_uploader(
         "Arrastra o selecciona un CSV con las columnas OCEAN",
         type=["csv"], label_visibility="collapsed", key="clf_uploader",
+        help=(
+            "El CSV debe contener las 5 dimensiones OCEAN, o q1-q20 para calcular scoring. "
+            "Se aplica scaler.transform (NO fit_transform) para mantener la escala del entrenamiento."
+        ),
     )
     if uploaded is not None:
         try:
@@ -187,15 +210,20 @@ elif source_mode == "Generar demo":
         n_gen = st.number_input(
             "Cantidad de registros",
             min_value=10, max_value=2000, value=100, step=10,
+            help="Entre 50 y 200 es un rango tipico para demostracion. Muy pocos no es representativo, muchos ralentiza sin aportar.",
         )
     with col_seed:
         seed_gen = st.number_input(
             "Seed",
             min_value=0, max_value=999999, value=99, step=1,
+            help="Cualquier entero. Misma semilla produce datos identicos (util para reproducir). Semilla nueva produce datos unicos que ningun modelo ha visto.",
         )
     with col_gen:
         st.write("")
-        if st.button("Generar", type="secondary", use_container_width=True):
+        if st.button(
+            "Generar", type="secondary", use_container_width=True,
+            help="Ejecuta el generador sintetico con la cantidad y seed indicadas y prepara los datos para clasificar.",
+        ):
             try:
                 with st.spinner(f"Generando {n_gen} registros..."):
                     df_gen = generate_synthetic_dataset(int(n_gen), int(seed_gen))
@@ -267,7 +295,15 @@ section_head(title="Ejecutar clasificacion", kicker="Paso 3")
 
 can_run = df_to_classify is not None and not df_to_classify.empty
 
-if st.button("Clasificar", type="primary", use_container_width=True, disabled=not can_run):
+if st.button(
+    "Clasificar", type="primary", use_container_width=True, disabled=not can_run,
+    help=(
+        "Carga modelo, scaler y PCA desde el filesystem. "
+        "Aplica scaler.transform a los datos nuevos. "
+        "Ejecuta predict y predict_proba. "
+        "Proyecta con el PCA guardado para visualizacion."
+    ),
+):
     try:
         with st.spinner("Aplicando modelo..."):
             df_new = drop_null_dimensions(df_to_classify)
@@ -312,11 +348,23 @@ if "clf_labels" in st.session_state:
     n_confident = int((prob_max >= 0.9).sum()) if prob_max is not None else 0
 
     col1, col2, col3, col4 = st.columns(4)
-    col1.metric("Registros", len(df_new))
-    col2.metric("Clusters presentes", int(pd.Series(labels).nunique()))
+    col1.metric(
+        "Registros", len(df_new),
+        help="Cantidad de personas clasificadas por el modelo tras remover nulos.",
+    )
+    col2.metric(
+        "Clusters presentes", int(pd.Series(labels).nunique()),
+        help="Cuantos clusters distintos aparecieron en la asignacion. Puede ser menor a k si el dataset es pequeno.",
+    )
     if prob_max is not None:
-        col3.metric("Muy confiables (>0.9)", n_confident)
-        col4.metric("Fronterizas (<0.7)", n_frontier)
+        col3.metric(
+            "Muy confiables (>0.9)", n_confident,
+            help="Personas cuya probabilidad maxima supera 0.9. El modelo esta muy seguro de su asignacion.",
+        )
+        col4.metric(
+            "Fronterizas (<0.7)", n_frontier,
+            help="Personas con perfil mixto entre dos o mas clusters. Son las mas interesantes psicologicamente.",
+        )
 
     st.write("")
 
@@ -431,4 +479,5 @@ if "clf_labels" in st.session_state:
         file_name=f"predicciones_{st.session_state.get('clf_model_name','modelo').replace(' ','_')}_{ts}.csv",
         mime="text/csv",
         use_container_width=True,
+        help="CSV con los datos clasificados, cluster asignado, probabilidad maxima y probabilidades por cluster.",
     )

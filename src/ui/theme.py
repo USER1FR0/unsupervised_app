@@ -600,7 +600,8 @@ def render_sidebar() -> None:
         st.markdown('<div class="sidebar-section-title">Acciones</div>',
                      unsafe_allow_html=True)
         if st.button("Reiniciar aplicacion", key="_reset_all",
-                      use_container_width=True):
+                      use_container_width=True,
+                      help="Limpia el estado de la sesion (dataset cargado, modelo actual, filtros). NO borra los modelos guardados en el historial ni los datasets de ejemplo."):
             _reset_all_state()
             st.rerun()
 

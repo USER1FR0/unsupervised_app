@@ -39,6 +39,7 @@ else:
         file_name=f"datos_filtrados_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
         mime="text/csv",
         use_container_width=True,
+        help="Registros del dataset activo despues de aplicar filtros de Exploracion. No incluye etiquetas de cluster. Util para analisis externo en Excel o BI.",
     )
 
 st.write("")
@@ -63,6 +64,11 @@ else:
         file_name=f"datos_clusterizados_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
         mime="text/csv",
         use_container_width=True,
+        help=(
+            "Los datos filtrados mas una columna 'cluster' con la etiqueta numerica asignada por el modelo actual, "
+            "y 'prob_maxima' con la confianza de la asignacion. "
+            "Util para analisis posterior o cruce con otras variables."
+        ),
     )
 
 st.write("")
@@ -81,7 +87,10 @@ if not all(k in st.session_state for k in required):
     st.info("Necesitas un modelo entrenado. Ve a **Entrenamiento** primero.")
     st.page_link("pages/2_Entrenamiento.py", label="Ir a Entrenamiento")
 else:
-    if st.button("Generar reporte PDF", type="primary", use_container_width=True):
+    if st.button(
+        "Generar reporte PDF", type="primary", use_container_width=True,
+        help="Construye un reporte formal con ReportLab: hiperparametros, metricas, PCA 2D, perfil por cluster e interpretaciones textuales.",
+    ):
         try:
             with st.spinner("Generando reporte..."):
                 model = st.session_state["current_model"]
@@ -120,4 +129,5 @@ else:
             file_name=f"reporte_gmm_{datetime.now().strftime('%Y%m%d_%H%M%S')}.pdf",
             mime="application/pdf",
             use_container_width=True,
+            help="Documento listo para archivo o entrega academica.",
         )

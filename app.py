@@ -82,8 +82,13 @@ with col_sample:
         exists = sample_exists(key)
         n = sample_size(key) if exists else 0
         label = f"{key.capitalize()} ({n})" if exists else f"{key.capitalize()} (no disponible)"
+        sample_help = {
+            "real": "Respuestas autenticas de la encuesta publica. Dataset principal para entrenar el modelo definitivo. Distribucion no controlada, refleja la muestra real.",
+            "synthetic": "Registros generados por script con 5 arquetipos base (Explorer, Architect, Charismatic, Guardian, Intense) y ruido gaussiano. Sirve para validar que el algoritmo recupera estructura conocida.",
+            "demo": "Registros generados con semilla distinta al Sintetico (99 vs 42). Estructura similar pero datos que ningun modelo entrenado ha visto. Para clasificacion en vivo.",
+        }.get(key)
         if st.button(label, key=f"load_{key}", use_container_width=True,
-                      disabled=not exists):
+                      disabled=not exists, help=sample_help):
             try:
                 df_new = load_sample(key)
                 set_active_dataframe(df_new, filename)
@@ -190,7 +195,10 @@ else:
     st.write("")
     col_x, _ = st.columns([1, 5])
     with col_x:
-        if st.button("Limpiar dataset", type="secondary", use_container_width=True):
+        if st.button(
+            "Limpiar dataset", type="secondary", use_container_width=True,
+            help="Descarta el dataset activo de la sesion. NO borra los archivos de ejemplo ni los modelos guardados.",
+        ):
             clear_active_dataframe()
             # Rotamos la seed del uploader para reciclar el widget (evita re-carga)
             st.session_state["_uploader_seed"] = st.session_state.get("_uploader_seed", 0) + 1

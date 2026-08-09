@@ -42,9 +42,18 @@ section_head(
 )
 
 col_h1, col_h2, col_h3 = st.columns(3)
-col_h1.metric("Tiempo de entrenamiento", f"{training_time} s")
-col_h2.metric("Registros", len(df))
-col_h3.metric("BIC", f"{model.get_bic(X_scaled):.1f}")
+col_h1.metric(
+    "Tiempo de entrenamiento", f"{training_time} s",
+    help="Duracion del proceso de ajuste (EM) del modelo GMM en segundos.",
+)
+col_h2.metric(
+    "Registros", len(df),
+    help="Cantidad de personas usadas para entrenar el modelo actual.",
+)
+col_h3.metric(
+    "BIC", f"{model.get_bic(X_scaled):.1f}",
+    help="Bayesian Information Criterion del modelo entrenado. Menor es mejor. Para comparar contra otros modelos guardados.",
+)
 
 st.write("")
 
@@ -52,23 +61,40 @@ st.write("")
 section_head(title="Metricas de evaluacion", kicker="Calidad del clustering")
 
 col1, col2, col3, col4, col5 = st.columns(5)
-col1.metric("Clusters", metrics["n_clusters"])
+col1.metric(
+    "Clusters", metrics["n_clusters"],
+    help="Numero de clusters con al menos una persona asignada.",
+)
 col2.metric(
     "Silhouette",
     f"{metrics['silhouette']:.3f}" if metrics["silhouette"] is not None else "N/A",
-    help="Rango -1 a 1. Mayor = mejor separacion.",
+    help=(
+        "Coeficiente de silueta: s(i) = (b(i) - a(i)) / max(a(i), b(i)). "
+        "a(i) = distancia promedio dentro del propio cluster (cohesion). "
+        "b(i) = distancia promedio al cluster vecino mas cercano (separacion). "
+        "Rango -1 a 1. Umbrales: >0.7 fuerte, 0.5-0.7 razonable, 0.25-0.5 debil (tipico en personalidad), <0.25 sin estructura."
+    ),
 )
 col3.metric(
     "Davies-Bouldin",
     f"{metrics['davies_bouldin']:.3f}" if metrics["davies_bouldin"] is not None else "N/A",
-    help="Menor = mejor. Compara compacidad y separacion.",
+    help=(
+        "Indice Davies-Bouldin. Promedio del maximo de la razon entre dispersiones internas y separacion entre clusters. "
+        "Menor es mejor. <1 clusters bien definidos, 1-2 aceptable, >2 muy solapados."
+    ),
 )
 col4.metric(
     "Calinski-Harabasz",
     f"{metrics['calinski_harabasz']:.1f}" if metrics["calinski_harabasz"] is not None else "N/A",
-    help="Mayor = mejor.",
+    help=(
+        "Razon entre varianza inter-cluster e intra-cluster. Mayor es mejor. "
+        "Sin umbrales absolutos, sirve para comparar modelos entrenados sobre los mismos datos."
+    ),
 )
-col5.metric("AIC", f"{model.get_aic(X_scaled):.1f}")
+col5.metric(
+    "AIC", f"{model.get_aic(X_scaled):.1f}",
+    help="Akaike Information Criterion. Menor es mejor. Penaliza menos que BIC.",
+)
 
 if metrics["silhouette"] is not None:
     st.markdown(
@@ -94,7 +120,12 @@ st.session_state["current_pca"] = pca
 st.plotly_chart(pca_scatter(X_2d, model.labels, variance), use_container_width=True)
 st.caption(
     f"Los dos componentes explican **{variance['total']*100:.1f}%** de la varianza total. "
-    "Puntos cercanos son personas con perfiles similares."
+    "Puntos cercanos son personas con perfiles similares.",
+    help=(
+        "Porcentaje de informacion original preservada en la proyeccion 2D. "
+        "El resto se pierde al comprimir de 5D a 2D. "
+        "Rangos: >70% muy fiel, 50-70% razonable, <50% pobre (interpretar con cuidado)."
+    ),
 )
 
 st.write("")
@@ -160,9 +191,25 @@ col_o1, col_o2 = st.columns([1, 1])
 with col_o1:
     solo_fronterizas = st.checkbox(
         "Mostrar solo personas fronterizas (prob_maxima < 0.7)", value=False,
+        help=(
+            "Personas cuya probabilidad maxima es menor a 0.7, es decir, "
+            "con perfil mixto entre dos o mas clusters. "
+            "Son el hallazgo mas valioso academicamente porque revelan "
+            "la naturaleza continua de la personalidad. "
+            "En clustering duro (K-Means, jerarquico) esta informacion se pierde."
+        ),
     )
 with col_o2:
-    st.metric("Prob. maxima promedio", f"{prob_max.mean():.3f}")
+    st.metric(
+        "Prob. maxima promedio", f"{prob_max.mean():.3f}",
+        help=(
+            "Indica cuan seguro esta el modelo en promedio. "
+            ">0.85 muy seguro, mayoria de asignaciones claras. "
+            "0.70-0.85 confiable con casos fronterizos ocasionales. "
+            "0.55-0.70 mucho perfil mixto. "
+            "<0.55 alta incertidumbre general."
+        ),
+    )
 
 view = detail[detail["prob_maxima"] < 0.7] if solo_fronterizas else detail
 

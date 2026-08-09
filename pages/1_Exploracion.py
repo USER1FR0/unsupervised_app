@@ -55,17 +55,25 @@ with col_f1:
             "Rango de edad",
             min_value=edad_min, max_value=edad_max,
             value=(edad_min, edad_max),
+            help=(
+                "Segmenta el analisis por rango de edad. El filtro se propaga a todas las paginas: "
+                "Entrenamiento y Resultados usaran solo el subconjunto filtrado."
+            ),
         )
 
 with col_f2:
     generos_disponibles = sorted(df_clean["genero"].unique().tolist())
-    generos = st.multiselect("Genero", options=generos_disponibles,
-                              default=generos_disponibles)
+    generos = st.multiselect(
+        "Genero", options=generos_disponibles, default=generos_disponibles,
+        help="Segmenta por genero. El filtro se aplica en cascada al resto del pipeline.",
+    )
 
 with col_f3:
     estados_disponibles = sorted(df_clean["estado"].unique().tolist())
-    estados = st.multiselect("Estado", options=estados_disponibles,
-                              default=estados_disponibles)
+    estados = st.multiselect(
+        "Estado", options=estados_disponibles, default=estados_disponibles,
+        help="Segmenta por estado de residencia. Util para analizar subgrupos regionales.",
+    )
 
 df = df_clean[
     (df_clean["edad"].between(edad_range[0], edad_range[1]))
@@ -76,9 +84,18 @@ df = df_clean[
 st.write("")
 
 col_m1, col_m2, col_m3 = st.columns(3)
-col_m1.metric("Filtrados", len(df))
-col_m2.metric("Totales", len(df_full))
-col_m3.metric("Excluidos", len(df_full) - len(df))
+col_m1.metric(
+    "Filtrados", len(df),
+    help="Registros que cumplen los filtros de edad, genero y estado seleccionados.",
+)
+col_m2.metric(
+    "Totales", len(df_full),
+    help="Total de registros en el dataset cargado antes de aplicar filtros.",
+)
+col_m3.metric(
+    "Excluidos", len(df_full) - len(df),
+    help="Registros descartados por no cumplir los filtros o por tener nulos en dimensiones OCEAN.",
+)
 
 if df.empty:
     st.warning("No hay registros que cumplan los filtros seleccionados.")
@@ -111,6 +128,7 @@ with tab_tabla:
         "Columnas a mostrar",
         options=df.columns.tolist(),
         default=default_cols,
+        help="Elige que columnas mostrar en la tabla. Util para inspeccion visual y deteccion de respuestas ruidosas.",
     )
 
     st.dataframe(
@@ -171,6 +189,10 @@ with tab_dist:
         "Selecciona una dimension",
         options=DIMENSIONS,
         format_func=lambda d: f"{d} · {DIMENSION_LABELS[d]}",
+        help=(
+            "Dimension OCEAN a visualizar. Histograma muestra frecuencia por rango de valores. "
+            "Boxplot muestra Q1, mediana, Q3, bigotes hasta 1.5·IQR y outliers."
+        ),
     )
 
     col_h, col_b = st.columns(2)

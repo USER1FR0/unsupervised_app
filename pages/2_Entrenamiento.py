@@ -39,7 +39,10 @@ if len(df) < 10:
     st.stop()
 
 col_i1, col_i2 = st.columns([1, 2])
-col_i1.metric("Registros a usar", len(df))
+col_i1.metric(
+    "Registros a usar", len(df),
+    help="Cantidad de registros del dataset filtrado que se usaran para entrenar el modelo.",
+)
 col_i2.info(
     "GMM asume que los datos provienen de una mezcla de distribuciones gaussianas. "
     "Entrega asignaciones **probabilisticas**, ideal para detectar perfiles fronterizos."
@@ -98,17 +101,35 @@ col_a, col_b, col_c = st.columns(3)
 n_components = col_a.slider(
     "n_components",
     2, 10, int(opt["suggested_k"]),
-    help="Numero de componentes gaussianos (clusters).",
+    help=(
+        "Numero de gaussianas que ajustara el modelo, equivalente al numero de clusters. "
+        "Default: el k con menor BIC. "
+        "k pequeno (2-3): clusters grandes y genericos. "
+        "k moderado (4-6): balance entre generalizacion y detalle. "
+        "k grande (7-10): clusters especificos pero con riesgo de sobreajuste; "
+        "algunas gaussianas pueden quedar sin puntos asignados."
+    ),
 )
 covariance_type = col_b.selectbox(
     "covariance_type",
     ["full", "tied", "diag", "spherical"],
     index=0,
-    help="Estructura de la matriz de covarianza de cada componente.",
+    help=(
+        "Forma de las elipses gaussianas de cada cluster. "
+        "full: cada cluster con su matriz completa, elipses libres en cualquier orientacion (mas flexible). "
+        "tied: todos comparten la misma matriz, misma forma en distintas ubicaciones. "
+        "diag: matrices diagonales, elipses alineadas con los ejes. "
+        "spherical: esferas, similar a K-Means. "
+        "Recomendado full con datos suficientes."
+    ),
 )
 random_state = col_c.number_input(
     "random_state", value=42, step=1,
-    help="Semilla para reproducibilidad.",
+    help=(
+        "Semilla del generador aleatorio. Fija la inicializacion del algoritmo EM "
+        "para garantizar reproducibilidad total: mismo dataset + mismos hiperparametros "
+        "+ misma semilla = mismo modelo. Cualquier entero sirve. 42 es convencion."
+    ),
 )
 
 st.write("")
@@ -116,7 +137,13 @@ st.write("")
 # ---------- 3. Entrenar ----------
 section_head(title="Entrenamiento", kicker="Paso 3")
 
-if st.button("Entrenar GMM", type="primary", use_container_width=True):
+if st.button(
+    "Entrenar GMM", type="primary", use_container_width=True,
+    help=(
+        "Aplica StandardScaler, ejecuta el algoritmo Expectation-Maximization hasta convergencia, "
+        "y calcula las metricas de evaluacion (Silhouette, Davies-Bouldin, Calinski-Harabasz, BIC)."
+    ),
+):
     if n_components >= len(df):
         st.error(
             f"n_components ({n_components}) debe ser menor al numero de registros "
@@ -150,18 +177,24 @@ if st.button("Entrenar GMM", type="primary", use_container_width=True):
 
     st.markdown("#### Vista rapida")
     col1, col2, col3, col4 = st.columns(4)
-    col1.metric("Clusters", metrics["n_clusters"])
+    col1.metric(
+        "Clusters", metrics["n_clusters"],
+        help="Numero de clusters con al menos una persona asignada. Puede ser menor a n_components si hubo sobreajuste.",
+    )
     col2.metric(
         "Silhouette",
         f"{metrics['silhouette']:.3f}" if metrics["silhouette"] is not None else "N/A",
+        help="Rango -1 a 1. Mayor a 0.7 estructura fuerte. 0.5-0.7 razonable. 0.25-0.5 debil (tipico en personalidad). Menor a 0.25 sin estructura clara.",
     )
     col3.metric(
         "Davies-Bouldin",
         f"{metrics['davies_bouldin']:.3f}" if metrics["davies_bouldin"] is not None else "N/A",
+        help="Menor es mejor. Menor a 1 clusters bien definidos. 1-2 aceptable. Mayor a 2 muy solapados.",
     )
     col4.metric(
         "BIC final",
         f"{model.get_bic(X_scaled):.1f}",
+        help="BIC del modelo entrenado. Se compara contra otros modelos guardados. Menor es mejor.",
     )
 
     if metrics["silhouette"] is not None:

@@ -43,11 +43,18 @@ else:
     csv_name = st.session_state.get("csv_name", "sin_archivo")
 
     col_info = st.columns(3)
-    col_info[0].metric("Algoritmo", "GMM")
-    col_info[1].metric("Clusters", metrics.get("n_clusters", "N/A"))
+    col_info[0].metric(
+        "Algoritmo", "GMM",
+        help="Algoritmo del modelo actual. En esta version solo GMM (Gaussian Mixture Model).",
+    )
+    col_info[1].metric(
+        "Clusters", metrics.get("n_clusters", "N/A"),
+        help="Numero de clusters efectivos del modelo entrenado en la sesion actual.",
+    )
     col_info[2].metric(
         "Silhouette",
         f"{metrics['silhouette']:.3f}" if metrics.get("silhouette") is not None else "N/A",
+        help="Modelos con Silhouette mas alto tienen clusters mejor separados. Comparar solo entre modelos entrenados sobre datasets similares.",
     )
 
     st.write("")
@@ -63,7 +70,13 @@ else:
         )
     with col_b:
         st.write("")
-        save_clicked = st.button("Guardar", type="primary", use_container_width=True)
+        save_clicked = st.button(
+            "Guardar", type="primary", use_container_width=True,
+            help=(
+                "Serializa el modelo, scaler y PCA como .pkl en la carpeta models/ "
+                "y guarda un documento con los metadatos (hiperparametros, metricas, rutas) en MongoDB."
+            ),
+        )
 
     if save_clicked:
         model_name = (model_name or "").strip()
@@ -205,8 +218,11 @@ for m in all_models:
         with col_b:
             if healthy:
                 st.page_link("pages/6_Clasificacion.py", label="Clasificar con este")
-            if st.button("Eliminar", key=f"del_{model_id}",
-                          use_container_width=True):
+            if st.button(
+                "Eliminar", key=f"del_{model_id}",
+                use_container_width=True,
+                help="Elimina el documento en MongoDB y los tres archivos .pkl del filesystem (modelo, scaler, PCA). Operacion irreversible.",
+            ):
                 try:
                     delete_model_bundle(
                         m.get("model_file_path", ""),
